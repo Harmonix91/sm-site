@@ -45,17 +45,23 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&fit=crop');
+    /* Bright professional office / data scene, light tones, positioned right */
+    background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80&fit=crop&crop=right');
     background-size: cover;
-    background-position: center right;
-    filter: grayscale(30%);
-    transform: scale(1.04);
-    animation: imgDrift 14s ease-in-out infinite alternate;
+    background-position: right center;
+    animation: imgDrift 16s ease-in-out infinite alternate;
   }
+  /* Strong fade from left (full page colour) to right (image visible) */
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(245,247,248,0.97) 45%, rgba(245,247,248,0.6) 70%, rgba(245,247,248,0.2) 100%);
+    background: linear-gradient(
+      to right,
+      #F5F7F8 35%,
+      rgba(245,247,248,0.92) 50%,
+      rgba(245,247,248,0.55) 70%,
+      rgba(245,247,248,0.15) 100%
+    );
   }
   #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
   .hero-content { position: relative; z-index: 2; }
@@ -92,14 +98,14 @@
   .hero-h { opacity: 0; transform: translateY(16px); animation: fadeUp 0.7s 0.2s forwards; }
   .hero-sub { opacity: 0; transform: translateY(12px); animation: fadeUp 0.7s 0.35s forwards; }
   .cards { opacity: 0; transform: translateY(12px); animation: fadeUp 0.6s 0.5s forwards; }
-  @keyframes imgDrift { 0% { transform: scale(1.04) translateX(0); } 100% { transform: scale(1.06) translateX(-1%); } }
+  @keyframes imgDrift { 0% { transform: scale(1.03) translateX(0); } 100% { transform: scale(1.05) translateX(-0.8%); } }
   @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
   @media (max-width: 768px) {
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
     .nav-burger { display: flex; }
     .hero { padding: 60px 5% 56px; }
-    .hero-overlay { background: linear-gradient(to right, rgba(245,247,248,0.98) 60%, rgba(245,247,248,0.5) 100%); }
+    .hero-overlay { background: linear-gradient(to right, #F5F7F8 55%, rgba(245,247,248,0.85) 100%); }
     .hero-sub { max-width: 100%; }
     .cards { grid-template-columns: repeat(2, 1fr); }
   }
