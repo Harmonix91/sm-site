@@ -24,88 +24,25 @@
     height: 72px;
     gap: 32px;
   }
-  .logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: #ffffff;
-    text-decoration: none;
-    flex-shrink: 0;
-  }
+  .logo { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; text-decoration: none; flex-shrink: 0; }
   .logo span { color: #23BDC6; }
   .nav-spacer { flex: 1; }
   .nav-r { display: flex; align-items: center; gap: 32px; }
-  .nav-link {
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    font-weight: 500;
-    text-decoration: none;
-    position: relative;
-    white-space: nowrap;
-    transition: color 0.2s;
-  }
+  .nav-link { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 500; text-decoration: none; position: relative; white-space: nowrap; transition: color 0.2s; }
   .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: #23BDC6; transition: width 0.25s; }
   .nav-link:hover { color: #ffffff; }
   .nav-link:hover::after { width: 100%; }
-
   .nav-dropdown { position: relative; padding-bottom: 20px; margin-bottom: -20px; }
-  .nav-dropdown-trigger {
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: color 0.2s;
-    white-space: nowrap;
-  }
+  .nav-dropdown-trigger { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: color 0.2s; white-space: nowrap; }
   .nav-dropdown-trigger span { font-size: 9px; transition: transform 0.2s; }
   .nav-dropdown:hover .nav-dropdown-trigger { color: #ffffff; }
   .nav-dropdown:hover .nav-dropdown-trigger span { transform: rotate(180deg); }
-  .nav-dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #111;
-    min-width: 200px;
-    display: none;
-    flex-direction: column;
-    border-top: 2px solid #23BDC6;
-  }
+  .nav-dropdown-menu { position: absolute; top: 100%; left: 0; background: #111; min-width: 200px; display: none; flex-direction: column; border-top: 2px solid #23BDC6; }
   .nav-dropdown:hover .nav-dropdown-menu { display: flex; }
-  .nav-dropdown-item {
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    padding: 14px 20px;
-    text-decoration: none;
-    display: block;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    transition: color 0.2s, background 0.2s;
-  }
+  .nav-dropdown-item { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); padding: 14px 20px; text-decoration: none; display: block; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.2s, background 0.2s; }
   .nav-dropdown-item:hover { color: #23BDC6; background: #1a1a1a; }
-
-  .nav-cta {
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #000000;
-    background: #23BDC6;
-    padding: 12px 24px;
-    font-weight: 600;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: opacity 0.2s, transform 0.15s;
-  }
+  .nav-cta { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #000000; background: #23BDC6; padding: 12px 24px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: opacity 0.2s, transform 0.15s; }
   .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
-
   .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
   .nav-burger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.5); }
 
@@ -114,139 +51,49 @@
     padding: 100px 7% 90px;
     border-bottom: 1px solid #DDE3E6;
     background: #F5F7F8;
-  }
-  .hero-pre {
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #19647E;
-    margin-bottom: 32px;
-  }
-  .hero-h {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(42px, 6vw, 86px);
-    font-weight: 600;
-    line-height: 1.05;
-    color: #000000;
-    margin-bottom: 32px;
-    letter-spacing: -0.01em;
-  }
-  .hero-h .line { display: block; }
-  .hero-h .accent { color: #23BDC6; }
-  .hero-sub {
-    font-size: clamp(17px, 1.5vw, 22px);
-    font-weight: 400;
-    color: #555;
-    max-width: 640px;
-    line-height: 1.7;
-    margin-bottom: 72px;
+    position: relative;
+    overflow: hidden;
   }
 
-  /* CARDS */
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-    width: 100%;
-    background: rgba(35,189,198,0.15);
-  }
-  .card {
-    background: #19647E;
-    padding: 32px 28px;
-    cursor: pointer;
-    position: relative;
-    transition: background 0.2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 180px;
-  }
-  .card::before {
-    content: '';
+  /* CANVAS BACKGROUND */
+  #hero-canvas {
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: #23BDC6;
-    transform: scaleX(0);
-    transition: transform 0.3s;
-    transform-origin: left;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
   }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-pre { font-size: 16px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #19647E; margin-bottom: 32px; }
+  .hero-h { font-family: 'Poppins', sans-serif; font-size: clamp(42px, 6vw, 86px); font-weight: 600; line-height: 1.05; color: #000000; margin-bottom: 32px; letter-spacing: -0.01em; }
+  .hero-h .line { display: block; }
+  .hero-h .accent { color: #23BDC6; }
+  .hero-sub { font-size: clamp(17px, 1.5vw, 22px); font-weight: 400; color: #555; max-width: 640px; line-height: 1.7; margin-bottom: 72px; }
+
+  /* CARDS */
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 100%; background: rgba(35,189,198,0.15); position: relative; z-index: 1; }
+  .card { background: #19647E; padding: 32px 28px; cursor: pointer; position: relative; transition: background 0.2s; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #23BDC6; transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
   .card:hover { background: #145670; }
   .card:hover::before { transform: scaleX(1); }
   .card:hover .card-more { opacity: 1; }
-  .card-pre {
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #23BDC6;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 12px;
-    min-height: 18px;
-  }
-  .card-label {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(18px, 1.8vw, 22px);
-    font-weight: 600;
-    color: #ffffff;
-    line-height: 1.2;
-    display: block;
-  }
-  .card-more {
-    color: #23BDC6;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    opacity: 0.5;
-    transition: opacity 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 24px;
-  }
+  .card-pre { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #23BDC6; font-weight: 600; display: block; margin-bottom: 12px; min-height: 18px; }
+  .card-label { font-family: 'Poppins', sans-serif; font-size: clamp(18px, 1.8vw, 22px); font-weight: 600; color: #ffffff; line-height: 1.2; display: block; }
+  .card-more { color: #23BDC6; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.5; transition: opacity 0.2s; display: flex; align-items: center; gap: 6px; margin-top: 24px; }
   .card-more-arrow { transition: transform 0.2s; display: inline-block; }
   .card:hover .card-more-arrow { transform: translateX(4px); }
 
   /* TICKER */
-  .ticker {
-    display: flex;
-    align-items: center;
-    border-top: 1px solid #DDE3E6;
-    overflow: hidden;
-    background: #F5F7F8;
-  }
-  .ticker-label {
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #000000;
-    background: #23BDC6;
-    padding: 18px 24px;
-    white-space: nowrap;
-    font-weight: 600;
-    flex-shrink: 0;
-  }
+  .ticker { display: flex; align-items: center; border-top: 1px solid #DDE3E6; overflow: hidden; background: #F5F7F8; }
+  .ticker-label { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #000000; background: #23BDC6; padding: 18px 24px; white-space: nowrap; font-weight: 600; flex-shrink: 0; }
   .ticker-track { display: flex; animation: ticker 22s linear infinite; }
-  .ticker-item {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #999;
-    padding: 18px 36px;
-    border-right: 1px solid #DDE3E6;
-    white-space: nowrap;
-    font-weight: 500;
-  }
+  .ticker-item { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #999; padding: 18px 36px; border-right: 1px solid #DDE3E6; white-space: nowrap; font-weight: 500; }
 
   /* FOOTER */
-  footer {
-    padding: 24px 7%;
-    background: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  footer { padding: 24px 7%; background: #000000; display: flex; align-items: center; justify-content: space-between; }
   .foot-logo { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.02em; color: rgba(255,255,255,0.2); }
   .foot-logo span { color: rgba(35,189,198,0.4); }
   .foot-tag { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.2); }
@@ -293,41 +140,45 @@
 </nav>
 
 <section class="hero">
-  <div class="hero-pre">Executive Search — Energy &amp; Infrastructure</div>
-  <h1 class="hero-h">
-    <span class="line">Exceptional leaders</span>
-    <span class="line">drive exceptional <span class="accent">returns.</span></span>
-  </h1>
-  <p class="hero-sub">We build the leadership teams who execute your value creation plan.</p>
+  <canvas id="hero-canvas"></canvas>
 
-  <div class="cards">
-    <div class="card">
-      <div>
-        <span class="card-pre">What we do</span>
-        <span class="card-label">Executive<br>Search</span>
+  <div class="hero-content">
+    <div class="hero-pre">Executive Search — Energy &amp; Infrastructure</div>
+    <h1 class="hero-h">
+      <span class="line">Exceptional leaders</span>
+      <span class="line">drive exceptional <span class="accent">returns.</span></span>
+    </h1>
+    <p class="hero-sub">We build the leadership teams who execute your value creation plan.</p>
+
+    <div class="cards">
+      <div class="card">
+        <div>
+          <span class="card-pre">What we do</span>
+          <span class="card-label">Executive<br>Search</span>
+        </div>
+        <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
       </div>
-      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
-    </div>
-    <div class="card">
-      <div>
-        <span class="card-pre">How we work</span>
-        <span class="card-label">Our<br>Process</span>
+      <div class="card">
+        <div>
+          <span class="card-pre">How we work</span>
+          <span class="card-label">Our<br>Process</span>
+        </div>
+        <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
       </div>
-      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
-    </div>
-    <div class="card">
-      <div>
-        <span class="card-pre">Where we work</span>
-        <span class="card-label">Energy &amp;<br>Infrastructure</span>
+      <div class="card">
+        <div>
+          <span class="card-pre">Where we work</span>
+          <span class="card-label">Energy &amp;<br>Infrastructure</span>
+        </div>
+        <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
       </div>
-      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
-    </div>
-    <div class="card">
-      <div>
-        <span class="card-pre">Insights</span>
-        <span class="card-label">Thinking &amp;<br>Perspectives</span>
+      <div class="card">
+        <div>
+          <span class="card-pre">Insights</span>
+          <span class="card-label">Thinking &amp;<br>Perspectives</span>
+        </div>
+        <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
       </div>
-      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
     </div>
   </div>
 </section>
@@ -355,5 +206,131 @@
   <div class="foot-tag">Exceptional leaders. Exceptional returns.</div>
 </footer>
 
+<script>
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let mouse = { x: null, y: null };
+  let particles = [];
+  let scrollY = 0;
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  window.addEventListener('resize', () => { resize(); init(); });
+  window.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  window.addEventListener('scroll', () => { scrollY = window.scrollY; });
+
+  class Particle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 3 + 1;
+      this.baseX = this.x;
+      this.baseY = this.y;
+      this.speedX = (Math.random() - 0.5) * 0.4;
+      this.speedY = (Math.random() - 0.5) * 0.4;
+      this.opacity = Math.random() * 0.15 + 0.04;
+      this.type = Math.random() > 0.5 ? 'circle' : 'rect';
+      this.angle = Math.random() * Math.PI * 2;
+      this.rotSpeed = (Math.random() - 0.5) * 0.01;
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY + scrollY * 0.0006;
+      this.angle += this.rotSpeed;
+
+      // Parallax drift from mouse
+      if (mouse.x !== null) {
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 200) {
+          this.x -= dx * 0.003;
+          this.y -= dy * 0.003;
+        }
+      }
+
+      if (this.x < -20) this.x = canvas.width + 20;
+      if (this.x > canvas.width + 20) this.x = -20;
+      if (this.y < -20) this.y = canvas.height + 20;
+      if (this.y > canvas.height + 20) this.y = -20;
+    }
+    draw() {
+      ctx.save();
+      ctx.globalAlpha = this.opacity;
+      ctx.strokeStyle = '#19647E';
+      ctx.lineWidth = 1;
+      ctx.translate(this.x, this.y);
+      ctx.rotate(this.angle);
+      if (this.type === 'circle') {
+        ctx.beginPath();
+        ctx.arc(0, 0, this.size * 3, 0, Math.PI * 2);
+        ctx.stroke();
+      } else {
+        const s = this.size * 4;
+        ctx.strokeRect(-s / 2, -s / 2, s, s);
+      }
+      ctx.restore();
+    }
+  }
+
+  // Also draw slow-moving large geometric shapes in background
+  class Shape {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 120 + 60;
+      this.speedX = (Math.random() - 0.5) * 0.15;
+      this.speedY = (Math.random() - 0.5) * 0.15;
+      this.opacity = Math.random() * 0.04 + 0.02;
+      this.angle = Math.random() * Math.PI * 2;
+      this.rotSpeed = (Math.random() - 0.5) * 0.003;
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.angle += this.rotSpeed;
+      if (this.x < -this.size) this.x = canvas.width + this.size;
+      if (this.x > canvas.width + this.size) this.x = -this.size;
+      if (this.y < -this.size) this.y = canvas.height + this.size;
+      if (this.y > canvas.height + this.size) this.y = -this.size;
+    }
+    draw() {
+      ctx.save();
+      ctx.globalAlpha = this.opacity;
+      ctx.strokeStyle = '#23BDC6';
+      ctx.lineWidth = 1.5;
+      ctx.translate(this.x, this.y);
+      ctx.rotate(this.angle);
+      ctx.strokeRect(-this.size / 2, -this.size / 2, this.size, this.size);
+      ctx.restore();
+    }
+  }
+
+  function init() {
+    particles = [];
+    const count = Math.floor((canvas.width * canvas.height) / 18000);
+    for (let i = 0; i < count; i++) particles.push(new Particle());
+    for (let i = 0; i < 6; i++) particles.push(new Shape());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(animate);
+  }
+
+  resize();
+  init();
+  animate();
+</script>
 </body>
 </html>
