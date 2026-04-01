@@ -12,7 +12,6 @@
   html { scroll-behavior: smooth; }
   body { background: #F5F7F8; color: #0A0A0A; font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; }
 
-  /* NAV */
   nav { display: flex; align-items: center; padding: 0 5%; background: #23BDC6; position: sticky; top: 0; z-index: 100; height: 72px; gap: 32px; }
   .logo { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; text-decoration: none; flex-shrink: 0; }
   .logo span { color: #19647E; }
@@ -36,7 +35,6 @@
   .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
   .nav-burger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.7); }
 
-  /* HERO */
   .hero { padding: 100px 7% 90px; border-bottom: 1px solid #DDE3E6; background: #F5F7F8; position: relative; overflow: hidden; }
   #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
   .hero-content { position: relative; z-index: 1; }
@@ -46,11 +44,10 @@
   .hero-h .accent { color: #23BDC6; }
   .hero-sub { font-size: clamp(17px, 1.5vw, 22px); font-weight: 400; color: #555; max-width: 640px; line-height: 1.7; margin-bottom: 72px; }
 
-  /* CARDS */
-  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 100%; background: rgba(0,0,0,0.15); position: relative; z-index: 1; }
-  .card { background: #0A0A0A; padding: 32px 28px; cursor: pointer; position: relative; transition: background 0.2s; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; }
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 100%; background: rgba(26,187,122,0.15); position: relative; z-index: 1; }
+  .card { background: #0A0A0A; padding: 32px 28px; cursor: pointer; position: relative; transition: background 0.25s; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; }
   .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #1ABB7A; transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
-  .card:hover { background: #141414; }
+  .card:hover { background: #0d2b1e; }
   .card:hover::before { transform: scaleX(1); }
   .card:hover .card-more { opacity: 1; }
   .card-pre { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #23BDC6; font-weight: 600; display: block; margin-bottom: 12px; min-height: 18px; }
@@ -59,19 +56,16 @@
   .card-more-arrow { transition: transform 0.2s; display: inline-block; }
   .card:hover .card-more-arrow { transform: translateX(4px); }
 
-  /* TICKER */
   .ticker { display: flex; align-items: center; border-top: 1px solid #DDE3E6; overflow: hidden; background: #F5F7F8; }
   .ticker-label { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #000000; background: #23BDC6; padding: 18px 24px; white-space: nowrap; font-weight: 600; flex-shrink: 0; }
   .ticker-track { display: flex; animation: ticker 22s linear infinite; }
   .ticker-item { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #999; padding: 18px 36px; border-right: 1px solid #DDE3E6; white-space: nowrap; font-weight: 500; }
 
-  /* FOOTER */
   footer { padding: 24px 7%; background: #23BDC6; display: flex; align-items: center; justify-content: space-between; }
   .foot-logo { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.02em; color: rgba(255,255,255,0.5); }
   .foot-logo span { color: rgba(25,100,126,0.8); }
   .foot-tag { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); }
 
-  /* ANIMATIONS */
   @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
   .hero-pre { opacity: 0; transform: translateY(12px); animation: fadeUp 0.5s 0.1s forwards; }
   .hero-h { opacity: 0; transform: translateY(16px); animation: fadeUp 0.7s 0.2s forwards; }
@@ -79,7 +73,6 @@
   .cards { opacity: 0; transform: translateY(12px); animation: fadeUp 0.6s 0.5s forwards; }
   @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-  /* MOBILE */
   @media (max-width: 768px) {
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
     .nav-burger { display: flex; }
@@ -107,9 +100,7 @@
     <a href="/about" class="nav-link">About</a>
     <a href="/contact" class="nav-cta">Start a search</a>
   </div>
-  <div class="nav-burger">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="nav-burger"><span></span><span></span><span></span></div>
 </nav>
 
 <section class="hero">
