@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sonder & Metric — Executive Search</title>
+<title>Sonder & Metric — Infrastructure Executive Search</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,83 +12,79 @@
   html { scroll-behavior: smooth; }
   body { background: #F5F7F8; color: #0A0A0A; font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; }
 
-  nav { display: flex; align-items: center; padding: 0 5%; background: #23BDC6; position: sticky; top: 0; z-index: 100; height: 72px; gap: 32px; }
+  /* NAV — dark teal #19647E primary */
+  nav { display: flex; align-items: center; padding: 0 5%; background: #19647E; position: sticky; top: 0; z-index: 100; height: 72px; gap: 32px; }
   .logo { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; text-decoration: none; flex-shrink: 0; }
-  .logo span { color: #19647E; }
+  .logo span { color: #23BDC6; }
   .nav-spacer { flex: 1; }
   .nav-r { display: flex; align-items: center; gap: 32px; }
-  .nav-link { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.65); font-weight: 500; text-decoration: none; position: relative; white-space: nowrap; transition: color 0.2s; }
-  .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: #ffffff; transition: width 0.25s; }
+  .nav-link { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 500; text-decoration: none; position: relative; white-space: nowrap; transition: color 0.2s; }
+  .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: #23BDC6; transition: width 0.25s; }
   .nav-link:hover { color: #ffffff; }
   .nav-link:hover::after { width: 100%; }
   .nav-dropdown { position: relative; padding-bottom: 20px; margin-bottom: -20px; }
-  .nav-dropdown-trigger { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.65); font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: color 0.2s; white-space: nowrap; }
+  .nav-dropdown-trigger { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: color 0.2s; white-space: nowrap; }
   .nav-dropdown-trigger span { font-size: 9px; transition: transform 0.2s; }
   .nav-dropdown:hover .nav-dropdown-trigger { color: #ffffff; }
   .nav-dropdown:hover .nav-dropdown-trigger span { transform: rotate(180deg); }
-  .nav-dropdown-menu { position: absolute; top: 100%; left: 0; background: #19647E; min-width: 200px; display: none; flex-direction: column; border-top: 2px solid #ffffff; }
+  .nav-dropdown-menu { position: absolute; top: 100%; left: 0; background: #0f4a5e; min-width: 200px; display: none; flex-direction: column; border-top: 2px solid #23BDC6; }
   .nav-dropdown:hover .nav-dropdown-menu { display: flex; }
-  .nav-dropdown-item { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); padding: 14px 20px; text-decoration: none; display: block; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 0.2s, background 0.2s; }
-  .nav-dropdown-item:hover { color: #ffffff; background: #145670; }
-  .nav-cta { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #23BDC6; background: #ffffff; padding: 12px 24px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: opacity 0.2s, transform 0.15s; }
+  .nav-dropdown-item { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.55); padding: 14px 20px; text-decoration: none; display: block; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s, background 0.2s; }
+  .nav-dropdown-item:hover { color: #23BDC6; background: #0d3f50; }
+  .nav-cta { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #19647E; background: #ffffff; padding: 12px 24px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: opacity 0.2s, transform 0.15s; }
   .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
   .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-  .nav-burger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.7); }
+  .nav-burger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.6); }
 
-  .hero {
-    padding: 100px 7% 90px;
-    border-bottom: 1px solid #DDE3E6;
-    position: relative;
-    overflow: hidden;
-    min-height: 600px;
-  }
+  /* HERO */
+  .hero { padding: 100px 7% 90px; border-bottom: 1px solid #DDE3E6; position: relative; overflow: hidden; min-height: 600px; }
   .hero-bg {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80&fit=crop&crop=right');
-    background-size: cover;
-    background-position: right center;
+    background-size: cover; background-position: right center;
     animation: imgDrift 16s ease-in-out infinite alternate;
   }
   .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to right,
-      #F5F7F8 35%,
-      rgba(245,247,248,0.92) 50%,
-      rgba(245,247,248,0.55) 70%,
-      rgba(245,247,248,0.15) 100%
-    );
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, #F5F7F8 35%, rgba(245,247,248,0.92) 50%, rgba(245,247,248,0.55) 70%, rgba(245,247,248,0.15) 100%);
   }
   #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
   .hero-content { position: relative; z-index: 2; }
+
+  /* Pre-header — dark teal */
   .hero-pre { font-size: 16px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #19647E; margin-bottom: 32px; }
+
   .hero-h { font-family: 'Poppins', sans-serif; font-size: clamp(42px, 6vw, 86px); font-weight: 300; line-height: 1.05; color: #000000; margin-bottom: 32px; letter-spacing: -0.01em; }
   .hero-h .line { display: block; }
-  .hero-sub { font-size: clamp(17px, 1.5vw, 22px); font-weight: 400; color: #444; max-width: 560px; line-height: 1.7; margin-bottom: 72px; }
 
-  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 100%; background: rgba(0,0,0,0.15); position: relative; z-index: 2; }
+  /* Sub-copy — two lines */
+  .hero-sub { font-size: clamp(17px, 1.5vw, 22px); font-weight: 400; color: #444; max-width: 600px; line-height: 1.75; margin-bottom: 72px; }
+  .hero-sub-second { display: block; margin-top: 12px; color: #777; font-size: clamp(14px, 1.1vw, 17px); font-weight: 400; }
+
+  /* CARDS — amber/gold accent #D4A843 */
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 100%; background: rgba(212,168,67,0.12); position: relative; z-index: 2; }
   .card { background: #0A0A0A; padding: 32px 28px; cursor: pointer; position: relative; transition: background 0.25s; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; }
-  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #1ABB7A; transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #D4A843; transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
   .card:hover { background: #141414; }
   .card:hover::before { transform: scaleX(1); }
   .card:hover .card-more { opacity: 1; }
-  .card-pre { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #1ABB7A; font-weight: 600; display: block; margin-bottom: 12px; min-height: 18px; }
+  .card-pre { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #D4A843; font-weight: 600; display: block; margin-bottom: 12px; min-height: 18px; }
   .card-label { font-family: 'Poppins', sans-serif; font-size: clamp(18px, 1.8vw, 22px); font-weight: 600; color: #ffffff; line-height: 1.2; display: block; }
-  .card-more { color: #1ABB7A; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.5; transition: opacity 0.2s; display: flex; align-items: center; gap: 6px; margin-top: 24px; }
+  .card-more { color: #D4A843; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.5; transition: opacity 0.2s; display: flex; align-items: center; gap: 6px; margin-top: 24px; }
   .card-more-arrow { transition: transform 0.2s; display: inline-block; }
   .card:hover .card-more-arrow { transform: translateX(4px); }
 
+  /* TICKER — amber label */
   .ticker { display: flex; align-items: center; border-top: 1px solid #DDE3E6; overflow: hidden; background: #F5F7F8; }
-  .ticker-label { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #000000; background: #23BDC6; padding: 18px 24px; white-space: nowrap; font-weight: 600; flex-shrink: 0; }
+  .ticker-label { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #000000; background: #D4A843; padding: 18px 24px; white-space: nowrap; font-weight: 600; flex-shrink: 0; }
   .ticker-track { display: flex; animation: ticker 22s linear infinite; }
   .ticker-item { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #999; padding: 18px 36px; border-right: 1px solid #DDE3E6; white-space: nowrap; font-weight: 500; }
 
-  footer { padding: 24px 7%; background: #23BDC6; display: flex; align-items: center; justify-content: space-between; }
-  .foot-logo { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.02em; color: rgba(255,255,255,0.5); }
-  .foot-logo span { color: rgba(25,100,126,0.8); }
-  .foot-tag { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); }
+  /* FOOTER — dark teal */
+  footer { padding: 24px 7%; background: #19647E; display: flex; align-items: center; justify-content: space-between; }
+  .foot-logo { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.02em; color: rgba(255,255,255,0.4); }
+  .foot-logo span { color: rgba(35,189,198,0.65); }
+  .foot-tag { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.4); }
 
   @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
   .hero-pre { opacity: 0; transform: translateY(12px); animation: fadeUp 0.5s 0.1s forwards; }
@@ -134,27 +130,30 @@
   <div class="hero-overlay"></div>
   <canvas id="hero-canvas"></canvas>
   <div class="hero-content">
-    <div class="hero-pre">Executive Search — Energy &amp; Infrastructure</div>
+    <div class="hero-pre">Infrastructure Executive Search</div>
     <h1 class="hero-h">
       <span class="line">Exceptional Leaders</span>
       <span class="line">Drive Exceptional <span style="color:#000000">Returns.</span></span>
     </h1>
-    <p class="hero-sub">We build the leadership teams who execute your value creation plan.</p>
+    <p class="hero-sub">
+      We build the leadership teams who execute your value creation plan.
+      <span class="hero-sub-second">Specialists in PE-backed infrastructure platforms — from energy and renewables to essential assets and utilities.</span>
+    </p>
     <div class="cards">
       <div class="card">
-        <div><span class="card-pre">What We Do</span><span class="card-label">Executive<br>Search</span></div>
+        <div><span class="card-pre">Our Focus</span><span class="card-label">Infrastructure<br>Platforms</span></div>
         <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
       </div>
       <div class="card">
-        <div><span class="card-pre">How We Work</span><span class="card-label">Our<br>Process</span></div>
+        <div><span class="card-pre">How We Search</span><span class="card-label">The Search<br>Process</span></div>
         <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
       </div>
       <div class="card">
-        <div><span class="card-pre">Where We Work</span><span class="card-label">Energy &amp;<br>Infrastructure</span></div>
+        <div><span class="card-pre">Who We Know</span><span class="card-label">The Leadership<br>Network</span></div>
         <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
       </div>
       <div class="card">
-        <div><span class="card-pre">Insights</span><span class="card-label">Thinking &amp;<br>Perspectives</span></div>
+        <div><span class="card-pre">Our Thinking</span><span class="card-label">Insights &amp;<br>Perspectives</span></div>
         <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
       </div>
     </div>
