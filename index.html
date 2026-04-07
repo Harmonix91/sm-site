@@ -10,9 +10,9 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-style: normal; }
   html { scroll-behavior: smooth; }
-  body { background: #F5F7F8; color: #0A0A0A; font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; }
+  body { background: #EEF2F4; color: #1C2E38; font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; }
 
-  /* NAV — dark teal #19647E primary */
+  /* NAV — dark teal */
   nav { display: flex; align-items: center; padding: 0 5%; background: #19647E; position: sticky; top: 0; z-index: 100; height: 72px; gap: 32px; }
   .logo { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; text-decoration: none; flex-shrink: 0; }
   .logo span { color: #23BDC6; }
@@ -37,7 +37,7 @@
   .nav-burger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.6); }
 
   /* HERO */
-  .hero { padding: 100px 7% 90px; border-bottom: 1px solid #DDE3E6; position: relative; overflow: hidden; min-height: 600px; }
+  .hero { padding: 100px 7% 90px; border-bottom: 1px solid #D4DDE1; position: relative; overflow: hidden; min-height: 600px; }
   .hero-bg {
     position: absolute; inset: 0;
     background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80&fit=crop&crop=right');
@@ -46,45 +46,42 @@
   }
   .hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to right, #F5F7F8 35%, rgba(245,247,248,0.92) 50%, rgba(245,247,248,0.55) 70%, rgba(245,247,248,0.15) 100%);
+    background: linear-gradient(to right, #EEF2F4 35%, rgba(238,242,244,0.92) 50%, rgba(238,242,244,0.55) 70%, rgba(238,242,244,0.1) 100%);
   }
   #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
   .hero-content { position: relative; z-index: 2; }
 
-  /* Pre-header — dark teal */
   .hero-pre { font-size: 16px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #19647E; margin-bottom: 32px; }
-
-  .hero-h { font-family: 'Poppins', sans-serif; font-size: clamp(42px, 6vw, 86px); font-weight: 300; line-height: 1.05; color: #000000; margin-bottom: 32px; letter-spacing: -0.01em; }
+  .hero-h { font-family: 'Poppins', sans-serif; font-size: clamp(42px, 6vw, 86px); font-weight: 300; line-height: 1.05; color: #1C2E38; margin-bottom: 32px; letter-spacing: -0.01em; }
   .hero-h .line { display: block; }
+  .hero-h .accent { color: #23BDC6; }
+  .hero-sub { font-size: clamp(17px, 1.5vw, 22px); font-weight: 400; color: #3d5a68; max-width: 600px; line-height: 1.75; margin-bottom: 72px; }
+  .hero-sub-second { display: block; margin-top: 14px; color: #6a8a96; font-size: clamp(14px, 1.1vw, 17px); font-weight: 400; }
 
-  /* Sub-copy — two lines */
-  .hero-sub { font-size: clamp(17px, 1.5vw, 22px); font-weight: 400; color: #444; max-width: 600px; line-height: 1.75; margin-bottom: 72px; }
-  .hero-sub-second { display: block; margin-top: 12px; color: #777; font-size: clamp(14px, 1.1vw, 17px); font-weight: 400; }
-
-  /* CARDS — amber/gold accent #D4A843 */
-  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 100%; background: rgba(212,168,67,0.12); position: relative; z-index: 2; }
-  .card { background: #0A0A0A; padding: 32px 28px; cursor: pointer; position: relative; transition: background 0.25s; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; }
-  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #D4A843; transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
-  .card:hover { background: #141414; }
+  /* CARDS — bright teal accent */
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 100%; background: rgba(25,100,126,0.1); position: relative; z-index: 2; }
+  .card { background: #19647E; padding: 32px 28px; cursor: pointer; position: relative; transition: background 0.25s; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #23BDC6; transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+  .card:hover { background: #145670; }
   .card:hover::before { transform: scaleX(1); }
   .card:hover .card-more { opacity: 1; }
-  .card-pre { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #D4A843; font-weight: 600; display: block; margin-bottom: 12px; min-height: 18px; }
+  .card-pre { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #23BDC6; font-weight: 600; display: block; margin-bottom: 12px; min-height: 18px; }
   .card-label { font-family: 'Poppins', sans-serif; font-size: clamp(18px, 1.8vw, 22px); font-weight: 600; color: #ffffff; line-height: 1.2; display: block; }
-  .card-more { color: #D4A843; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.5; transition: opacity 0.2s; display: flex; align-items: center; gap: 6px; margin-top: 24px; }
+  .card-more { color: #23BDC6; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.6; transition: opacity 0.2s; display: flex; align-items: center; gap: 6px; margin-top: 24px; }
   .card-more-arrow { transition: transform 0.2s; display: inline-block; }
   .card:hover .card-more-arrow { transform: translateX(4px); }
 
-  /* TICKER — amber label */
-  .ticker { display: flex; align-items: center; border-top: 1px solid #DDE3E6; overflow: hidden; background: #F5F7F8; }
-  .ticker-label { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #000000; background: #D4A843; padding: 18px 24px; white-space: nowrap; font-weight: 600; flex-shrink: 0; }
+  /* TICKER */
+  .ticker { display: flex; align-items: center; border-top: 1px solid #D4DDE1; overflow: hidden; background: #EEF2F4; }
+  .ticker-label { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #ffffff; background: #19647E; padding: 18px 24px; white-space: nowrap; font-weight: 600; flex-shrink: 0; }
   .ticker-track { display: flex; animation: ticker 22s linear infinite; }
-  .ticker-item { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #999; padding: 18px 36px; border-right: 1px solid #DDE3E6; white-space: nowrap; font-weight: 500; }
+  .ticker-item { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #7a9aaa; padding: 18px 36px; border-right: 1px solid #D4DDE1; white-space: nowrap; font-weight: 500; }
 
-  /* FOOTER — dark teal */
+  /* FOOTER */
   footer { padding: 24px 7%; background: #19647E; display: flex; align-items: center; justify-content: space-between; }
-  .foot-logo { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.02em; color: rgba(255,255,255,0.4); }
-  .foot-logo span { color: rgba(35,189,198,0.65); }
-  .foot-tag { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.4); }
+  .foot-logo { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.02em; color: rgba(255,255,255,0.35); }
+  .foot-logo span { color: rgba(35,189,198,0.6); }
+  .foot-tag { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.35); }
 
   @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
   .hero-pre { opacity: 0; transform: translateY(12px); animation: fadeUp 0.5s 0.1s forwards; }
@@ -98,7 +95,7 @@
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
     .nav-burger { display: flex; }
     .hero { padding: 60px 5% 56px; }
-    .hero-overlay { background: linear-gradient(to right, #F5F7F8 55%, rgba(245,247,248,0.85) 100%); }
+    .hero-overlay { background: linear-gradient(to right, #EEF2F4 55%, rgba(238,242,244,0.85) 100%); }
     .hero-sub { max-width: 100%; }
     .cards { grid-template-columns: repeat(2, 1fr); }
   }
@@ -133,7 +130,7 @@
     <div class="hero-pre">Infrastructure Executive Search</div>
     <h1 class="hero-h">
       <span class="line">Exceptional Leaders</span>
-      <span class="line">Drive Exceptional <span style="color:#000000">Returns.</span></span>
+      <span class="line">Drive Exceptional <span class="accent">Returns.</span></span>
     </h1>
     <p class="hero-sub">
       We build the leadership teams who execute your value creation plan.
