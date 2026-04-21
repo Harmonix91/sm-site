@@ -124,7 +124,7 @@
   /* ===== BELIEF SECTION ===== */
   .belief {
     background: #19647E; color: #ffffff;
-    padding: 320px 7% 300px;
+    padding: 320px 7% 340px;
     position: relative; overflow: hidden;
   }
   .belief-inner { position: relative; z-index: 1; max-width: 1400px; width: 100%; }
@@ -142,28 +142,41 @@
     margin-left: 80px;
   }
 
-  /* ===== CARDS BRIDGE (belief -> sectors) ===== */
+  /* ===== CARDS BRIDGE (belief -> sectors) — CONVICTION CARDS ===== */
   .cards-bridge-wrap { position: relative; height: 0; z-index: 10; }
   .cards-bridge {
-    position: absolute; top: -110px; left: 7%; right: 7%;
+    position: absolute; top: -150px; left: 7%; right: 7%;
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
     max-width: 1400px; margin: 0 auto;
   }
   .card {
-    background: #ffffff; padding: 26px 28px; cursor: pointer; position: relative;
+    background: #ffffff; padding: 28px 26px; position: relative;
     transition: transform 0.2s, box-shadow 0.2s;
-    display: flex; flex-direction: column; justify-content: space-between;
-    min-height: 180px;
+    display: flex; flex-direction: column;
+    min-height: 260px;
     border-top: 2px solid #23BDC6;
     box-shadow: 0 8px 24px rgba(25, 100, 126, 0.12);
   }
   .card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(25, 100, 126, 0.18); }
-  .card:hover .card-more { opacity: 1; }
-  .card-pre { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #19647E; font-weight: 600; display: block; margin-bottom: 12px; min-height: 18px; }
-  .card-label { font-family: 'Poppins', sans-serif; font-size: clamp(16px, 1.5vw, 20px); font-weight: 600; color: #19647E; line-height: 1.2; display: block; }
-  .card-more { color: #19647E; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.55; transition: opacity 0.2s; display: flex; align-items: center; gap: 6px; margin-top: 20px; }
-  .card-more-arrow { transition: transform 0.2s; display: inline-block; }
-  .card:hover .card-more-arrow { transform: translateX(4px); }
+  .card-num {
+    font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: #23BDC6; font-weight: 600;
+    margin-bottom: 20px;
+    font-variant-numeric: tabular-nums;
+  }
+  .card-head {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(16px, 1.35vw, 19px);
+    font-weight: 600; color: #19647E;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .card-body {
+    font-size: 13px; font-weight: 400;
+    color: #3d5a68;
+    line-height: 1.6;
+  }
 
   /* ===== SECTORS SECTION (gradient, bookends hero) ===== */
   .sectors {
@@ -241,6 +254,8 @@
     .stat-num { font-size: 36px; }
     .sectors-grid { grid-template-columns: repeat(2, 1fr); }
     .belief-p { margin-left: 48px; }
+    .cards-bridge { grid-template-columns: repeat(2, 1fr); top: -180px; }
+    .card { min-height: 220px; }
   }
   @media (max-width: 768px) {
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
@@ -254,10 +269,10 @@
     .stat-card { padding: 20px 22px; }
     .stat-num { font-size: 34px; margin-bottom: 10px; }
     .stat-desc { font-size: 13px; }
-    .belief { padding: 240px 5% 300px; }
+    .belief { padding: 240px 5% 380px; }
     .belief-p { margin-top: 56px; margin-left: 0; }
-    .cards-bridge { grid-template-columns: repeat(2, 1fr); top: -140px; left: 5%; right: 5%; gap: 12px; }
-    .card { padding: 20px 22px; min-height: 140px; }
+    .cards-bridge { grid-template-columns: 1fr; top: -320px; left: 5%; right: 5%; gap: 12px; }
+    .card { padding: 22px 22px; min-height: 0; }
     .sectors { padding: 200px 5% 100px; }
     .sectors-overlay { background: linear-gradient(to right, #EEF2F4 55%, rgba(238,242,244,0.7) 100%); }
     .sectors-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -344,20 +359,24 @@
 <div class="cards-bridge-wrap">
   <div class="cards-bridge">
     <div class="card reveal" style="--d:0s">
-      <div><span class="card-pre">Our Focus</span><span class="card-label">Infrastructure<br>Platforms</span></div>
-      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+      <div class="card-num">01</div>
+      <div class="card-head">Most hiring mistakes are avoidable.</div>
+      <div class="card-body">They're made in the brief, not the search. The wrong hire is almost always visible on day one if the right questions got asked in week one.</div>
     </div>
     <div class="card reveal" style="--d:0.1s">
-      <div><span class="card-pre">How We Search</span><span class="card-label">The Search<br>Process</span></div>
-      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+      <div class="card-num">02</div>
+      <div class="card-head">Speed is a feature, not a KPI.</div>
+      <div class="card-body">Long searches don't produce better hires. They produce tired boards and compromised shortlists. Every week past month four costs you optionality.</div>
     </div>
     <div class="card reveal" style="--d:0.2s">
-      <div><span class="card-pre">Who We Know</span><span class="card-label">The Leadership<br>Network</span></div>
-      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+      <div class="card-num">03</div>
+      <div class="card-head">Generalist CVs don't run specialist assets.</div>
+      <div class="card-body">The people who can actually run a battery platform, a solar IPP, or a fibre build-out are a small, specific pool. Most search firms don't know who they are.</div>
     </div>
     <div class="card reveal" style="--d:0.3s">
-      <div><span class="card-pre">Our Thinking</span><span class="card-label">Insights &amp;<br>Perspectives</span></div>
-      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+      <div class="card-num">04</div>
+      <div class="card-head">Process is the product.</div>
+      <div class="card-body">A retained, exclusive, structured search is the only honest model. Anything else is a sourcing team in a suit.</div>
     </div>
   </div>
 </div>
