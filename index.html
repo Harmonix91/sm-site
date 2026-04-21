@@ -92,7 +92,7 @@
   .hero-scroll-line { width: 1px; height: 48px; background: #19647E; opacity: 0.3; position: relative; overflow: hidden; }
   .hero-scroll-line::after { content: ''; position: absolute; top: -100%; left: 0; width: 100%; height: 100%; background: #23BDC6; animation: scrollCue 2.2s cubic-bezier(0.6, 0, 0.2, 1) infinite; }
 
-  /* ===== STATS BRIDGE ===== */
+  /* ===== STATS BRIDGE (hero -> belief) ===== */
   .stats-bridge-wrap { position: relative; height: 0; z-index: 10; }
   .stats-bridge {
     position: absolute; top: -90px; left: 7%; right: 7%;
@@ -124,7 +124,7 @@
   /* ===== BELIEF SECTION ===== */
   .belief {
     background: #19647E; color: #ffffff;
-    padding: 320px 7% 160px;
+    padding: 320px 7% 220px;
     position: relative; overflow: hidden;
   }
   .belief-inner { position: relative; z-index: 1; max-width: 1400px; width: 100%; }
@@ -141,18 +141,76 @@
     margin-top: 80px;
   }
 
-  /* ===== CARDS (follow belief) ===== */
-  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 100%; background: rgba(25,100,126,0.2); }
-  .card { background: #19647E; padding: 36px 28px; cursor: pointer; position: relative; transition: background 0.25s; display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; }
-  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #23BDC6; transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+  /* ===== CARDS BRIDGE (belief -> sectors) ===== */
+  .cards-bridge-wrap { position: relative; height: 0; z-index: 10; }
+  .cards-bridge {
+    position: absolute; top: -110px; left: 7%; right: 7%;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    background: rgba(25, 100, 126, 0.15);
+    box-shadow: 0 8px 24px rgba(25, 100, 126, 0.18);
+    max-width: 1400px; margin: 0 auto;
+  }
+  .card {
+    background: #19647E; padding: 28px 22px; cursor: pointer; position: relative;
+    transition: background 0.25s;
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 180px;
+    border-top: 2px solid #23BDC6;
+  }
   .card:hover { background: #145670; }
-  .card:hover::before { transform: scaleX(1); }
   .card:hover .card-more { opacity: 1; }
-  .card-pre { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #23BDC6; font-weight: 600; display: block; margin-bottom: 14px; min-height: 18px; }
-  .card-label { font-family: 'Poppins', sans-serif; font-size: clamp(18px, 1.8vw, 22px); font-weight: 600; color: #ffffff; line-height: 1.2; display: block; }
-  .card-more { color: #23BDC6; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.6; transition: opacity 0.2s; display: flex; align-items: center; gap: 6px; margin-top: 24px; }
+  .card-pre { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #23BDC6; font-weight: 600; display: block; margin-bottom: 12px; min-height: 18px; }
+  .card-label { font-family: 'Poppins', sans-serif; font-size: clamp(16px, 1.5vw, 20px); font-weight: 600; color: #ffffff; line-height: 1.2; display: block; }
+  .card-more { color: #23BDC6; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.6; transition: opacity 0.2s; display: flex; align-items: center; gap: 6px; margin-top: 20px; }
   .card-more-arrow { transition: transform 0.2s; display: inline-block; }
   .card:hover .card-more-arrow { transform: translateX(4px); }
+
+  /* ===== SECTORS SECTION (gradient, bookends hero) ===== */
+  .sectors {
+    padding: 200px 7% 120px;
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #D4DDE1 0%, #19647E 100%);
+  }
+  .sectors-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, #EEF2F4 40%, rgba(238,242,244,0.6) 70%, rgba(238,242,244,0.15) 100%);
+    z-index: 0;
+  }
+  .sectors-inner { position: relative; z-index: 1; max-width: 1400px; width: 100%; }
+  .sectors-pre {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.24em;
+    text-transform: uppercase; color: #19647E;
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 28px;
+  }
+  .sectors-pre::before { content: ''; display: inline-block; width: 48px; height: 1px; background: #19647E; opacity: 0.55; }
+  .sectors-h {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(34px, 4.8vw, 64px);
+    font-weight: 300; line-height: 1.08; letter-spacing: -0.022em;
+    color: #1C2E38; max-width: 900px;
+    margin-bottom: 32px;
+  }
+  .sectors-sub {
+    font-size: clamp(15px, 1.15vw, 18px); font-weight: 400;
+    color: #3d5a68; max-width: 640px; line-height: 1.75;
+    margin-bottom: 56px;
+  }
+  .sectors-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+    max-width: 1200px;
+  }
+  .sector-card {
+    background: rgba(255,255,255,0.8);
+    border-left: 2px solid #23BDC6;
+    padding: 18px 20px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .sector-card:hover { background: rgba(255,255,255,0.95); transform: translateY(-2px); }
+  .sector-num { font-size: 10px; letter-spacing: 0.18em; color: #19647E; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; display: block; }
+  .sector-name { font-size: 13px; color: #1C2E38; font-weight: 500; line-height: 1.35; }
 
   /* ===== TICKER (fixed bottom) ===== */
   .ticker {
@@ -181,6 +239,7 @@
     .hero-h, .belief-h { font-size: clamp(38px, 6.3vw, 70px); }
     .hero-scroll { display: none; }
     .stat-num { font-size: 36px; }
+    .sectors-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 768px) {
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
@@ -194,9 +253,12 @@
     .stat-card { padding: 20px 22px; }
     .stat-num { font-size: 34px; margin-bottom: 10px; }
     .stat-desc { font-size: 13px; }
-    .belief { padding: 240px 5% 120px; }
+    .belief { padding: 240px 5% 260px; }
     .belief-p { margin-top: 56px; }
-    .cards { grid-template-columns: repeat(2, 1fr); }
+    .cards-bridge { grid-template-columns: repeat(2, 1fr); top: -140px; left: 5%; right: 5%; }
+    .sectors { padding: 200px 5% 100px; }
+    .sectors-overlay { background: linear-gradient(to right, #EEF2F4 55%, rgba(238,242,244,0.7) 100%); }
+    .sectors-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   }
 </style>
 </head>
@@ -277,24 +339,53 @@
   </div>
 </section>
 
-<div class="cards">
-  <div class="card reveal" style="--d:0s">
-    <div><span class="card-pre">Our Focus</span><span class="card-label">Infrastructure<br>Platforms</span></div>
-    <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
-  </div>
-  <div class="card reveal" style="--d:0.1s">
-    <div><span class="card-pre">How We Search</span><span class="card-label">The Search<br>Process</span></div>
-    <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
-  </div>
-  <div class="card reveal" style="--d:0.2s">
-    <div><span class="card-pre">Who We Know</span><span class="card-label">The Leadership<br>Network</span></div>
-    <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
-  </div>
-  <div class="card reveal" style="--d:0.3s">
-    <div><span class="card-pre">Our Thinking</span><span class="card-label">Insights &amp;<br>Perspectives</span></div>
-    <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+<div class="cards-bridge-wrap">
+  <div class="cards-bridge">
+    <div class="card reveal" style="--d:0s">
+      <div><span class="card-pre">Our Focus</span><span class="card-label">Infrastructure<br>Platforms</span></div>
+      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+    </div>
+    <div class="card reveal" style="--d:0.1s">
+      <div><span class="card-pre">How We Search</span><span class="card-label">The Search<br>Process</span></div>
+      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+    </div>
+    <div class="card reveal" style="--d:0.2s">
+      <div><span class="card-pre">Who We Know</span><span class="card-label">The Leadership<br>Network</span></div>
+      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+    </div>
+    <div class="card reveal" style="--d:0.3s">
+      <div><span class="card-pre">Our Thinking</span><span class="card-label">Insights &amp;<br>Perspectives</span></div>
+      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+    </div>
   </div>
 </div>
+
+<section class="sectors">
+  <div class="sectors-overlay"></div>
+  <div class="sectors-inner">
+    <div class="sectors-pre reveal" style="--d:0.1s">Where We Focus</div>
+    <h2 class="sectors-h reveal" style="--d:0.2s">Critical infrastructure. The assets the real economy runs on.</h2>
+    <p class="sectors-sub reveal" style="--d:0.35s">We specialise in leadership for the platforms that power, move, and connect the real economy — the infrastructure institutional capital is quietly consolidating behind.</p>
+    <div class="sectors-grid">
+      <div class="sector-card reveal" style="--d:0.45s">
+        <span class="sector-num">01</span>
+        <div class="sector-name">Renewable Power &amp; Storage</div>
+      </div>
+      <div class="sector-card reveal" style="--d:0.55s">
+        <span class="sector-num">02</span>
+        <div class="sector-name">Transport &amp; Logistics</div>
+      </div>
+      <div class="sector-card reveal" style="--d:0.65s">
+        <span class="sector-num">03</span>
+        <div class="sector-name">Digital Infrastructure</div>
+      </div>
+      <div class="sector-card reveal" style="--d:0.75s">
+        <span class="sector-num">04</span>
+        <div class="sector-name">Water &amp; Utilities</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="foot-logo">Sonder <span>&</span> Metric</div>
