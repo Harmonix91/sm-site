@@ -146,23 +146,22 @@
   .cards-bridge-wrap { position: relative; height: 0; z-index: 10; }
   .cards-bridge {
     position: absolute; top: -110px; left: 7%; right: 7%;
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
-    background: rgba(25, 100, 126, 0.15);
-    box-shadow: 0 8px 24px rgba(25, 100, 126, 0.18);
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
     max-width: 1400px; margin: 0 auto;
   }
   .card {
-    background: #19647E; padding: 28px 22px; cursor: pointer; position: relative;
-    transition: background 0.25s;
+    background: #ffffff; padding: 26px 28px; cursor: pointer; position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
     display: flex; flex-direction: column; justify-content: space-between;
     min-height: 180px;
     border-top: 2px solid #23BDC6;
+    box-shadow: 0 8px 24px rgba(25, 100, 126, 0.12);
   }
-  .card:hover { background: #145670; }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(25, 100, 126, 0.18); }
   .card:hover .card-more { opacity: 1; }
-  .card-pre { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #23BDC6; font-weight: 600; display: block; margin-bottom: 12px; min-height: 18px; }
-  .card-label { font-family: 'Poppins', sans-serif; font-size: clamp(16px, 1.5vw, 20px); font-weight: 600; color: #ffffff; line-height: 1.2; display: block; }
-  .card-more { color: #23BDC6; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.6; transition: opacity 0.2s; display: flex; align-items: center; gap: 6px; margin-top: 20px; }
+  .card-pre { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #19647E; font-weight: 600; display: block; margin-bottom: 12px; min-height: 18px; }
+  .card-label { font-family: 'Poppins', sans-serif; font-size: clamp(16px, 1.5vw, 20px); font-weight: 600; color: #19647E; line-height: 1.2; display: block; }
+  .card-more { color: #19647E; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.55; transition: opacity 0.2s; display: flex; align-items: center; gap: 6px; margin-top: 20px; }
   .card-more-arrow { transition: transform 0.2s; display: inline-block; }
   .card:hover .card-more-arrow { transform: translateX(4px); }
 
@@ -257,7 +256,8 @@
     .stat-desc { font-size: 13px; }
     .belief { padding: 240px 5% 300px; }
     .belief-p { margin-top: 56px; margin-left: 0; }
-    .cards-bridge { grid-template-columns: repeat(2, 1fr); top: -140px; left: 5%; right: 5%; }
+    .cards-bridge { grid-template-columns: repeat(2, 1fr); top: -140px; left: 5%; right: 5%; gap: 12px; }
+    .card { padding: 20px 22px; min-height: 140px; }
     .sectors { padding: 200px 5% 100px; }
     .sectors-overlay { background: linear-gradient(to right, #EEF2F4 55%, rgba(238,242,244,0.7) 100%); }
     .sectors-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
