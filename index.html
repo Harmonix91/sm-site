@@ -92,7 +92,7 @@
   .hero-scroll-line { width: 1px; height: 48px; background: #19647E; opacity: 0.3; position: relative; overflow: hidden; }
   .hero-scroll-line::after { content: ''; position: absolute; top: -100%; left: 0; width: 100%; height: 100%; background: #23BDC6; animation: scrollCue 2.2s cubic-bezier(0.6, 0, 0.2, 1) infinite; }
 
-  /* ===== STATS BRIDGE (hero -> belief) ===== */
+  /* ===== STATS BRIDGE (hero -> belief) — horizontal layout ===== */
   .stats-bridge-wrap { position: relative; height: 0; z-index: 10; }
   .stats-bridge {
     position: absolute; top: -90px; left: 7%; right: 7%;
@@ -101,20 +101,26 @@
   }
   .stat-card {
     background: #ffffff; border-top: 2px solid #23BDC6;
-    padding: 26px 28px;
+    padding: 28px 30px;
     box-shadow: 0 8px 24px rgba(25, 100, 126, 0.12);
+    display: flex;
+    align-items: flex-start;
+    gap: 26px;
   }
   .stat-num {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(36px, 4.2vw, 52px);
+    font-size: clamp(52px, 6vw, 76px);
     font-weight: 600; color: #19647E;
-    line-height: 1; letter-spacing: -0.02em;
-    margin-bottom: 14px;
+    line-height: 0.95; letter-spacing: -0.03em;
+    flex-shrink: 0;
+  }
+  .stat-text {
+    flex: 1;
+    padding-top: 4px;
   }
   .stat-desc {
     font-size: 14px; font-weight: 400; color: #1C2E38;
-    line-height: 1.55; margin-bottom: 14px;
-    max-width: 460px;
+    line-height: 1.55; margin-bottom: 10px;
   }
   .stat-source {
     font-size: 10px; letter-spacing: 0.14em; color: #7a9aaa;
@@ -251,7 +257,7 @@
   @media (max-width: 1024px) {
     .hero-h, .belief-h { font-size: clamp(38px, 6.3vw, 70px); }
     .hero-scroll { display: none; }
-    .stat-num { font-size: 36px; }
+    .stat-num { font-size: 48px; }
     .sectors-grid { grid-template-columns: repeat(2, 1fr); }
     .belief-p { margin-left: 48px; }
     .cards-bridge { grid-template-columns: repeat(2, 1fr); top: -180px; }
@@ -266,8 +272,8 @@
     .hero-pre::before { width: 32px; }
     .hero-sub { max-width: 100%; }
     .stats-bridge { grid-template-columns: 1fr; top: -70px; left: 5%; right: 5%; gap: 12px; }
-    .stat-card { padding: 20px 22px; }
-    .stat-num { font-size: 34px; margin-bottom: 10px; }
+    .stat-card { padding: 20px 22px; gap: 18px; }
+    .stat-num { font-size: 44px; }
     .stat-desc { font-size: 13px; }
     .belief { padding: 240px 5% 380px; }
     .belief-p { margin-top: 56px; margin-left: 0; }
@@ -333,13 +339,17 @@
   <div class="stats-bridge">
     <div class="stat-card reveal" style="--d:0s">
       <div class="stat-num">2.5&times;</div>
-      <div class="stat-desc">Higher MOIC when the right operators are matched to critical roles from day one.</div>
-      <div class="stat-source">McKinsey Quarterly</div>
+      <div class="stat-text">
+        <div class="stat-desc">Higher MOIC when the right operators are matched to critical roles from day one.</div>
+        <div class="stat-source">McKinsey Quarterly</div>
+      </div>
     </div>
     <div class="stat-card reveal" style="--d:0.12s">
       <div class="stat-num">53%</div>
-      <div class="stat-desc">Average share of investment returns GPs attribute directly to portfolio company leadership quality.</div>
-      <div class="stat-source">Teneo / McKinsey, 2022</div>
+      <div class="stat-text">
+        <div class="stat-desc">Average share of investment returns GPs attribute directly to portfolio company leadership quality.</div>
+        <div class="stat-source">Teneo / McKinsey, 2022</div>
+      </div>
     </div>
   </div>
 </div>
