@@ -124,7 +124,7 @@
   /* ===== BELIEF SECTION ===== */
   .belief {
     background: #19647E; color: #ffffff;
-    padding: 320px 7% 220px;
+    padding: 320px 7% 300px;
     position: relative; overflow: hidden;
   }
   .belief-inner { position: relative; z-index: 1; max-width: 1400px; width: 100%; }
@@ -139,6 +139,7 @@
     color: rgba(255,255,255,0.88);
     max-width: 720px; line-height: 1.85;
     margin-top: 80px;
+    margin-left: 80px;
   }
 
   /* ===== CARDS BRIDGE (belief -> sectors) ===== */
@@ -240,6 +241,7 @@
     .hero-scroll { display: none; }
     .stat-num { font-size: 36px; }
     .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+    .belief-p { margin-left: 48px; }
   }
   @media (max-width: 768px) {
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
@@ -253,8 +255,8 @@
     .stat-card { padding: 20px 22px; }
     .stat-num { font-size: 34px; margin-bottom: 10px; }
     .stat-desc { font-size: 13px; }
-    .belief { padding: 240px 5% 260px; }
-    .belief-p { margin-top: 56px; }
+    .belief { padding: 240px 5% 300px; }
+    .belief-p { margin-top: 56px; margin-left: 0; }
     .cards-bridge { grid-template-columns: repeat(2, 1fr); top: -140px; left: 5%; right: 5%; }
     .sectors { padding: 200px 5% 100px; }
     .sectors-overlay { background: linear-gradient(to right, #EEF2F4 55%, rgba(238,242,244,0.7) 100%); }
