@@ -33,7 +33,7 @@
   nav.scrolled { background: rgba(25, 100, 126, 0.82); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); }
   nav.hidden { transform: translateY(-100%); }
   .logo { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; text-decoration: none; flex-shrink: 0; }
-  .logo span { color: #23BDC6; }
+  .logo span { color: #ffffff; }
   .nav-spacer { flex: 1; }
   .nav-r { display: flex; align-items: center; gap: 32px; }
   .nav-link { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 500; text-decoration: none; position: relative; white-space: nowrap; transition: color 0.2s; }
@@ -54,23 +54,18 @@
   .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
   .nav-burger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.6); }
 
-  /* ===== HERO ===== */
+  /* ===== HERO (gradient, no photo) ===== */
   .hero {
-    padding: 120px 7% 140px;
+    padding: 120px 7% 200px;
     position: relative; overflow: hidden;
     min-height: 100vh;
     display: flex; flex-direction: column;
-  }
-  .hero-bg-wrap { position: absolute; inset: 0; overflow: hidden; will-change: transform; }
-  .hero-bg {
-    position: absolute; inset: -6% -6% -6% -6%;
-    background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80&fit=crop&crop=right');
-    background-size: cover; background-position: right center;
-    animation: imgDrift 18s ease-in-out infinite alternate;
+    background: linear-gradient(135deg, #D4DDE1 0%, #19647E 100%);
   }
   .hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to right, #EEF2F4 32%, rgba(238,242,244,0.92) 48%, rgba(238,242,244,0.55) 68%, rgba(238,242,244,0.1) 100%);
+    background: linear-gradient(to right, #EEF2F4 40%, rgba(238,242,244,0.6) 70%, rgba(238,242,244,0.15) 100%);
+    z-index: 0;
   }
   #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
 
@@ -83,9 +78,9 @@
   .hero-pre::before { content: ''; display: inline-block; width: 56px; height: 1px; background: #19647E; opacity: 0.55; }
 
   .hero-content { position: relative; z-index: 2; max-width: 1400px; margin-top: auto; margin-bottom: auto; }
-  .hero-h { font-family: 'Poppins', sans-serif; font-size: clamp(48px, 8vw, 112px); font-weight: 300; line-height: 1.03; color: #1C2E38; margin-bottom: 44px; letter-spacing: -0.028em; }
+  .hero-h { font-family: 'Poppins', sans-serif; font-size: clamp(48px, 8vw, 112px); font-weight: 300; line-height: 1.03; color: #1C2E38; margin-bottom: 40px; letter-spacing: -0.028em; }
   .hero-h .line { display: block; }
-  .hero-sub { font-size: clamp(18px, 1.4vw, 23px); font-weight: 400; color: #3d5a68; max-width: 620px; line-height: 1.7; }
+  .hero-sub { font-size: clamp(19px, 1.5vw, 24px); font-weight: 400; color: #3d5a68; max-width: 620px; line-height: 1.7; }
 
   .hero-scroll {
     position: absolute; bottom: 96px; right: 7%;
@@ -97,17 +92,63 @@
   .hero-scroll-line { width: 1px; height: 48px; background: #19647E; opacity: 0.3; position: relative; overflow: hidden; }
   .hero-scroll-line::after { content: ''; position: absolute; top: -100%; left: 0; width: 100%; height: 100%; background: #23BDC6; animation: scrollCue 2.2s cubic-bezier(0.6, 0, 0.2, 1) infinite; }
 
-  /* ===== SECTION LABELS ===== */
-  .section-label { display: inline-flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 500; color: #19647E; }
-  .section-label .section-num { font-weight: 600; font-variant-numeric: tabular-nums; }
-  .section-label .section-bar { width: 40px; height: 1px; background: currentColor; opacity: 0.4; }
-  .section-label.light { color: rgba(255,255,255,0.65); }
+  /* ===== STATS BRIDGE ===== */
+  .stats-bridge-wrap { position: relative; height: 0; z-index: 10; }
+  .stats-bridge {
+    position: absolute; top: -90px; left: 7%; right: 7%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    max-width: 1400px; margin: 0 auto;
+  }
+  .stat-card {
+    background: #ffffff; border-top: 2px solid #23BDC6;
+    padding: 26px 28px;
+    box-shadow: 0 8px 24px rgba(25, 100, 126, 0.12);
+  }
+  .stat-num {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(36px, 4.2vw, 52px);
+    font-weight: 600; color: #19647E;
+    line-height: 1; letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  .stat-desc {
+    font-size: 14px; font-weight: 400; color: #1C2E38;
+    line-height: 1.55; margin-bottom: 14px;
+    max-width: 460px;
+  }
+  .stat-source {
+    font-size: 10px; letter-spacing: 0.14em; color: #7a9aaa;
+    text-transform: uppercase; font-weight: 500;
+  }
 
-  /* ===== FOCUS (CARDS) SECTION ===== */
-  .focus { background: #EEF2F4; padding: 120px 0 0; position: relative; }
-  .focus-header { padding: 0 7% 56px; max-width: 1400px; }
+  /* ===== BELIEF SECTION ===== */
+  .belief {
+    background: #19647E; color: #ffffff;
+    padding: 180px 7% 160px;
+    position: relative; overflow: hidden;
+  }
+  .belief-inner { position: relative; z-index: 1; max-width: 1400px; width: 100%; }
+  .belief-h {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(48px, 8vw, 112px);
+    font-weight: 300; line-height: 1.03; letter-spacing: -0.028em;
+    color: #ffffff; max-width: 1200px;
+  }
+  .belief-p {
+    font-size: clamp(15px, 1.15vw, 18px); font-weight: 300;
+    color: rgba(255,255,255,0.88);
+    max-width: 640px; line-height: 1.85;
+    margin-top: 44px;
+  }
+  .belief-p-second {
+    font-size: clamp(15px, 1.15vw, 18px); font-weight: 300;
+    color: rgba(255,255,255,0.88);
+    max-width: 640px; line-height: 1.85;
+    margin-top: 22px;
+  }
 
-  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 100%; background: rgba(25,100,126,0.1); }
+  /* ===== CARDS (follow belief) ===== */
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; width: 100%; background: rgba(25,100,126,0.2); }
   .card { background: #19647E; padding: 36px 28px; cursor: pointer; position: relative; transition: background 0.25s; display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; }
   .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #23BDC6; transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
   .card:hover { background: #145670; }
@@ -118,33 +159,6 @@
   .card-more { color: #23BDC6; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; opacity: 0.6; transition: opacity 0.2s; display: flex; align-items: center; gap: 6px; margin-top: 24px; }
   .card-more-arrow { transition: transform 0.2s; display: inline-block; }
   .card:hover .card-more-arrow { transform: translateX(4px); }
-
-  /* ===== BELIEF SECTION ===== */
-  .belief {
-    background: #0f4a5e; color: #ffffff;
-    padding: 160px 7% 180px;
-    min-height: 80vh;
-    display: flex; flex-direction: column; justify-content: center; gap: 56px;
-    position: relative; overflow: hidden;
-  }
-  .belief::before {
-    content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%;
-    background: radial-gradient(circle at 80% 50%, rgba(35, 189, 198, 0.08) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .belief-inner { position: relative; z-index: 1; max-width: 1400px; width: 100%; }
-  .belief-h {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(48px, 8vw, 112px);
-    font-weight: 300; line-height: 1.03; letter-spacing: -0.028em;
-    color: #ffffff; margin-top: 40px; max-width: 1200px;
-  }
-  .belief-h .accent-teal { color: #23BDC6; }
-  .belief-sub {
-    font-size: clamp(18px, 1.4vw, 23px); font-weight: 400;
-    color: rgba(255,255,255,0.7); max-width: 620px; line-height: 1.7;
-    margin-top: 40px;
-  }
 
   /* ===== TICKER (fixed bottom) ===== */
   .ticker {
@@ -162,30 +176,32 @@
   /* ===== FOOTER ===== */
   footer { padding: 24px 7%; background: #19647E; display: flex; align-items: center; justify-content: space-between; }
   .foot-logo { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.02em; color: rgba(255,255,255,0.35); }
-  .foot-logo span { color: rgba(35,189,198,0.6); }
+  .foot-logo span { color: rgba(255,255,255,0.35); }
   .foot-tag { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.35); }
 
   /* ===== ANIMATIONS ===== */
-  @keyframes imgDrift { 0% { transform: scale(1.02) translateX(0); } 100% { transform: scale(1.06) translateX(-1%); } }
   @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-33.3333%); } }
   @keyframes scrollCue { 0% { top: -100%; } 100% { top: 100%; } }
 
   @media (max-width: 1024px) {
     .hero-h, .belief-h { font-size: clamp(42px, 7vw, 78px); }
     .hero-scroll { display: none; }
+    .stat-num { font-size: 36px; }
   }
   @media (max-width: 768px) {
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
     .nav-burger { display: flex; }
-    .hero { padding: 100px 5% 100px; min-height: 92vh; }
-    .hero-overlay { background: linear-gradient(to right, #EEF2F4 50%, rgba(238,242,244,0.85) 100%); }
+    .hero { padding: 100px 5% 160px; min-height: 92vh; }
+    .hero-overlay { background: linear-gradient(to right, #EEF2F4 55%, rgba(238,242,244,0.7) 100%); }
     .hero-pre { font-size: 13px; letter-spacing: 0.22em; }
     .hero-pre::before { width: 32px; }
     .hero-sub { max-width: 100%; }
-    .focus { padding: 80px 0 0; }
-    .focus-header { padding: 0 5% 40px; }
+    .stats-bridge { grid-template-columns: 1fr; top: -70px; left: 5%; right: 5%; gap: 12px; }
+    .stat-card { padding: 20px 22px; }
+    .stat-num { font-size: 34px; margin-bottom: 10px; }
+    .stat-desc { font-size: 13px; }
+    .belief { padding: 140px 5% 120px; }
     .cards { grid-template-columns: repeat(2, 1fr); }
-    .belief { padding: 100px 5% 120px; }
   }
 </style>
 </head>
@@ -211,7 +227,6 @@
 </nav>
 
 <section class="hero">
-  <div class="hero-bg-wrap"><div class="hero-bg"></div></div>
   <div class="hero-overlay"></div>
   <canvas id="hero-canvas"></canvas>
 
@@ -231,7 +246,7 @@
         <span class="word-wrap reveal" style="--d:0.75s"><span class="word">Returns.</span></span>
       </span>
     </h1>
-    <p class="hero-sub reveal" style="--d:1s">We build the leadership teams who execute your value creation plan.</p>
+    <p class="hero-sub reveal" style="--d:1s">We build the leadership teams who<br>execute your value creation plan.</p>
   </div>
 
   <div class="hero-scroll reveal" style="--d:1.3s">
@@ -240,50 +255,52 @@
   </div>
 </section>
 
-<section class="focus">
-  <div class="focus-header">
-    <div class="section-label reveal">
-      <span class="section-num">01</span>
-      <span class="section-bar"></span>
-      <span class="section-name">What We Do</span>
+<div class="stats-bridge-wrap">
+  <div class="stats-bridge">
+    <div class="stat-card reveal" style="--d:0s">
+      <div class="stat-num">2.5&times;</div>
+      <div class="stat-desc">Higher MOIC when the right operators are matched to critical roles from day one.</div>
+      <div class="stat-source">McKinsey Quarterly</div>
+    </div>
+    <div class="stat-card reveal" style="--d:0.12s">
+      <div class="stat-num">53%</div>
+      <div class="stat-desc">Average share of investment returns GPs attribute directly to portfolio company leadership quality.</div>
+      <div class="stat-source">Teneo / McKinsey, 2022</div>
     </div>
   </div>
-  <div class="cards">
-    <div class="card reveal" style="--d:0s">
-      <div><span class="card-pre">Our Focus</span><span class="card-label">Infrastructure<br>Platforms</span></div>
-      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
-    </div>
-    <div class="card reveal" style="--d:0.1s">
-      <div><span class="card-pre">How We Search</span><span class="card-label">The Search<br>Process</span></div>
-      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
-    </div>
-    <div class="card reveal" style="--d:0.2s">
-      <div><span class="card-pre">Who We Know</span><span class="card-label">The Leadership<br>Network</span></div>
-      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
-    </div>
-    <div class="card reveal" style="--d:0.3s">
-      <div><span class="card-pre">Our Thinking</span><span class="card-label">Insights &amp;<br>Perspectives</span></div>
-      <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
-    </div>
-  </div>
-</section>
+</div>
 
 <section class="belief">
   <div class="belief-inner">
-    <div class="section-label light reveal">
-      <span class="section-num">02</span>
-      <span class="section-bar"></span>
-      <span class="section-name">The Belief</span>
-    </div>
     <h2 class="belief-h">
       <span class="word-wrap reveal" style="--d:0.1s"><span class="word">Leadership</span></span>
       <span class="word-wrap reveal" style="--d:0.2s"><span class="word">is</span></span>
       <span class="word-wrap reveal" style="--d:0.3s"><span class="word">the</span></span>
-      <span class="word-wrap reveal" style="--d:0.4s"><span class="word"><span class="accent-teal">lever.</span></span></span>
+      <span class="word-wrap reveal" style="--d:0.4s"><span class="word">lever.</span></span>
     </h2>
-    <p class="belief-sub reveal" style="--d:0.65s">In infrastructure, the quality of your leadership team determines the value of your asset. We find the operators who turn capital into performance.</p>
+    <p class="belief-p reveal" style="--d:0.55s">Capital can be raised. Assets can be bought. Leadership has to be built.</p>
+    <p class="belief-p-second reveal" style="--d:0.7s">Every value creation plan lives or dies in the hands of the people running the core functions. The right operator will compound performance year on year. The wrong one will quietly drain it.</p>
   </div>
 </section>
+
+<div class="cards">
+  <div class="card reveal" style="--d:0s">
+    <div><span class="card-pre">Our Focus</span><span class="card-label">Infrastructure<br>Platforms</span></div>
+    <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+  </div>
+  <div class="card reveal" style="--d:0.1s">
+    <div><span class="card-pre">How We Search</span><span class="card-label">The Search<br>Process</span></div>
+    <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+  </div>
+  <div class="card reveal" style="--d:0.2s">
+    <div><span class="card-pre">Who We Know</span><span class="card-label">The Leadership<br>Network</span></div>
+    <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+  </div>
+  <div class="card reveal" style="--d:0.3s">
+    <div><span class="card-pre">Our Thinking</span><span class="card-label">Insights &amp;<br>Perspectives</span></div>
+    <div class="card-more">Learn more <span class="card-more-arrow">→</span></div>
+  </div>
+</div>
 
 <footer>
   <div class="foot-logo">Sonder <span>&</span> Metric</div>
@@ -345,21 +362,6 @@
         ticking = false;
       });
       ticking = true;
-    }
-  }, { passive: true });
-
-  const heroBgWrap = document.querySelector('.hero-bg-wrap');
-  let parallaxTicking = false;
-  window.addEventListener('scroll', () => {
-    if (!parallaxTicking) {
-      window.requestAnimationFrame(() => {
-        const sc = window.scrollY;
-        if (heroBgWrap && sc < window.innerHeight * 1.2) {
-          heroBgWrap.style.transform = `translate3d(0, ${sc * 0.28}px, 0)`;
-        }
-        parallaxTicking = false;
-      });
-      parallaxTicking = true;
     }
   }, { passive: true });
 
