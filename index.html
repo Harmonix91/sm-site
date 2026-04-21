@@ -80,7 +80,7 @@
   .hero-content { position: relative; z-index: 2; max-width: 1400px; margin-top: auto; margin-bottom: auto; }
   .hero-h { font-family: 'Poppins', sans-serif; font-size: clamp(43px, 7.2vw, 101px); font-weight: 300; line-height: 1.03; color: #1C2E38; margin-bottom: 40px; letter-spacing: -0.028em; }
   .hero-h .line { display: block; }
-  .hero-sub { font-size: clamp(19px, 1.5vw, 24px); font-weight: 400; color: #3d5a68; max-width: 620px; line-height: 1.7; }
+  .hero-sub { font-size: clamp(19px, 1.5vw, 24px); font-weight: 400; color: #3d5a68; max-width: 860px; line-height: 1.7; }
 
   .hero-scroll {
     position: absolute; bottom: 96px; right: 7%;
@@ -145,6 +145,7 @@
     color: rgba(255,255,255,0.88);
     max-width: 640px; line-height: 1.85;
     margin-top: 22px;
+    margin-left: 60px;
   }
 
   /* ===== CARDS (follow belief) ===== */
@@ -187,6 +188,7 @@
     .hero-h, .belief-h { font-size: clamp(38px, 6.3vw, 70px); }
     .hero-scroll { display: none; }
     .stat-num { font-size: 36px; }
+    .belief-p-second { margin-left: 40px; }
   }
   @media (max-width: 768px) {
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
@@ -202,6 +204,7 @@
     .stat-desc { font-size: 13px; }
     .belief { padding: 240px 5% 120px; }
     .belief-p { margin-top: 56px; }
+    .belief-p-second { margin-left: 0; }
     .cards { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
@@ -247,7 +250,7 @@
         <span class="word-wrap reveal" style="--d:0.75s"><span class="word">Returns.</span></span>
       </span>
     </h1>
-    <p class="hero-sub reveal" style="--d:1s">We build the leadership teams who<br>execute your value creation plan.</p>
+    <p class="hero-sub reveal" style="--d:1s">We build the leadership teams who execute your value creation plan.</p>
   </div>
 
   <div class="hero-scroll reveal" style="--d:1.3s">
