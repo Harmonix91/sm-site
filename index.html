@@ -110,6 +110,16 @@
     font-weight: 600; color: #19647E;
     line-height: 0.95; letter-spacing: -0.03em;
     flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .stat-unit {
+    font-size: 0.42em;
+    font-weight: 400;
+    margin-left: 0.16em;
+    letter-spacing: 0.02em;
+    display: inline-block;
+    vertical-align: baseline;
+    color: #19647E;
   }
   .stat-text { flex: 1; padding-top: 6px; }
   .stat-desc { font-size: clamp(15px, 1.05vw, 17px); font-weight: 400; color: #1C2E38; line-height: 1.6; margin-bottom: 14px; }
@@ -331,17 +341,17 @@
 <div class="stats-bridge-wrap">
   <div class="stats-bridge">
     <div class="stat-card reveal" style="--d:0s">
-      <div class="stat-num">2.5&times;</div>
+      <div class="stat-num">100%</div>
       <div class="stat-text">
-        <div class="stat-desc">Higher MOIC when the right operators are matched to critical roles from day one.</div>
-        <div class="stat-source">McKinsey Quarterly</div>
+        <div class="stat-desc">Retention at twelve months across every executive we&rsquo;ve placed.</div>
+        <div class="stat-source">Sonder &amp; Metric placements</div>
       </div>
     </div>
     <div class="stat-card reveal" style="--d:0.12s">
-      <div class="stat-num">53%</div>
+      <div class="stat-num">90<span class="stat-unit">days</span></div>
       <div class="stat-text">
-        <div class="stat-desc">Average share of investment returns GPs attribute directly to portfolio company leadership quality.</div>
-        <div class="stat-source">Teneo / McKinsey, 2022</div>
+        <div class="stat-desc">Average time from mandate to executive in seat.</div>
+        <div class="stat-source">Sonder &amp; Metric average</div>
       </div>
     </div>
   </div>
@@ -423,7 +433,7 @@
         <a href="/board-search">Board Search</a>
         <a href="/fund-side">Fund-side</a>
         <a href="/technical-operational">Technical &amp; Operational</a>
-        <a href="/transaction-transformation">Transaction &amp; Transformation</a>
+        <a href="/transaction-transformation">Transaction &amp; Operational</a>
         <a href="/case-studies">Case Studies</a>
         <a href="/approach">Approach</a>
         <a href="/about">About</a>
