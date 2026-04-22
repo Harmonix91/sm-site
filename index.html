@@ -54,7 +54,7 @@
   .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
   .nav-burger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.6); }
 
-  /* ===== HERO (gradient, no photo) ===== */
+  /* ===== HERO ===== */
   .hero {
     padding: 120px 7% 200px;
     position: relative; overflow: hidden;
@@ -92,7 +92,7 @@
   .hero-scroll-line { width: 1px; height: 48px; background: #19647E; opacity: 0.3; position: relative; overflow: hidden; }
   .hero-scroll-line::after { content: ''; position: absolute; top: -100%; left: 0; width: 100%; height: 100%; background: #23BDC6; animation: scrollCue 2.2s cubic-bezier(0.6, 0, 0.2, 1) infinite; }
 
-  /* ===== STATS BRIDGE (hero -> belief) — horizontal layout ===== */
+  /* ===== STATS BRIDGE ===== */
   .stats-bridge-wrap { position: relative; height: 0; z-index: 10; }
   .stats-bridge {
     position: absolute; top: -90px; left: 7%; right: 7%;
@@ -148,7 +148,7 @@
     margin-left: 80px;
   }
 
-  /* ===== CARDS BRIDGE (belief -> sectors) — CONVICTION CARDS ===== */
+  /* ===== NAVIGATIONAL CARDS BRIDGE (belief -> sectors) ===== */
   .cards-bridge-wrap { position: relative; height: 0; z-index: 10; }
   .cards-bridge {
     position: absolute; top: -150px; left: 7%; right: 7%;
@@ -162,29 +162,44 @@
     min-height: 260px;
     border-top: 2px solid #23BDC6;
     box-shadow: 0 8px 24px rgba(25, 100, 126, 0.12);
+    text-decoration: none;
+    color: inherit;
   }
   .card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(25, 100, 126, 0.18); }
+  .card:hover .card-more { opacity: 1; }
+  .card:hover .card-arrow { transform: translateX(4px); }
   .card-num {
     font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
     color: #23BDC6; font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-variant-numeric: tabular-nums;
   }
   .card-head {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(16px, 1.35vw, 19px);
+    font-size: clamp(17px, 1.45vw, 21px);
     font-weight: 600; color: #19647E;
-    line-height: 1.25;
-    margin-bottom: 16px;
+    line-height: 1.2;
+    margin-bottom: 12px;
     letter-spacing: -0.01em;
   }
   .card-body {
     font-size: 13px; font-weight: 400;
     color: #3d5a68;
     line-height: 1.6;
+    margin-bottom: 18px;
+    flex: 1;
   }
+  .card-more {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #19647E;
+    opacity: 0.65;
+    transition: opacity 0.2s;
+    display: flex; align-items: center; gap: 8px;
+    margin-top: auto;
+  }
+  .card-arrow { transition: transform 0.2s; display: inline-block; }
 
-  /* ===== SECTORS SECTION (gradient, bookends hero) ===== */
+  /* ===== SECTORS SECTION — two-column (prose left, case studies right) ===== */
   .sectors {
     padding: 200px 7% 120px;
     position: relative; overflow: hidden;
@@ -192,10 +207,14 @@
   }
   .sectors-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to right, #EEF2F4 40%, rgba(238,242,244,0.6) 70%, rgba(238,242,244,0.15) 100%);
+    background: linear-gradient(to right, #EEF2F4 35%, rgba(238,242,244,0.55) 65%, rgba(238,242,244,0.12) 100%);
     z-index: 0;
   }
-  .sectors-inner { position: relative; z-index: 1; max-width: 1400px; width: 100%; }
+  .sectors-inner {
+    position: relative; z-index: 1; max-width: 1400px; width: 100%;
+    display: grid; grid-template-columns: 1.25fr 1fr; gap: 72px;
+    align-items: start;
+  }
   .sectors-pre {
     font-size: 12px; font-weight: 500; letter-spacing: 0.24em;
     text-transform: uppercase; color: #19647E;
@@ -205,31 +224,60 @@
   .sectors-pre::before { content: ''; display: inline-block; width: 48px; height: 1px; background: #19647E; opacity: 0.55; }
   .sectors-h {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(34px, 4.8vw, 64px);
+    font-size: clamp(32px, 4.2vw, 56px);
     font-weight: 300; line-height: 1.08; letter-spacing: -0.022em;
-    color: #1C2E38; max-width: 900px;
-    margin-bottom: 32px;
+    color: #1C2E38;
+    margin-bottom: 28px;
   }
   .sectors-sub {
-    font-size: clamp(15px, 1.15vw, 18px); font-weight: 400;
-    color: #3d5a68; max-width: 640px; line-height: 1.75;
-    margin-bottom: 56px;
+    font-size: clamp(15px, 1.1vw, 17px); font-weight: 400;
+    color: #3d5a68; line-height: 1.8;
   }
-  .sectors-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
-    max-width: 1200px;
+  .sectors-sub strong {
+    color: #19647E; font-weight: 500;
   }
-  .sector-card {
-    background: rgba(255,255,255,0.8);
+  .case-studies {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .case-study {
+    background: rgba(255,255,255,0.85);
     border-left: 2px solid #23BDC6;
-    padding: 18px 20px;
+    padding: 14px 18px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     transition: background 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
   }
-  .sector-card:hover { background: rgba(255,255,255,0.95); transform: translateY(-2px); }
-  .sector-num { font-size: 10px; letter-spacing: 0.18em; color: #19647E; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; display: block; }
-  .sector-name { font-size: 13px; color: #1C2E38; font-weight: 500; line-height: 1.35; }
+  .case-study:hover { background: rgba(255,255,255,0.98); transform: translateX(2px); }
+  .case-pre {
+    font-size: 9px; letter-spacing: 0.2em; color: #23BDC6;
+    font-weight: 600; text-transform: uppercase;
+    margin-bottom: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+  .case-title {
+    font-size: 14px; color: #19647E;
+    font-weight: 600; line-height: 1.3;
+    margin-bottom: 4px;
+    letter-spacing: -0.005em;
+  }
+  .case-meta {
+    font-size: 11px; color: #3d5a68;
+    line-height: 1.45;
+    font-weight: 400;
+  }
+  .case-link {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+    color: #19647E;
+    margin-top: 6px;
+    text-align: right;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    display: block;
+  }
+  .case-link:hover { opacity: 0.7; }
 
   /* ===== TICKER (fixed bottom) ===== */
   .ticker {
@@ -244,11 +292,60 @@
   .ticker-track { display: flex; animation: ticker 45s linear infinite; position: relative; z-index: 1; }
   .ticker-item { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #7a9aaa; padding: 18px 36px; border-right: 1px solid #D4DDE1; white-space: nowrap; font-weight: 500; }
 
-  /* ===== FOOTER ===== */
-  footer { padding: 24px 7%; background: #19647E; display: flex; align-items: center; justify-content: space-between; }
-  .foot-logo { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.02em; color: rgba(255,255,255,0.35); }
-  .foot-logo span { color: rgba(255,255,255,0.35); }
-  .foot-tag { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.35); }
+  /* ===== FOOTER — four columns ===== */
+  footer {
+    padding: 56px 7% 40px;
+    background: #19647E;
+    color: rgba(255,255,255,0.75);
+  }
+  .foot-grid {
+    display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px;
+    max-width: 1400px; margin: 0 auto 36px;
+  }
+  .foot-col-label {
+    font-size: 10px; letter-spacing: 0.22em; color: rgba(255,255,255,0.45);
+    text-transform: uppercase; font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .foot-brand {
+    font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 600;
+    letter-spacing: 0.02em; color: #ffffff;
+    margin-bottom: 10px;
+  }
+  .foot-brand span { color: #ffffff; }
+  .foot-tag {
+    font-size: 13px; font-weight: 300;
+    color: rgba(255,255,255,0.6); line-height: 1.55;
+    max-width: 260px;
+  }
+  .foot-text {
+    font-size: 13px; color: rgba(255,255,255,0.78);
+    font-weight: 300; line-height: 1.75;
+  }
+  .foot-text a {
+    color: rgba(255,255,255,0.78); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .foot-text a:hover { color: #23BDC6; }
+  .foot-nav {
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .foot-nav a {
+    font-size: 13px; color: rgba(255,255,255,0.78);
+    text-decoration: none; font-weight: 300;
+    transition: color 0.2s;
+  }
+  .foot-nav a:hover { color: #23BDC6; }
+  .foot-base {
+    max-width: 1400px; margin: 0 auto;
+    padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 20px; flex-wrap: wrap;
+  }
+  .foot-copy {
+    font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 300;
+    letter-spacing: 0.02em;
+  }
 
   /* ===== ANIMATIONS ===== */
   @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-33.3333%); } }
@@ -258,10 +355,11 @@
     .hero-h, .belief-h { font-size: clamp(38px, 6.3vw, 70px); }
     .hero-scroll { display: none; }
     .stat-num { font-size: 48px; }
-    .sectors-grid { grid-template-columns: repeat(2, 1fr); }
     .belief-p { margin-left: 48px; }
     .cards-bridge { grid-template-columns: repeat(2, 1fr); top: -180px; }
     .card { min-height: 220px; }
+    .sectors-inner { grid-template-columns: 1fr; gap: 40px; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
   @media (max-width: 768px) {
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
@@ -279,9 +377,10 @@
     .belief-p { margin-top: 56px; margin-left: 0; }
     .cards-bridge { grid-template-columns: 1fr; top: -320px; left: 5%; right: 5%; gap: 12px; }
     .card { padding: 22px 22px; min-height: 0; }
-    .sectors { padding: 200px 5% 100px; }
+    .sectors { padding: 160px 5% 80px; }
     .sectors-overlay { background: linear-gradient(to right, #EEF2F4 55%, rgba(238,242,244,0.7) 100%); }
-    .sectors-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+    footer { padding: 44px 5% 32px; }
   }
 </style>
 </head>
@@ -292,14 +391,16 @@
   <div class="nav-spacer"></div>
   <div class="nav-r">
     <div class="nav-dropdown">
-      <div class="nav-dropdown-trigger">Services <span>▾</span></div>
+      <div class="nav-dropdown-trigger">What we do <span>▾</span></div>
       <div class="nav-dropdown-menu">
-        <a href="/approach" class="nav-dropdown-item">Our Approach</a>
-        <a href="/process" class="nav-dropdown-item">The Process</a>
+        <a href="/board-search" class="nav-dropdown-item">Board Search</a>
+        <a href="/fund-side" class="nav-dropdown-item">Fund-side Search</a>
+        <a href="/technical-operational" class="nav-dropdown-item">Technical &amp; Operational</a>
+        <a href="/transaction-transformation" class="nav-dropdown-item">Transaction &amp; Transformation</a>
       </div>
     </div>
-    <a href="/sectors" class="nav-link">Sectors</a>
-    <a href="/insights" class="nav-link">Insights</a>
+    <a href="/case-studies" class="nav-link">Case Studies</a>
+    <a href="/approach" class="nav-link">Approach</a>
     <a href="/about" class="nav-link">About</a>
     <a href="/contact" class="nav-cta">Start a search</a>
   </div>
@@ -368,59 +469,96 @@
 
 <div class="cards-bridge-wrap">
   <div class="cards-bridge">
-    <div class="card reveal" style="--d:0s">
+    <a href="/board-search" class="card reveal" style="--d:0s">
       <div class="card-num">01</div>
-      <div class="card-head">Most hiring mistakes are avoidable.</div>
-      <div class="card-body">They're made in the brief, not the search. The wrong hire is almost always visible on day one if the right questions got asked in week one.</div>
-    </div>
-    <div class="card reveal" style="--d:0.1s">
+      <div class="card-head">Board Search</div>
+      <div class="card-body">Chair, CEO, CFO, CCO and non-executive appointments into portfolio company boards. The nameplate hires your value creation plan runs on.</div>
+      <div class="card-more">Explore <span class="card-arrow">→</span></div>
+    </a>
+    <a href="/fund-side" class="card reveal" style="--d:0.1s">
       <div class="card-num">02</div>
-      <div class="card-head">Speed is a feature, not a KPI.</div>
-      <div class="card-body">Long searches don't produce better hires. They produce tired boards and compromised shortlists. Every week past month four costs you optionality.</div>
-    </div>
-    <div class="card reveal" style="--d:0.2s">
+      <div class="card-head">Fund-side Search</div>
+      <div class="card-body">Operating partners, asset management leaders and investment professionals hired directly into the fund. The team behind the portfolio.</div>
+      <div class="card-more">Explore <span class="card-arrow">→</span></div>
+    </a>
+    <a href="/technical-operational" class="card reveal" style="--d:0.2s">
       <div class="card-num">03</div>
-      <div class="card-head">Generalist CVs don't run specialist assets.</div>
-      <div class="card-body">The people who can actually run a battery platform, a solar IPP, or a fibre build-out are a small, specific pool. Most search firms don't know who they are.</div>
-    </div>
-    <div class="card reveal" style="--d:0.3s">
+      <div class="card-head">Technical &amp; Operational</div>
+      <div class="card-body">Head of Asset Management, Head of Operations, Head of Engineering, Head of Programme. The specialist seats beneath the C-suite that actually deliver the plan.</div>
+      <div class="card-more">Explore <span class="card-arrow">→</span></div>
+    </a>
+    <a href="/transaction-transformation" class="card reveal" style="--d:0.3s">
       <div class="card-num">04</div>
-      <div class="card-head">Process is the product.</div>
-      <div class="card-body">A retained, exclusive, structured search is the only honest model. Anything else is a sourcing team in a suit.</div>
-    </div>
+      <div class="card-head">Transaction &amp; Transformation</div>
+      <div class="card-body">Time-critical mandates around deals: pre-acquisition leadership due diligence, post-close builds, mid-hold replacements, carve-out leadership teams.</div>
+      <div class="card-more">Explore <span class="card-arrow">→</span></div>
+    </a>
   </div>
 </div>
 
 <section class="sectors">
   <div class="sectors-overlay"></div>
   <div class="sectors-inner">
-    <div class="sectors-pre reveal" style="--d:0.1s">Where We Focus</div>
-    <h2 class="sectors-h reveal" style="--d:0.2s">Critical infrastructure. The assets the real economy runs on.</h2>
-    <p class="sectors-sub reveal" style="--d:0.35s">We specialise in leadership for the platforms that power, move, and connect the real economy — the infrastructure institutional capital is quietly consolidating behind.</p>
-    <div class="sectors-grid">
-      <div class="sector-card reveal" style="--d:0.45s">
-        <span class="sector-num">01</span>
-        <div class="sector-name">Renewable Power &amp; Storage</div>
-      </div>
-      <div class="sector-card reveal" style="--d:0.55s">
-        <span class="sector-num">02</span>
-        <div class="sector-name">Transport &amp; Logistics</div>
-      </div>
-      <div class="sector-card reveal" style="--d:0.65s">
-        <span class="sector-num">03</span>
-        <div class="sector-name">Digital Infrastructure</div>
-      </div>
-      <div class="sector-card reveal" style="--d:0.75s">
-        <span class="sector-num">04</span>
-        <div class="sector-name">Water &amp; Utilities</div>
-      </div>
+    <div>
+      <div class="sectors-pre reveal" style="--d:0.1s">Where We Focus</div>
+      <h2 class="sectors-h reveal" style="--d:0.2s">Critical infrastructure. The assets the real economy runs on.</h2>
+      <p class="sectors-sub reveal" style="--d:0.35s">We work across <strong>renewable power and storage, transport and logistics, digital infrastructure, and water and utilities</strong> — the platforms institutional capital is quietly consolidating behind.</p>
+    </div>
+    <div class="case-studies">
+      <a href="/case-studies/bring-energy" class="case-study reveal" style="--d:0.45s">
+        <div class="case-pre">01 &middot; Heat Networks M&amp;A</div>
+        <div class="case-title">Bring Energy carve-out</div>
+        <div class="case-meta">Swiss Life AM + Schroders Greencoat</div>
+      </a>
+      <a href="/case-studies/flex-gen-technical" class="case-study reveal" style="--d:0.55s">
+        <div class="case-pre">02 &middot; Flexible Generation</div>
+        <div class="case-title">Head of Ops + Head of Engineering</div>
+        <div class="case-meta">PE-backed platform</div>
+      </a>
+      <a href="/case-studies/flex-gen-partnership" class="case-study reveal" style="--d:0.65s">
+        <div class="case-pre">03 &middot; Talent Partnership</div>
+        <div class="case-title">Multi-year, UK flex-gen platform</div>
+        <div class="case-meta">One of the UK's largest</div>
+      </a>
+      <a href="/case-studies" class="case-link reveal" style="--d:0.75s">View all case studies &rarr;</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="foot-logo">Sonder <span>&</span> Metric</div>
-  <div class="foot-tag">Exceptional Leaders. Exceptional Returns.</div>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">Sonder <span>&</span> Metric</div>
+      <div class="foot-tag">Exceptional Leaders. Exceptional Returns.<br>Infrastructure executive search.</div>
+    </div>
+    <div>
+      <div class="foot-col-label">Office</div>
+      <div class="foot-text">Ministry of Work<br>41 New Cross Street<br>Swinton, Manchester<br>M27 4TU</div>
+    </div>
+    <div>
+      <div class="foot-col-label">Contact</div>
+      <div class="foot-text">
+        <a href="mailto:info@sonderandmetric.com">info@sonderandmetric.com</a><br>
+        <a href="tel:+441616942500">0161 694 2500</a>
+      </div>
+    </div>
+    <div>
+      <div class="foot-col-label">Navigate</div>
+      <div class="foot-nav">
+        <a href="/board-search">Board Search</a>
+        <a href="/fund-side">Fund-side</a>
+        <a href="/technical-operational">Technical &amp; Operational</a>
+        <a href="/transaction-transformation">Transaction &amp; Transformation</a>
+        <a href="/case-studies">Case Studies</a>
+        <a href="/approach">Approach</a>
+        <a href="/about">About</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-base">
+    <div class="foot-copy">&copy; 2026 Sonder &amp; Metric. All rights reserved.</div>
+    <div class="foot-copy"><a href="/privacy" style="color: inherit; text-decoration: none;">Privacy</a> &middot; <a href="/terms" style="color: inherit; text-decoration: none;">Terms</a></div>
+  </div>
 </footer>
 
 <div class="ticker">
