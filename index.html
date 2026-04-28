@@ -6,7 +6,7 @@
 <title>Sonder & Metric — Infrastructure Executive Search</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-style: normal; }
   html { scroll-behavior: smooth; }
@@ -58,10 +58,10 @@
     min-height: 100vh;
     display: flex; flex-direction: column;
     gap: clamp(56px, 9vh, 140px);
-    background: linear-gradient(135deg, #D4DDE1 0%, #19647E 100%);
+    background: linear-gradient(135deg, #D4DDE1 0%, #0F4A5E 100%);
   }
   .hero-image {
-    position: absolute; top: 0; bottom: 0; right: 0;
+    position: absolute; top: -80px; bottom: -80px; right: 0;
     width: 55%;
     background-image: url('Dam%20image.png');
     background-size: cover;
@@ -70,6 +70,7 @@
     -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.4) 65%, transparent 100%);
     mask-image: linear-gradient(to left, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.4) 65%, transparent 100%);
     opacity: 0.5;
+    will-change: transform;
   }
   .hero-overlay {
     position: absolute; inset: 0;
@@ -80,14 +81,14 @@
 
   .hero-pre {
     position: relative; z-index: 3;
-    font-size: 16px; font-weight: 500; letter-spacing: 0.24em;
-    text-transform: uppercase; color: #19647E;
+    font-size: 16px; font-weight: 600; letter-spacing: 0.24em;
+    text-transform: uppercase; color: #23BDC6;
     display: flex; align-items: center; gap: 18px;
   }
-  .hero-pre::before { content: ''; display: inline-block; width: 56px; height: 1px; background: #19647E; opacity: 0.55; }
+  .hero-pre::before { content: ''; display: inline-block; width: 56px; height: 2px; background: #23BDC6; opacity: 0.85; }
 
   .hero-content { position: relative; z-index: 3; max-width: 1400px; margin-top: auto; margin-bottom: auto; }
-  .hero-h { font-family: 'Poppins', sans-serif; font-size: clamp(36px, 5.6vw, 80px); font-weight: 300; line-height: 1.05; color: #1C2E38; margin-bottom: 36px; letter-spacing: -0.026em; }
+  .hero-h { font-family: 'Poppins', sans-serif; font-size: clamp(36px, 5.6vw, 80px); font-weight: 500; line-height: 1.05; color: #1C2E38; margin-bottom: 36px; letter-spacing: -0.028em; }
   .hero-h .line { display: block; }
   .hero-sub { font-size: clamp(18px, 1.4vw, 22px); font-weight: 400; color: #3d5a68; max-width: 820px; line-height: 1.65; }
 
@@ -108,7 +109,7 @@
     max-width: 1400px; margin: 0 auto;
   }
   .stat-card {
-    background: #ffffff; border-top: 2px solid #23BDC6;
+    background: #ffffff; border-top: 4px solid #23BDC6;
     padding: 32px 32px;
     box-shadow: 0 8px 24px rgba(25, 100, 126, 0.12);
     display: flex;
@@ -123,6 +124,7 @@
     flex-shrink: 0;
     white-space: nowrap;
   }
+  .stat-counter { display: inline-block; }
   .stat-unit {
     font-size: 0.42em;
     font-weight: 400;
@@ -144,7 +146,7 @@
   .belief-h {
     font-family: 'Poppins', sans-serif;
     font-size: clamp(36px, 5.6vw, 80px);
-    font-weight: 300; line-height: 1.05; letter-spacing: -0.026em;
+    font-weight: 500; line-height: 1.05; letter-spacing: -0.028em;
     color: #ffffff; max-width: 1200px;
   }
   .belief-p {
@@ -153,6 +155,15 @@
     max-width: 720px; line-height: 1.85;
     margin-top: 80px;
     margin-left: 80px;
+    padding-left: 28px;
+    position: relative;
+  }
+  .belief-p::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 6px; bottom: 6px;
+    width: 4px;
+    background: #23BDC6;
   }
 
   .cards-bridge-wrap { position: relative; height: 0; z-index: 10; }
@@ -166,7 +177,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
     display: flex; flex-direction: column;
     min-height: 260px;
-    border-top: 2px solid #23BDC6;
+    border-top: 4px solid #23BDC6;
     box-shadow: 0 8px 24px rgba(25, 100, 126, 0.12);
     text-decoration: none;
     color: inherit;
@@ -174,7 +185,18 @@
   .card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(25, 100, 126, 0.18); }
   .card:hover .card-more { opacity: 1; }
   .card:hover .card-arrow { transform: translateX(4px); }
-  .card-num { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #23BDC6; font-weight: 600; margin-bottom: 18px; font-variant-numeric: tabular-nums; }
+  .card-num {
+    align-self: flex-start;
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    background: #23BDC6;
+    padding: 5px 11px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    font-variant-numeric: tabular-nums;
+  }
   .card-head { font-family: 'Poppins', sans-serif; font-size: clamp(18px, 1.55vw, 22px); font-weight: 600; color: #19647E; line-height: 1.22; margin-bottom: 14px; letter-spacing: -0.01em; }
   .card-body { font-size: clamp(14px, 1.05vw, 16px); font-weight: 400; color: #3d5a68; line-height: 1.6; margin-bottom: 20px; flex: 1; }
   .card-more { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #19647E; opacity: 0.65; transition: opacity 0.2s; display: flex; align-items: center; gap: 8px; margin-top: auto; }
@@ -184,11 +206,11 @@
   .sectors {
     padding: 200px 7% 160px;
     position: relative; overflow: hidden;
-    background: linear-gradient(135deg, #D4DDE1 0%, #19647E 100%);
+    background: linear-gradient(135deg, #D4DDE1 0%, #0F4A5E 100%);
     min-height: 580px;
   }
   .sectors-image {
-    position: absolute; top: 0; bottom: 0; right: 0;
+    position: absolute; top: -80px; bottom: -80px; right: 0;
     width: 58%;
     background-image: url('Dam%20image.png');
     background-size: cover;
@@ -197,6 +219,7 @@
     -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.45) 65%, transparent 100%);
     mask-image: linear-gradient(to left, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.45) 65%, transparent 100%);
     opacity: 0.55;
+    will-change: transform;
   }
   .sectors-overlay {
     position: absolute; inset: 0;
@@ -210,16 +233,16 @@
     max-width: 640px;
   }
   .sectors-pre {
-    font-size: 12px; font-weight: 500; letter-spacing: 0.24em;
-    text-transform: uppercase; color: #19647E;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.24em;
+    text-transform: uppercase; color: #23BDC6;
     display: flex; align-items: center; gap: 16px;
     margin-bottom: 28px;
   }
-  .sectors-pre::before { content: ''; display: inline-block; width: 48px; height: 1px; background: #19647E; opacity: 0.55; }
+  .sectors-pre::before { content: ''; display: inline-block; width: 48px; height: 2px; background: #23BDC6; opacity: 0.85; }
   .sectors-h {
     font-family: 'Poppins', sans-serif;
     font-size: clamp(32px, 4.2vw, 56px);
-    font-weight: 300; line-height: 1.08; letter-spacing: -0.022em;
+    font-weight: 500; line-height: 1.08; letter-spacing: -0.024em;
     color: #1C2E38;
     margin-bottom: 28px;
   }
@@ -276,7 +299,7 @@
     .nav-burger { display: flex; }
     .hero { padding: 100px 5% 160px; min-height: 92vh; gap: 48px; }
     .hero-overlay { background: linear-gradient(to right, #EEF2F4 55%, rgba(238,242,244,0.7) 100%); }
-    .hero-image { width: 100%; opacity: 0.22; -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 70%); mask-image: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 70%); }
+    .hero-image { width: 100%; top: 0; bottom: 0; opacity: 0.22; -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 70%); mask-image: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 70%); transform: none !important; }
     .hero-pre { font-size: 13px; letter-spacing: 0.22em; }
     .hero-pre::before { width: 32px; }
     .hero-h { font-size: clamp(32px, 8vw, 48px); margin-bottom: 28px; }
@@ -287,12 +310,12 @@
     .stat-desc { font-size: 14px; }
     .belief { padding: 240px 5% 380px; }
     .belief-h { font-size: clamp(32px, 8vw, 48px); }
-    .belief-p { margin-top: 56px; margin-left: 0; }
+    .belief-p { margin-top: 56px; margin-left: 0; padding-left: 20px; }
     .cards-bridge { grid-template-columns: 1fr; top: -320px; left: 5%; right: 5%; gap: 12px; }
     .card { padding: 24px 22px; min-height: 0; }
     .card-body { font-size: 14px; }
     .sectors { padding: 160px 5% 120px; min-height: 0; }
-    .sectors-image { width: 100%; opacity: 0.25; -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 70%); mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 70%); }
+    .sectors-image { width: 100%; top: 0; bottom: 0; opacity: 0.25; -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 70%); mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 70%); transform: none !important; }
     .sectors-overlay { background: linear-gradient(to bottom, #EEF2F4 30%, rgba(238,242,244,0.85) 60%, rgba(238,242,244,0.5) 100%); }
     .foot-grid { grid-template-columns: 1fr; gap: 28px; }
     footer { padding: 44px 5% 32px; }
@@ -396,13 +419,13 @@
 <div class="stats-bridge-wrap">
   <div class="stats-bridge">
     <div class="stat-card reveal" style="--d:0s">
-      <div class="stat-num">100%</div>
+      <div class="stat-num"><span class="stat-counter" data-target="100" data-suffix="%">0%</span></div>
       <div class="stat-text">
         <div class="stat-desc">Retention at twelve months across every executive we&rsquo;ve placed.</div>
       </div>
     </div>
     <div class="stat-card reveal" style="--d:0.12s">
-      <div class="stat-num">60<span class="stat-unit">days</span></div>
+      <div class="stat-num"><span class="stat-counter" data-target="60">0</span><span class="stat-unit">days</span></div>
       <div class="stat-text">
         <div class="stat-desc">Typical time from mandate to accepted offer.</div>
       </div>
@@ -489,6 +512,7 @@
 </div>
 
 <script>
+  // ===== REVEAL ANIMATIONS =====
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -499,23 +523,96 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+  // ===== NAV SCROLL BEHAVIOUR =====
   const nav = document.querySelector('nav');
   let lastScroll = 0;
-  let ticking = false;
+  let navTicking = false;
   window.addEventListener('scroll', () => {
-    if (!ticking) {
+    if (!navTicking) {
       window.requestAnimationFrame(() => {
         const curr = window.scrollY;
         if (curr > 20) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
         if (curr > 220 && curr > lastScroll) nav.classList.add('hidden');
         else nav.classList.remove('hidden');
         lastScroll = curr;
-        ticking = false;
+        navTicking = false;
       });
-      ticking = true;
+      navTicking = true;
     }
   }, { passive: true });
 
+  // ===== PARALLAX ON HERO + SECTORS IMAGES (desktop only) =====
+  const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+  const parallaxTargets = [
+    { el: document.querySelector('.hero-image'), strength: 0.25 },
+    { el: document.querySelector('.sectors-image'), strength: 0.25 }
+  ].filter(t => t.el);
+
+  let parallaxTicking = false;
+  function updateParallax() {
+    if (isMobile()) {
+      parallaxTargets.forEach(({el}) => { el.style.transform = ''; });
+      parallaxTicking = false;
+      return;
+    }
+    const viewportH = window.innerHeight;
+    const viewportCenter = viewportH / 2;
+    parallaxTargets.forEach(({el, strength}) => {
+      const rect = el.getBoundingClientRect();
+      // Skip if element is far out of view
+      if (rect.bottom < -200 || rect.top > viewportH + 200) return;
+      const elementCenter = rect.top + rect.height / 2;
+      const offset = (elementCenter - viewportCenter) * -strength;
+      el.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
+    });
+    parallaxTicking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!parallaxTicking) {
+      requestAnimationFrame(updateParallax);
+      parallaxTicking = true;
+    }
+  }, { passive: true });
+  window.addEventListener('resize', () => {
+    if (!parallaxTicking) {
+      requestAnimationFrame(updateParallax);
+      parallaxTicking = true;
+    }
+  });
+  updateParallax();
+
+  // ===== NUMBER COUNTERS ON STATS =====
+  function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1600;
+    const startTime = performance.now();
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(target * eased);
+      el.textContent = value + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(update);
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Slight delay so counter starts after the card has finished revealing
+        setTimeout(() => animateCounter(entry.target), 250);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-counter').forEach(el => counterObserver.observe(el));
+
+  // ===== HERO PARTICLE CANVAS =====
   const canvas = document.getElementById('hero-canvas');
   const ctx = canvas.getContext('2d');
   let mouse = { x: null, y: null };
