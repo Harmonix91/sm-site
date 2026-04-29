@@ -58,23 +58,23 @@
     min-height: 100vh;
     display: flex; flex-direction: column;
     gap: clamp(56px, 9vh, 140px);
-    background: #ffffff;
+    background: linear-gradient(135deg, #D4DDE1 0%, #093744 100%);
   }
   .hero-image {
     position: absolute; top: -80px; bottom: -80px; right: 0;
-    width: 50%;
-    background-color: #ffffff;
-    background-image: url('orange%20lightning%20white%20background.jpeg');
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 55%;
+    background-image: url('Hydro%20damn%20.jpg');
+    background-size: cover;
     background-position: center;
     z-index: 0;
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0.7) 80%, transparent 100%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0.7) 80%, transparent 100%);
     opacity: 1;
     will-change: transform;
   }
   .hero-overlay {
     position: absolute; inset: 0;
-    background: transparent;
+    background: linear-gradient(to right, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.6) 35%, rgba(255,255,255,0.2) 60%, transparent 80%);
     z-index: 1;
   }
 
@@ -297,8 +297,8 @@
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
     .nav-burger { display: flex; }
     .hero { padding: 100px 5% 160px; min-height: 92vh; gap: 48px; }
-    .hero-overlay { background: transparent; }
-    .hero-image { width: 100%; top: 0; bottom: 0; opacity: 0.4; transform: none !important; }
+    .hero-overlay { background: linear-gradient(to right, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.7) 100%); }
+    .hero-image { width: 100%; top: 0; bottom: 0; opacity: 0.5; -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 70%); mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 70%); transform: none !important; }
     .hero-pre { font-size: 13px; letter-spacing: 0.22em; }
     .hero-pre::before { width: 32px; }
     .hero-h { font-size: clamp(32px, 8vw, 48px); margin-bottom: 28px; }
