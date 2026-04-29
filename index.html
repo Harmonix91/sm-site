@@ -58,14 +58,15 @@
     min-height: 100vh;
     display: flex; flex-direction: column;
     gap: clamp(56px, 9vh, 140px);
-    background: linear-gradient(135deg, #D4DDE1 0%, #093744 100%);
+    background: #ffffff;
   }
   .hero-image {
     position: absolute; top: -80px; bottom: -80px; right: 0;
     width: 50%;
     background-color: #ffffff;
     background-image: url('orange%20lightning%20white%20background.jpeg');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     z-index: 0;
     opacity: 1;
@@ -73,7 +74,7 @@
   }
   .hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to right, #FFFFFF 0%, #FFFFFF 42%, rgba(255,255,255,0.55) 52%, rgba(255,255,255,0.1) 65%, transparent 75%);
+    background: transparent;
     z-index: 1;
   }
 
@@ -296,8 +297,8 @@
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
     .nav-burger { display: flex; }
     .hero { padding: 100px 5% 160px; min-height: 92vh; gap: 48px; }
-    .hero-overlay { background: linear-gradient(to right, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.75) 100%); }
-    .hero-image { width: 100%; top: 0; bottom: 0; opacity: 0.6; transform: none !important; }
+    .hero-overlay { background: transparent; }
+    .hero-image { width: 100%; top: 0; bottom: 0; opacity: 0.4; transform: none !important; }
     .hero-pre { font-size: 13px; letter-spacing: 0.22em; }
     .hero-pre::before { width: 32px; }
     .hero-h { font-size: clamp(32px, 8vw, 48px); margin-bottom: 28px; }
