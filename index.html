@@ -265,9 +265,9 @@
   .card-more { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #0F4A5E; opacity: 0.65; transition: opacity 0.2s; display: flex; align-items: center; gap: 8px; margin-top: auto; }
   .card-arrow { transition: transform 0.2s; display: inline-block; }
 
-  /* ===== SECTORS SECTION — prose left, faded infrastructure image right ===== */
+  /* ===== SECTORS SECTION — editorial list left, faded infrastructure image right ===== */
   .sectors {
-    padding: 240px 7% 200px;
+    padding: 200px 7% 180px;
     position: relative; overflow: hidden;
     background: linear-gradient(135deg, #D4DDE1 0%, #093744 100%);
     min-height: 720px;
@@ -293,58 +293,72 @@
     position: relative; z-index: 2; max-width: 1400px; width: 100%;
   }
   .sectors-content {
-    max-width: 880px;
+    max-width: 760px;
   }
   .sectors-pre {
     font-size: 12px; font-weight: 600; letter-spacing: 0.24em;
     text-transform: uppercase; color: #DB6F2A;
     display: flex; align-items: center; gap: 16px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
   .sectors-pre::before { content: ''; display: inline-block; width: 48px; height: 2px; background: #DB6F2A; opacity: 0.85; }
   .sectors-h {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(32px, 4.2vw, 56px);
+    font-size: clamp(30px, 3.4vw, 44px);
     font-weight: 500; line-height: 1.1; letter-spacing: -0.024em;
     color: #0F4A5E;
-    margin-bottom: 32px;
-    max-width: 720px;
+    margin-bottom: 22px;
+    max-width: 640px;
   }
   .sectors-h .sectors-h-line { display: block; }
   .sectors-sub {
     font-size: clamp(15px, 1.1vw, 17px); font-weight: 400;
-    color: #3d5a68; line-height: 1.8;
+    color: #3d5a68; line-height: 1.7;
     max-width: 580px;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
   }
-  .sectors-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;
-    margin-bottom: 64px;
+  .sectors-list {
+    max-width: 720px;
+    margin-bottom: 48px;
+    border-top: 1px solid rgba(15, 74, 94, 0.18);
   }
-  .sectors-item-line {
-    width: 28px; height: 2px; background: #DB6F2A;
-    margin-bottom: 18px;
+  .sectors-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: baseline;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(15, 74, 94, 0.18);
+    gap: 24px;
   }
-  .sectors-item-name {
+  .sectors-row-name {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(14px, 1.05vw, 16px); font-weight: 600;
-    color: #0F4A5E; line-height: 1.3;
-    margin-bottom: 8px;
+    font-size: clamp(16px, 1.15vw, 18px);
+    font-weight: 600;
+    color: #0F4A5E;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
   }
-  .sectors-item-desc {
-    font-size: clamp(12px, 0.85vw, 14px); font-weight: 400;
-    color: #3d5a68; line-height: 1.55;
+  .sectors-row-desc {
+    font-size: clamp(13px, 0.9vw, 14px);
+    font-weight: 400;
+    color: #3d5a68;
+    line-height: 1.55;
   }
   .sectors-cta {
-    font-size: 12px; font-weight: 500;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: #0F4A5E; text-decoration: none;
-    display: inline-flex; align-items: center; gap: 12px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid rgba(219, 111, 42, 0.55);
-    transition: color 0.2s, border-color 0.2s;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: #ffffff; background: #DB6F2A;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 16px 28px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 14px rgba(219, 111, 42, 0.28);
   }
-  .sectors-cta:hover { color: #DB6F2A; border-bottom-color: #DB6F2A; }
+  .sectors-cta:hover {
+    background: #c25f1f;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(219, 111, 42, 0.36);
+  }
   .sectors-cta-arrow { transition: transform 0.2s; display: inline-block; }
   .sectors-cta:hover .sectors-cta-arrow { transform: translateX(4px); }
 
@@ -392,7 +406,7 @@
     .cards-bridge { grid-template-columns: repeat(2, 1fr); top: -180px; }
     .card { min-height: 220px; }
     .sectors-image { width: 50%; opacity: 0.4; }
-    .sectors-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 28px; }
+    .sectors-row { grid-template-columns: 1fr 1fr; }
     .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
   @media (max-width: 768px) {
@@ -420,7 +434,7 @@
     .sectors { padding: 180px 5% 140px; min-height: 0; }
     .sectors-image { width: 100%; top: 0; bottom: 0; opacity: 0.25; -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 70%); mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 70%); transform: none !important; }
     .sectors-overlay { background: linear-gradient(to bottom, #FFFFFF 30%, rgba(255,255,255,0.85) 60%, rgba(255,255,255,0.5) 100%); }
-    .sectors-grid { grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px; }
+    .sectors-row { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
     .sectors-sub { margin-bottom: 48px; }
     .foot-grid { grid-template-columns: 1fr; gap: 28px; }
     footer { padding: 44px 5% 32px; }
@@ -554,29 +568,25 @@
       <div class="sectors-pre reveal" style="--d:0.1s">Where We Focus</div>
       <h2 class="sectors-h reveal" style="--d:0.2s">
         <span class="sectors-h-line">Sustainable Infrastructure.</span>
-        <span class="sectors-h-line">The platforms institutional capital is consolidating behind.</span>
+        <span class="sectors-h-line">The platforms shaping the next decade.</span>
       </h2>
-      <p class="sectors-sub reveal" style="--d:0.3s">We hire the operators who execute the value creation plan.</p>
-      <div class="sectors-grid reveal" style="--d:0.45s">
-        <div class="sectors-item">
-          <div class="sectors-item-line"></div>
-          <div class="sectors-item-name">Renewable Power<br>&amp; Storage</div>
-          <div class="sectors-item-desc">Solar, wind, BESS, flexibility</div>
+      <p class="sectors-sub reveal" style="--d:0.3s">We&rsquo;ve placed exceptional operators across critical sectors.</p>
+      <div class="sectors-list reveal" style="--d:0.45s">
+        <div class="sectors-row">
+          <div class="sectors-row-name">Renewable Power &amp; Storage</div>
+          <div class="sectors-row-desc">Solar, wind, BESS, flexibility</div>
         </div>
-        <div class="sectors-item">
-          <div class="sectors-item-line"></div>
-          <div class="sectors-item-name">Utilities</div>
-          <div class="sectors-item-desc">Heat networks, water, waste</div>
+        <div class="sectors-row">
+          <div class="sectors-row-name">Utilities</div>
+          <div class="sectors-row-desc">Heat networks, water, waste</div>
         </div>
-        <div class="sectors-item">
-          <div class="sectors-item-line"></div>
-          <div class="sectors-item-name">Infrastructure<br>Services</div>
-          <div class="sectors-item-desc">EPC, O&amp;M, technical services</div>
+        <div class="sectors-row">
+          <div class="sectors-row-name">Infrastructure Services</div>
+          <div class="sectors-row-desc">EPC, O&amp;M, technical services</div>
         </div>
-        <div class="sectors-item">
-          <div class="sectors-item-line"></div>
-          <div class="sectors-item-name">Digital<br>Infrastructure</div>
-          <div class="sectors-item-desc">Data centres, fibre, towers</div>
+        <div class="sectors-row">
+          <div class="sectors-row-name">Digital Infrastructure</div>
+          <div class="sectors-row-desc">Data centres, fibre, towers</div>
         </div>
       </div>
       <a href="/contact" class="sectors-cta reveal" style="--d:0.6s">Start a search <span class="sectors-cta-arrow">&rarr;</span></a>
