@@ -57,7 +57,7 @@
     position: relative; overflow: hidden;
     min-height: 100vh;
     display: flex; flex-direction: column;
-    gap: clamp(56px, 9vh, 140px);
+    gap: clamp(28px, 4vh, 56px);
     background: linear-gradient(135deg, #D4DDE1 0%, #093744 100%);
   }
   .hero-image {
@@ -82,9 +82,7 @@
     position: relative; z-index: 3;
     font-size: 16px; font-weight: 600; letter-spacing: 0.24em;
     text-transform: uppercase; color: #DB6F2A;
-    display: flex; align-items: center; gap: 18px;
   }
-  .hero-pre::before { content: ''; display: inline-block; width: 56px; height: 2px; background: #DB6F2A; opacity: 0.85; }
 
   .hero-content { position: relative; z-index: 3; max-width: 1400px; margin-top: auto; margin-bottom: auto; }
   .hero-h { font-family: 'Poppins', sans-serif; font-size: clamp(36px, 5.6vw, 80px); font-weight: 500; line-height: 1.05; color: #0F4A5E; margin-bottom: 36px; letter-spacing: -0.028em; }
@@ -298,10 +296,8 @@
   .sectors-pre {
     font-size: 12px; font-weight: 600; letter-spacing: 0.24em;
     text-transform: uppercase; color: #DB6F2A;
-    display: flex; align-items: center; gap: 16px;
     margin-bottom: 24px;
   }
-  .sectors-pre::before { content: ''; display: inline-block; width: 48px; height: 2px; background: #DB6F2A; opacity: 0.85; }
   .sectors-h {
     font-family: 'Poppins', sans-serif;
     font-size: clamp(30px, 3.4vw, 44px);
@@ -412,11 +408,10 @@
   @media (max-width: 768px) {
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
     .nav-burger { display: flex; }
-    .hero { padding: 100px 5% 160px; min-height: 92vh; gap: 48px; }
+    .hero { padding: 100px 5% 160px; min-height: 92vh; gap: 32px; }
     .hero-overlay { background: linear-gradient(to right, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.85) 100%); }
     .hero-image { width: 100%; top: 0; bottom: 0; opacity: 0.28; -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 70%); mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 70%); transform: none !important; }
     .hero-pre { font-size: 13px; letter-spacing: 0.22em; }
-    .hero-pre::before { width: 32px; }
     .hero-h { font-size: clamp(32px, 8vw, 48px); margin-bottom: 28px; }
     .hero-sub { max-width: 100%; font-size: 16px; }
     .stats-bridge { grid-template-columns: 1fr; top: -70px; left: 5%; right: 5%; gap: 12px; }
@@ -676,14 +671,18 @@
   const nav = document.querySelector('nav');
   let lastScroll = 0;
   let navTicking = false;
+  const NAV_DELTA = 8; // ignore micro-scrolls smaller than this
   window.addEventListener('scroll', () => {
     if (!navTicking) {
       window.requestAnimationFrame(() => {
         const curr = window.scrollY;
+        const diff = curr - lastScroll;
         if (curr > 20) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
-        if (curr > 220 && curr > lastScroll) nav.classList.add('hidden');
-        else nav.classList.remove('hidden');
-        lastScroll = curr;
+        if (Math.abs(diff) > NAV_DELTA) {
+          if (curr > 220 && diff > 0) nav.classList.add('hidden');
+          else if (diff < 0) nav.classList.remove('hidden');
+          lastScroll = curr;
+        }
         navTicking = false;
       });
       navTicking = true;
