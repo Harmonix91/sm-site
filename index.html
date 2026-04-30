@@ -10,7 +10,7 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-style: normal; }
   html { scroll-behavior: smooth; }
-  body { background: #FFFFFF; color: #1C2E38; font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; padding-bottom: 58px; }
+  body { background: #FFFFFF; color: #1C2E38; font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1); transition-delay: var(--d, 0s); }
   .revealed { opacity: 1; transform: translateY(0); }
@@ -358,18 +358,6 @@
   .sectors-cta-arrow { transition: transform 0.2s; display: inline-block; }
   .sectors-cta:hover .sectors-cta-arrow { transform: translateX(4px); }
 
-  .ticker {
-    display: flex; align-items: center; overflow: hidden;
-    background: #FFFFFF;
-    border-top: 1px solid #D4DDE1;
-    position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
-    height: 58px;
-    box-shadow: 0 -4px 16px rgba(15, 74, 94, 0.08);
-  }
-  .ticker-label { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #ffffff; background: #0F4A5E; padding: 18px 24px; white-space: nowrap; font-weight: 600; flex-shrink: 0; position: relative; z-index: 2; box-shadow: 4px 0 8px rgba(15,74,94,0.15); height: 100%; display: flex; align-items: center; }
-  .ticker-track { display: flex; animation: ticker 45s linear infinite; position: relative; z-index: 1; }
-  .ticker-item { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #7a9aaa; padding: 18px 36px; border-right: 1px solid #D4DDE1; white-space: nowrap; font-weight: 500; }
-
   footer { padding: 56px 7% 40px; background: #0F4A5E; color: rgba(255,255,255,0.75); }
   .foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; max-width: 1400px; margin: 0 auto 36px; }
   .foot-col-label { font-size: 10px; letter-spacing: 0.22em; color: rgba(255,255,255,0.45); text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
@@ -385,7 +373,6 @@
   .foot-base { max-width: 1400px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
   .foot-copy { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 300; letter-spacing: 0.02em; }
 
-  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-33.3333%); } }
   @keyframes scrollCue { 0% { top: -100%; } 100% { top: 100%; } }
 
   @media (max-width: 1100px) {
@@ -624,36 +611,6 @@
     <div class="foot-copy"><a href="/privacy" style="color: inherit; text-decoration: none;">Privacy</a> &middot; <a href="/terms" style="color: inherit; text-decoration: none;">Terms</a></div>
   </div>
 </footer>
-
-<div class="ticker">
-  <div class="ticker-label">Trusted by</div>
-  <div class="ticker-track">
-    <div class="ticker-item">Flexitricity</div>
-    <div class="ticker-item">Bring Energy</div>
-    <div class="ticker-item">Fidra Energy</div>
-    <div class="ticker-item">Schroders Greencoat</div>
-    <div class="ticker-item">I Squared Capital</div>
-    <div class="ticker-item">Swiss Life AM</div>
-    <div class="ticker-item">SWEN Capital Partners</div>
-    <div class="ticker-item">GMT</div>
-    <div class="ticker-item">Flexitricity</div>
-    <div class="ticker-item">Bring Energy</div>
-    <div class="ticker-item">Fidra Energy</div>
-    <div class="ticker-item">Schroders Greencoat</div>
-    <div class="ticker-item">I Squared Capital</div>
-    <div class="ticker-item">Swiss Life AM</div>
-    <div class="ticker-item">SWEN Capital Partners</div>
-    <div class="ticker-item">GMT</div>
-    <div class="ticker-item">Flexitricity</div>
-    <div class="ticker-item">Bring Energy</div>
-    <div class="ticker-item">Fidra Energy</div>
-    <div class="ticker-item">Schroders Greencoat</div>
-    <div class="ticker-item">I Squared Capital</div>
-    <div class="ticker-item">Swiss Life AM</div>
-    <div class="ticker-item">SWEN Capital Partners</div>
-    <div class="ticker-item">GMT</div>
-  </div>
-</div>
 
 <script>
   // ===== REVEAL ANIMATIONS =====
