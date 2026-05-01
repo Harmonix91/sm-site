@@ -229,23 +229,19 @@
 
   .cards-bridge-wrap { position: relative; height: 0; z-index: 10; }
   .cards-bridge {
-    position: absolute; top: -150px; left: 7%; right: 7%;
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    position: absolute; top: -200px; left: 7%; right: 7%;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
     max-width: 1400px; margin: 0 auto;
   }
   .card {
     background: #ffffff; padding: 32px 28px; position: relative;
     transition: transform 0.2s, box-shadow 0.2s;
     display: flex; flex-direction: column;
-    min-height: 260px;
+    min-height: 320px;
     border-top: 4px solid #DB6F2A;
     box-shadow: 0 8px 24px rgba(15, 74, 94, 0.12);
-    text-decoration: none;
     color: inherit;
   }
-  .card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(15, 74, 94, 0.18); }
-  .card:hover .card-more { opacity: 1; }
-  .card:hover .card-arrow { transform: translateX(4px); }
   .card-num {
     align-self: flex-start;
     display: inline-block;
@@ -259,9 +255,12 @@
     font-variant-numeric: tabular-nums;
   }
   .card-head { font-family: 'Poppins', sans-serif; font-size: clamp(18px, 1.55vw, 22px); font-weight: 600; color: #0F4A5E; line-height: 1.22; margin-bottom: 14px; letter-spacing: -0.01em; }
-  .card-body { font-size: clamp(14px, 1.05vw, 16px); font-weight: 400; color: #3d5a68; line-height: 1.6; margin-bottom: 20px; flex: 1; }
-  .card-more { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #0F4A5E; opacity: 0.65; transition: opacity 0.2s; display: flex; align-items: center; gap: 8px; margin-top: auto; }
-  .card-arrow { transition: transform 0.2s; display: inline-block; }
+  .card-body { font-size: clamp(14px, 1.05vw, 16px); font-weight: 400; color: #3d5a68; line-height: 1.6; margin-bottom: 22px; flex: 1; }
+  .card-caps { border-top: 1px solid rgba(15, 74, 94, 0.15); padding-top: 14px; margin-top: auto; }
+  .card-caps-label { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #0F4A5E; font-weight: 500; opacity: 0.65; margin-bottom: 8px; }
+  .card-caps-list { list-style: none; padding: 0; margin: 0; font-size: clamp(13px, 0.95vw, 14px); color: #1C2E38; line-height: 1.95; }
+  .cards-bridge .card.reveal { transform: translateY(40px); }
+  .cards-bridge .card.revealed { transform: translateY(0); }
 
   /* ===== SECTORS SECTION — editorial list left, faded infrastructure image right ===== */
   .sectors {
@@ -381,8 +380,8 @@
     .stat-desc { font-size: 15px; }
     .belief-body { margin-left: 48px; padding-left: 52px; }
     .belief-body::before { font-size: 160px; top: -42px; }
-    .cards-bridge { grid-template-columns: repeat(2, 1fr); top: -180px; }
-    .card { min-height: 220px; }
+    .cards-bridge { grid-template-columns: repeat(3, 1fr); top: -220px; gap: 14px; }
+    .card { min-height: 300px; padding: 26px 22px; }
     .sectors-image { width: 50%; opacity: 0.4; }
     .sectors-row { grid-template-columns: 1fr 1fr; }
   }
@@ -404,7 +403,7 @@
     .belief-body { margin-top: 56px; margin-left: 0; padding-left: 36px; }
     .belief-body::before { font-size: 120px; top: -32px; left: -4px; }
     .belief-meta { flex-direction: column; align-items: flex-start; gap: 18px; }
-    .cards-bridge { grid-template-columns: 1fr; top: -320px; left: 5%; right: 5%; gap: 12px; }
+    .cards-bridge { grid-template-columns: 1fr; top: -260px; left: 5%; right: 5%; gap: 12px; }
     .card { padding: 24px 22px; min-height: 0; }
     .card-body { font-size: 14px; }
     .sectors { padding: 180px 5% 140px; min-height: 0; }
@@ -424,17 +423,8 @@
   <a href="/" class="logo">Sonder <span>&</span> Metric</a>
   <div class="nav-spacer"></div>
   <div class="nav-r">
-    <div class="nav-dropdown">
-      <div class="nav-dropdown-trigger">What we do <span>&#9662;</span></div>
-      <div class="nav-dropdown-menu">
-        <a href="/board-search" class="nav-dropdown-item">Board Search</a>
-        <a href="/fund-side" class="nav-dropdown-item">Fund-side Search</a>
-        <a href="/embedded-talent" class="nav-dropdown-item">Embedded Talent Partnership</a>
-        <a href="/transaction-search" class="nav-dropdown-item">Transaction Search</a>
-      </div>
-    </div>
+    <a href="#services" class="nav-link">What we do</a>
     <a href="/case-studies" class="nav-link">Case Studies</a>
-    <a href="/approach" class="nav-link">Approach</a>
     <a href="/about" class="nav-link">About</a>
     <a href="/contact" class="nav-cta">Start a search</a>
   </div>
@@ -470,32 +460,48 @@
   </div>
 </section>
 
-<div class="cards-bridge-wrap">
+<div class="cards-bridge-wrap" id="services">
   <div class="cards-bridge">
-    <a href="/board-search" class="card reveal" style="--d:0s">
+    <div class="card reveal" style="--d:0s">
       <div class="card-num">01</div>
-      <div class="card-head">Board Search</div>
-      <div class="card-body">Portfolio Company Executives aligned to your investment thesis.</div>
-      <div class="card-more">Explore <span class="card-arrow">&rarr;</span></div>
-    </a>
-    <a href="/fund-side" class="card reveal" style="--d:0.1s">
+      <div class="card-head">Executive Search</div>
+      <div class="card-body">Single senior mandates at board, fund and portfolio level.</div>
+      <div class="card-caps">
+        <div class="card-caps-label">Capabilities</div>
+        <ul class="card-caps-list">
+          <li>Board Search</li>
+          <li>Fund-side Search</li>
+          <li>Transaction Search</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card reveal" style="--d:0.22s">
       <div class="card-num">02</div>
-      <div class="card-head">Fund-side Search</div>
-      <div class="card-body">Operating Partners and Asset Management leaders aligned to your fund strategy.</div>
-      <div class="card-more">Explore <span class="card-arrow">&rarr;</span></div>
-    </a>
-    <a href="/embedded-talent" class="card reveal" style="--d:0.2s">
+      <div class="card-head">Platform Build</div>
+      <div class="card-body">Multi-role build programmes for platforms in scale-up or transformation mode &mdash; leadership and critical operating roles.</div>
+      <div class="card-caps">
+        <div class="card-caps-label">Capabilities</div>
+        <ul class="card-caps-list">
+          <li>Multi-Hire Programmes</li>
+          <li>Functional Build-Outs</li>
+          <li>Embedded Talent Partnership</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card reveal" style="--d:0.44s">
       <div class="card-num">03</div>
-      <div class="card-head">Embedded Talent Partnership</div>
-      <div class="card-body">Ongoing talent partnership aligned to your scale-up and transformation plan.</div>
-      <div class="card-more">Explore <span class="card-arrow">&rarr;</span></div>
-    </a>
-    <a href="/transaction-search" class="card reveal" style="--d:0.3s">
-      <div class="card-num">04</div>
-      <div class="card-head">Transaction Search</div>
-      <div class="card-body">Leadership mandates aligned to your deal timeline.</div>
-      <div class="card-more">Explore <span class="card-arrow">&rarr;</span></div>
-    </a>
+      <div class="card-head">Advisory Services</div>
+      <div class="card-body">Decision-grade talent intelligence drawn from the same conversations that source our placements.</div>
+      <div class="card-caps">
+        <div class="card-caps-label">Capabilities</div>
+        <ul class="card-caps-list">
+          <li>Market Intelligence</li>
+          <li>Benchmarking</li>
+          <li>Talent Mapping</li>
+          <li>Assessment</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -514,7 +520,6 @@
       <p class="belief-p">We know where to find them, and how to attract them.</p>
       <div class="belief-meta">
         <div class="belief-sig">&mdash; Josh Foulkes, Founder</div>
-        <a href="/approach" class="belief-cta">Our approach <span class="belief-cta-arrow">&rarr;</span></a>
       </div>
     </div>
   </div>
@@ -587,7 +592,7 @@
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px 80px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   // ===== NAV SCROLL BEHAVIOUR =====
