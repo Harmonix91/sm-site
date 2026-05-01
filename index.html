@@ -358,20 +358,15 @@
   .sectors-cta-arrow { transition: transform 0.2s; display: inline-block; }
   .sectors-cta:hover .sectors-cta-arrow { transform: translateX(4px); }
 
-  footer { padding: 56px 7% 40px; background: #0F4A5E; color: rgba(255,255,255,0.75); }
-  .foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; max-width: 1400px; margin: 0 auto 36px; }
-  .foot-col-label { font-size: 10px; letter-spacing: 0.22em; color: rgba(255,255,255,0.45); text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
-  .foot-brand { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; margin-bottom: 10px; }
-  .foot-brand span { color: #ffffff; }
-  .foot-tag { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.55; max-width: 280px; }
-  .foot-text { font-size: 13px; color: rgba(255,255,255,0.78); font-weight: 300; line-height: 1.75; }
-  .foot-text a { color: rgba(255,255,255,0.78); text-decoration: none; transition: color 0.2s; }
-  .foot-text a:hover { color: #DB6F2A; }
-  .foot-nav { display: flex; flex-direction: column; gap: 8px; }
-  .foot-nav a { font-size: 13px; color: rgba(255,255,255,0.78); text-decoration: none; font-weight: 300; transition: color 0.2s; }
-  .foot-nav a:hover { color: #DB6F2A; }
-  .foot-base { max-width: 1400px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
-  .foot-copy { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 300; letter-spacing: 0.02em; }
+  footer { background: #0F4A5E; padding: 28px 7%; }
+  .foot-min { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .foot-brand-link { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; text-decoration: none; transition: opacity 0.2s; }
+  .foot-brand-link:hover { opacity: 0.85; }
+  .foot-brand-link span { color: #ffffff; }
+  .foot-contact { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.92); font-weight: 500; text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid rgba(219, 111, 42, 0.55); display: inline-flex; align-items: center; gap: 10px; transition: color 0.2s, border-color 0.2s; }
+  .foot-contact:hover { color: #DB6F2A; border-bottom-color: #DB6F2A; }
+  .foot-contact-arrow { transition: transform 0.2s; display: inline-block; }
+  .foot-contact:hover .foot-contact-arrow { transform: translateX(3px); }
 
   @keyframes scrollCue { 0% { top: -100%; } 100% { top: 100%; } }
 
@@ -390,7 +385,6 @@
     .card { min-height: 220px; }
     .sectors-image { width: 50%; opacity: 0.4; }
     .sectors-row { grid-template-columns: 1fr 1fr; }
-    .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
   @media (max-width: 768px) {
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
@@ -418,8 +412,9 @@
     .sectors-overlay { background: linear-gradient(to bottom, #FFFFFF 30%, rgba(255,255,255,0.85) 60%, rgba(255,255,255,0.5) 100%); }
     .sectors-row { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
     .sectors-sub { margin-bottom: 48px; }
-    .foot-grid { grid-template-columns: 1fr; gap: 28px; }
-    footer { padding: 44px 5% 32px; }
+    .foot-min { gap: 14px; }
+    .foot-brand-link { font-size: 18px; }
+    footer { padding: 22px 5%; }
   }
 </style>
 </head>
@@ -577,38 +572,9 @@
 </section>
 
 <footer>
-  <div class="foot-grid">
-    <div>
-      <div class="foot-brand">Sonder <span>&</span> Metric</div>
-      <div class="foot-tag">Exceptional Leaders. Exceptional Performance.<br>Executive search across sustainable infrastructure.</div>
-    </div>
-    <div>
-      <div class="foot-col-label">Office</div>
-      <div class="foot-text">Ministry of Work<br>41 New Cross Street<br>Swinton, Manchester<br>M27 4TU</div>
-    </div>
-    <div>
-      <div class="foot-col-label">Contact</div>
-      <div class="foot-text">
-        <a href="mailto:info@sonderandmetric.com">info@sonderandmetric.com</a><br>
-        <a href="tel:+441616942500">0161 694 2500</a>
-      </div>
-    </div>
-    <div>
-      <div class="foot-col-label">Navigate</div>
-      <div class="foot-nav">
-        <a href="/board-search">Board Search</a>
-        <a href="/fund-side">Fund-side Search</a>
-        <a href="/embedded-talent">Embedded Talent Partnership</a>
-        <a href="/transaction-search">Transaction Search</a>
-        <a href="/case-studies">Case Studies</a>
-        <a href="/approach">Approach</a>
-        <a href="/about">About</a>
-      </div>
-    </div>
-  </div>
-  <div class="foot-base">
-    <div class="foot-copy">&copy; 2026 Sonder &amp; Metric. All rights reserved.</div>
-    <div class="foot-copy"><a href="/privacy" style="color: inherit; text-decoration: none;">Privacy</a> &middot; <a href="/terms" style="color: inherit; text-decoration: none;">Terms</a></div>
+  <div class="foot-min">
+    <a href="/" class="foot-brand-link">Sonder <span>&</span> Metric</a>
+    <a href="mailto:info@sonderandmetric.com" class="foot-contact">Contact us <span class="foot-contact-arrow">&rarr;</span></a>
   </div>
 </footer>
 
