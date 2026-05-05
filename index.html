@@ -883,13 +883,13 @@
       const h = canvas.offsetHeight;
       ctx.clearRect(0, 0, w, h);
 
-      const cy = h / 2;
+      const cy = h * 0.66;
       const layers = 60;
       const steps = 220;
 
       for (let layer = 0; layer < layers; layer++) {
         const tNorm = layer / (layers - 1);
-        const amp = 24 + tNorm * h * 0.18;
+        const amp = 18 + tNorm * h * 0.13;
         const wavelength = 600 - tNorm * 200;
         const k = (Math.PI * 2) / wavelength;
         const phase = -elapsed + tNorm * Math.PI * 0.4;
