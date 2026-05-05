@@ -46,7 +46,8 @@
   .hero {
     padding: 88px 7% 110px;
     position: relative; overflow: hidden;
-    min-height: 78vh;
+    min-height: calc(100vh - 72px);
+    min-height: calc(100svh - 72px);
     display: flex; flex-direction: column;
     align-items: center;
     gap: clamp(28px, 4vh, 56px);
@@ -461,7 +462,7 @@
   @media (max-width: 768px) {
     .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
     .nav-burger { display: flex; }
-    .hero { padding: 76px 5% 88px; min-height: 72vh; gap: 28px; }
+    .hero { padding: 76px 5% 88px; min-height: calc(100vh - 72px); min-height: calc(100svh - 72px); gap: 28px; }
     .hero-h { font-size: clamp(32px, 8.4vw, 50px); margin-bottom: 26px; line-height: 1.06; }
     .hero-sub { max-width: 100%; font-size: 16px; line-height: 1.55; }
     .stat-card { padding: 22px 24px; gap: 18px; }
