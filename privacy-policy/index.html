@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Sonder & Metric</title>
+<meta name="description" content="How Sonder & Metric Ltd collects, uses, and protects personal data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-style: normal; }
+  html { scroll-behavior: smooth; }
+  body { background: #FFFFFF; color: #1C2E38; font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+  nav {
+    display: flex; align-items: center; padding: 0 5%;
+    background: #0F4A5E; position: sticky; top: 0; z-index: 100;
+    height: 72px; gap: 32px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease, backdrop-filter 0.3s ease;
+    will-change: transform;
+  }
+  nav.scrolled { background: rgba(15, 74, 94, 0.82); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); }
+  nav.hidden { transform: translateY(-100%); }
+  .logo { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; text-decoration: none; flex-shrink: 0; }
+  .logo span { color: #ffffff; }
+  .nav-spacer { flex: 1; }
+  .nav-r { display: flex; align-items: center; gap: 32px; }
+  .nav-link { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 500; text-decoration: none; position: relative; white-space: nowrap; transition: color 0.2s; }
+  .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: #DB6F2A; transition: width 0.25s; }
+  .nav-link:hover { color: #ffffff; }
+  .nav-link:hover::after { width: 100%; }
+  .nav-cta { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #0F4A5E; background: #ffffff; padding: 12px 24px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: opacity 0.2s, transform 0.15s; }
+  .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+  .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .nav-burger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.6); }
+
+  .pp-hero {
+    background: #0F4A5E;
+    padding: 80px 7% 64px;
+    color: #ffffff;
+  }
+  .pp-hero-inner { max-width: 920px; margin: 0 auto; }
+  .pp-hero-pre { font-size: 12px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #DB6F2A; margin-bottom: 24px; }
+  .pp-hero-h { font-family: 'Poppins', sans-serif; font-size: clamp(32px, 4.4vw, 56px); font-weight: 500; line-height: 1.08; color: #ffffff; letter-spacing: -0.024em; margin-bottom: 0; }
+
+  .pp-body { padding: 64px 7% 96px; max-width: 920px; margin: 0 auto; }
+  .pp-meta {
+    border-top: 2px solid #DB6F2A;
+    border-bottom: 1px solid rgba(15, 74, 94, 0.18);
+    padding: 20px 0 22px;
+    margin-bottom: 56px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 32px;
+    row-gap: 10px;
+  }
+  .pp-meta-label { font-weight: 600; color: rgba(28, 46, 56, 0.65); letter-spacing: 0.12em; text-transform: uppercase; font-size: 11px; padding-top: 2px; }
+  .pp-meta-val { color: #1C2E38; font-size: 14px; line-height: 1.5; }
+
+  .pp-section { margin-bottom: 44px; }
+  .pp-section:last-child { margin-bottom: 0; }
+  .pp-section-h {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(20px, 1.8vw, 26px);
+    font-weight: 600;
+    color: #0F4A5E;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+  }
+  .pp-section p {
+    font-size: clamp(15px, 1.05vw, 16px);
+    line-height: 1.75;
+    color: #3d5a68;
+    margin-bottom: 14px;
+  }
+  .pp-section p:last-child { margin-bottom: 0; }
+  .pp-list { list-style: none; margin-top: 8px; }
+  .pp-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 14px;
+    font-size: clamp(15px, 1.05vw, 16px);
+    line-height: 1.7;
+    color: #3d5a68;
+  }
+  .pp-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 12px;
+    height: 1px;
+    background: #DB6F2A;
+  }
+  .pp-list li strong {
+    color: #0F4A5E;
+    font-weight: 600;
+  }
+
+  footer { background: #0F4A5E; padding: 28px 7%; }
+  .foot-min { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .foot-brand-link { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; text-decoration: none; transition: opacity 0.2s; }
+  .foot-brand-link:hover { opacity: 0.85; }
+  .foot-brand-link span { color: #ffffff; }
+  .foot-right { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .foot-link { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 500; text-decoration: none; transition: color 0.2s; }
+  .foot-link:hover { color: #DB6F2A; }
+  .foot-contact { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.92); font-weight: 500; text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid rgba(219, 111, 42, 0.55); display: inline-flex; align-items: center; gap: 10px; transition: color 0.2s, border-color 0.2s; }
+  .foot-contact:hover { color: #DB6F2A; border-bottom-color: #DB6F2A; }
+  .foot-contact-arrow { transition: transform 0.2s; display: inline-block; }
+  .foot-contact:hover .foot-contact-arrow { transform: translateX(3px); }
+
+  @media (max-width: 768px) {
+    .nav-r .nav-link, .nav-r .nav-cta { display: none; }
+    .nav-burger { display: flex; }
+    .pp-hero { padding: 56px 5% 44px; }
+    .pp-body { padding: 44px 5% 72px; }
+    .pp-meta { grid-template-columns: 1fr; row-gap: 14px; }
+    .pp-meta-label { padding-top: 0; }
+    .pp-section { margin-bottom: 36px; }
+    .pp-section-h { margin-bottom: 14px; }
+    footer { padding: 22px 5%; }
+    .foot-min { gap: 14px; }
+    .foot-brand-link { font-size: 18px; }
+    .foot-right { gap: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Sonder <span>&</span> Metric</a>
+  <div class="nav-spacer"></div>
+  <div class="nav-r">
+    <a href="/#services" class="nav-link">What we do</a>
+    <a href="/case-studies" class="nav-link">Case Studies</a>
+    <a href="/our-team" class="nav-link">Our Team</a>
+    <a href="mailto:info@sonderandmetric.com?subject=Search%20enquiry" class="nav-cta">Start a search</a>
+  </div>
+  <div class="nav-burger"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="pp-hero">
+  <div class="pp-hero-inner">
+    <div class="pp-hero-pre">Legal</div>
+    <h1 class="pp-hero-h">Privacy Policy</h1>
+  </div>
+</section>
+
+<section class="pp-body">
+  <div class="pp-meta">
+    <div class="pp-meta-label">VAT</div><div class="pp-meta-val">353538980</div>
+    <div class="pp-meta-label">Company No.</div><div class="pp-meta-val">10647585</div>
+    <div class="pp-meta-label">Registered Address</div><div class="pp-meta-val">Hanover House, 30&ndash;32 Charlotte Street, Manchester, England, M1 4FD</div>
+  </div>
+
+  <div class="pp-section">
+    <h2 class="pp-section-h">Introduction</h2>
+    <p>Sonder &amp; Metric Ltd (&ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;) is committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, and protect the personal data we obtain about you. Please read the following carefully to understand our views and practices regarding your personal data and how we will treat it.</p>
+  </div>
+
+  <div class="pp-section">
+    <h2 class="pp-section-h">Who We Are</h2>
+    <p>Sonder &amp; Metric is an executive search firm registered in Manchester, United Kingdom with the registration number 10647585. Our registered office is located at Hanover House, 30&ndash;32 Charlotte Street, Manchester, England, M1 4FD.</p>
+  </div>
+
+  <div class="pp-section">
+    <h2 class="pp-section-h">Information We Collect</h2>
+    <p>We may collect and process the following data about you:</p>
+    <ul class="pp-list">
+      <li><strong>Personal Identification Information:</strong> Name, address, email address, phone number, date of birth, and other contact details.</li>
+      <li><strong>Professional Information:</strong> CV, employment history, education background, skills, references, and other information relevant to your job search.</li>
+      <li><strong>Technical Data:</strong> IP address, browser type and version, time zone setting, browser plug-in types and versions, operating system, and platform.</li>
+      <li><strong>Usage Data:</strong> Information about how you use our website, products, and services.</li>
+    </ul>
+  </div>
+
+  <div class="pp-section">
+    <h2 class="pp-section-h">How We Collect Your Information</h2>
+    <p>We collect personal data from you in various ways, including:</p>
+    <ul class="pp-list">
+      <li><strong>Direct interactions:</strong> You may provide personal data when filling in forms on our website, corresponding with us by post, phone, email, or otherwise.</li>
+      <li><strong>Automated technologies:</strong> As you interact with our website, we may automatically collect technical data about your equipment, browsing actions, and patterns.</li>
+      <li><strong>Third parties:</strong> We may receive personal data about you from various third parties, such as business partners, technical, payment, and delivery services, advertising networks, analytics providers, search information providers, and credit reference agencies.</li>
+    </ul>
+  </div>
+
+  <div class="pp-section">
+    <h2 class="pp-section-h">How We Use Your Information</h2>
+    <p>We use the information we hold about you in the following ways:</p>
+    <ul class="pp-list">
+      <li>To provide our executive search services to you.</li>
+      <li>To notify you about changes to our service.</li>
+      <li>To ensure that content from our site is presented most effectively for you and your computer.</li>
+      <li>To administer our site and for internal operations, including troubleshooting, data analysis, testing, research, statistical, and survey purposes.</li>
+      <li>To improve our site to ensure that content is presented most effectively for you and your computer.</li>
+      <li>To allow you to participate in interactive features of our service, when you choose to do so.</li>
+      <li>As part of our efforts to keep our site safe and secure.</li>
+    </ul>
+  </div>
+
+  <div class="pp-section">
+    <h2 class="pp-section-h">Legal Basis for Processing Your Data</h2>
+    <p>We will only use your personal data when the law allows.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-min">
+    <a href="/" class="foot-brand-link">Sonder <span>&</span> Metric</a>
+    <div class="foot-right">
+      <a href="/privacy-policy" class="foot-link">Privacy Policy</a>
+      <a href="mailto:info@sonderandmetric.com" class="foot-contact">Contact us <span class="foot-contact-arrow">&rarr;</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.querySelector('nav');
+  let lastScroll = 0;
+  let navTicking = false;
+  const NAV_DELTA = 8;
+  window.addEventListener('scroll', () => {
+    if (!navTicking) {
+      window.requestAnimationFrame(() => {
+        const curr = window.scrollY;
+        const diff = curr - lastScroll;
+        if (curr > 20) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+        if (Math.abs(diff) > NAV_DELTA) {
+          if (curr > 220 && diff > 0) nav.classList.add('hidden');
+          else if (diff < 0) nav.classList.remove('hidden');
+          lastScroll = curr;
+        }
+        navTicking = false;
+      });
+      navTicking = true;
+    }
+  }, { passive: true });
+</script>
+</body>
+</html>
