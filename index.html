@@ -230,6 +230,76 @@
   .cards-bridge .card.reveal { transform: translateY(40px); }
   .cards-bridge .card.revealed { transform: translateY(0); }
 
+  .platforms {
+    background: #0F4A5E;
+    padding: 100px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .platforms-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 7%;
+  }
+  .platforms-pre {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.24em;
+    text-transform: uppercase; color: #DB6F2A;
+    margin-bottom: 18px;
+  }
+  .platforms-h {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(28px, 3.4vw, 44px);
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0;
+  }
+  .platforms-strip-mask {
+    position: relative;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 120px, #000 calc(100% - 120px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 120px, #000 calc(100% - 120px), transparent 100%);
+  }
+  .platforms-strip {
+    display: flex;
+    width: max-content;
+    animation: platforms-scroll 56s linear infinite;
+    align-items: center;
+  }
+  .platforms-strip:hover { animation-play-state: paused; }
+  .platforms-cell {
+    flex: 0 0 auto;
+    width: 220px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 32px;
+  }
+  .platforms-cell img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(1) brightness(0.5) invert(1);
+    mix-blend-mode: lighten;
+    opacity: 0.9;
+  }
+  .platforms-cell.boost img {
+    filter: grayscale(1) brightness(0.3) invert(1);
+  }
+  .platforms-cell.size-up { width: 150px; }
+  .platforms-cell.size-up img { transform: scale(1.35); }
+  @keyframes platforms-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .platforms-strip { animation: none; }
+  }
+
   .sectors {
     padding: 140px 7% 160px;
     position: relative; overflow: hidden;
@@ -348,6 +418,7 @@
     .cards-bridge-wrap { padding: 160px 7% 100px; }
     .cards-bridge { grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .card { min-height: 340px; padding: 26px 22px; }
+    .platforms { padding: 88px 0 96px; }
     .sectors-row { grid-template-columns: 1fr 1fr; }
     .sectors-body { grid-template-columns: 1fr 1fr; gap: 40px; }
     .sectors-header { margin-bottom: 56px; }
@@ -372,6 +443,10 @@
     .cards-bridge { grid-template-columns: 1fr; gap: 12px; }
     .card { padding: 24px 22px; min-height: 0; }
     .card-body { font-size: 14px; }
+    .platforms { padding: 72px 0 80px; }
+    .platforms-header { margin-bottom: 44px; }
+    .platforms-cell { width: 170px; height: 64px; margin: 0 22px; }
+    .platforms-cell.size-up { width: 120px; }
     .sectors { padding: 100px 5% 100px; }
     .sectors-body { grid-template-columns: 1fr; gap: 48px; }
     .sectors-header { margin-bottom: 48px; }
@@ -497,6 +572,33 @@
     </div>
   </div>
 </div>
+
+<section class="platforms">
+  <div class="platforms-header">
+    <div class="platforms-pre reveal" style="--d:0s">Track record</div>
+    <h2 class="platforms-h reveal" style="--d:0.15s">Platforms we&rsquo;ve helped build</h2>
+  </div>
+  <div class="platforms-strip-mask">
+    <div class="platforms-strip">
+      <div class="platforms-cell"><img src="logos/Apatura%20Logo.png" alt="Apatura"></div>
+      <div class="platforms-cell"><img src="logos/Bring%20Energy%20final%20logo.png" alt="Bring Energy"></div>
+      <div class="platforms-cell boost"><img src="logos/Conrad%20Energy%20Logo.png" alt="Conrad Energy"></div>
+      <div class="platforms-cell boost"><img src="logos/Fidra%20Logo.webp" alt="Fidra"></div>
+      <div class="platforms-cell"><img src="logos/Flexitricity%20Logo%20PNG.webp" alt="Flexitricity"></div>
+      <div class="platforms-cell"><img src="logos/gmt.svg" alt="GMT Energy"></div>
+      <div class="platforms-cell"><img src="logos/Velox%20Power%20logo.png" alt="Velox Power"></div>
+      <div class="platforms-cell boost size-up"><img src="logos/Vital%20Energi%20Logo.svg" alt="Vital Energi"></div>
+      <div class="platforms-cell"><img src="logos/Apatura%20Logo.png" alt="Apatura"></div>
+      <div class="platforms-cell"><img src="logos/Bring%20Energy%20final%20logo.png" alt="Bring Energy"></div>
+      <div class="platforms-cell boost"><img src="logos/Conrad%20Energy%20Logo.png" alt="Conrad Energy"></div>
+      <div class="platforms-cell boost"><img src="logos/Fidra%20Logo.webp" alt="Fidra"></div>
+      <div class="platforms-cell"><img src="logos/Flexitricity%20Logo%20PNG.webp" alt="Flexitricity"></div>
+      <div class="platforms-cell"><img src="logos/gmt.svg" alt="GMT Energy"></div>
+      <div class="platforms-cell"><img src="logos/Velox%20Power%20logo.png" alt="Velox Power"></div>
+      <div class="platforms-cell boost size-up"><img src="logos/Vital%20Energi%20Logo.svg" alt="Vital Energi"></div>
+    </div>
+  </div>
+</section>
 
 <section class="sectors">
   <div class="sectors-inner">
