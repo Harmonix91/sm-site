@@ -240,10 +240,20 @@
     position: relative;
     overflow: hidden;
   }
+  .platforms-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
   .platforms-header {
     text-align: center;
     margin-bottom: 100px;
     padding: 0 7%;
+    position: relative;
+    z-index: 2;
   }
   .platforms-pre {
     font-size: 12px; font-weight: 600; letter-spacing: 0.24em;
@@ -261,6 +271,7 @@
   }
   .platforms-strip-mask {
     position: relative;
+    z-index: 2;
     overflow: hidden;
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 120px, #000 calc(100% - 120px), transparent 100%);
     mask-image: linear-gradient(to right, transparent 0, #000 120px, #000 calc(100% - 120px), transparent 100%);
@@ -540,6 +551,7 @@
 </section>
 
 <section class="platforms">
+  <canvas class="platforms-canvas" id="platformsCanvas"></canvas>
   <div class="platforms-header">
     <div class="platforms-pre reveal" style="--d:0s">Track record</div>
     <h2 class="platforms-h reveal" style="--d:0.15s">Platforms we&rsquo;ve helped build</h2>
@@ -835,6 +847,86 @@
       });
     }, { threshold: 0.01 });
     hIo.observe(canvas);
+  })();
+
+  // ===== PLATFORMS HORIZONTAL WAVE BACKDROP =====
+  (function() {
+    const canvas = document.getElementById('platformsCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let elapsed = 0;
+    let last = performance.now();
+    let isVisible = false;
+    let rafId = null;
+
+    function resize() {
+      const w = canvas.offsetWidth, h = canvas.offsetHeight;
+      if (w === 0 || h === 0) return;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function frame(now) {
+      if (!isVisible) { rafId = null; return; }
+      const dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+      if (!reduceMotion) elapsed += dt * 0.35;
+
+      const w = canvas.offsetWidth;
+      const h = canvas.offsetHeight;
+      ctx.clearRect(0, 0, w, h);
+
+      const cy = h / 2;
+      const layers = 60;
+      const steps = 220;
+
+      for (let layer = 0; layer < layers; layer++) {
+        const tNorm = layer / (layers - 1);
+        const amp = 24 + tNorm * h * 0.18;
+        const wavelength = 600 - tNorm * 200;
+        const k = (Math.PI * 2) / wavelength;
+        const phase = -elapsed + tNorm * Math.PI * 0.4;
+        const opacity = 0.025 + tNorm * 0.10;
+
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(245, 240, 220, ' + opacity.toFixed(3) + ')';
+        ctx.lineWidth = 0.85;
+
+        for (let s = 0; s <= steps; s++) {
+          const x = (s / steps) * w;
+          const y = cy + amp * Math.sin(k * x + phase);
+          if (s === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      rafId = requestAnimationFrame(frame);
+    }
+
+    const pIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!isVisible) {
+            isVisible = true;
+            resize();
+            last = performance.now();
+            rafId = requestAnimationFrame(frame);
+          }
+        } else {
+          isVisible = false;
+          if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        }
+      });
+    }, { threshold: 0.01 });
+    pIo.observe(canvas);
   })();
 
   // ===== SECTORS SILHOUETTE MORPH (BESS -> turbines -> pipe -> data centre) =====
