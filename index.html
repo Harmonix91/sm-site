@@ -195,7 +195,17 @@
     font-size: 12px; font-weight: 600; letter-spacing: 0.24em;
     text-transform: uppercase; color: #DB6F2A;
     max-width: 1400px;
-    margin: 0 auto 36px;
+    margin: 0 auto 18px;
+  }
+  .services-h {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(22px, 2.2vw, 30px);
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: -0.012em;
+    line-height: 1.4;
+    max-width: 920px;
+    margin: 0 0 64px;
   }
   .cards-bridge {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
@@ -432,6 +442,7 @@
     .belief-body { margin-left: 24px; padding-left: 52px; }
     .belief-body::before { font-size: 160px; top: -42px; }
     .cards-bridge-wrap { padding: 110px 7% 100px; }
+    .services-h { margin-bottom: 52px; }
     .cards-bridge { grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .card { min-height: 340px; padding: 26px 22px; }
     .platforms { padding: 88px 0 96px; }
@@ -457,6 +468,7 @@
     .belief-meta { flex-direction: column; align-items: flex-start; gap: 18px; }
     .belief-stats { gap: 12px; }
     .cards-bridge-wrap { padding: 80px 5% 80px; }
+    .services-h { font-size: 19px; margin-bottom: 40px; }
     .cards-bridge { grid-template-columns: 1fr; gap: 12px; }
     .card { padding: 24px 22px; min-height: 0; }
     .card-body { font-size: 14px; }
@@ -580,6 +592,7 @@
 
 <div class="cards-bridge-wrap" id="services">
   <div class="services-pre reveal" style="--d:0s">Capabilities</div>
+  <h2 class="services-h reveal" style="--d:0.15s">Each engagement is scoped to where value gets created in the platform lifecycle &mdash; the pre-deal view, the critical hire, or the leadership build that scales the asset toward exit.</h2>
   <div class="cards-bridge">
     <div class="card reveal" style="--d:0s">
       <div class="card-num">01</div>
