@@ -109,22 +109,6 @@
     padding: 120px 7% 280px;
     position: relative; overflow: hidden;
   }
-  .belief-portrait {
-    position: absolute;
-    right: 10%;
-    bottom: 280px;
-    width: clamp(300px, 30vw, 460px);
-    height: auto;
-    max-height: 64vh;
-    z-index: 1;
-    filter: drop-shadow(0 14px 36px rgba(0, 0, 0, 0.45));
-    pointer-events: none;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-    transition-delay: 0.3s;
-  }
-  .belief-portrait.revealed { opacity: 1; transform: translateY(0); }
   .belief-inner { position: relative; z-index: 2; max-width: 1400px; width: 100%; }
   .belief-pre {
     font-size: 12px; font-weight: 600; letter-spacing: 0.24em;
@@ -354,9 +338,6 @@
 
   @keyframes scrollCue { 0% { top: -100%; } 100% { top: 100%; } }
 
-  @media (max-width: 1100px) {
-    .belief-portrait { display: none; }
-  }
   @media (max-width: 1024px) {
     .hero-h, .belief-h { font-size: clamp(34px, 5.4vw, 60px); }
     .hero-scroll { display: none; }
@@ -442,7 +423,6 @@
 </section>
 
 <section class="belief">
-  <img class="belief-portrait reveal" src="Josh%20podcast%20for%20website%20%20(1).png" alt="Josh Foulkes, Founder of Sonder & Metric">
   <div class="belief-inner">
     <div class="belief-pre reveal" style="--d:0s">The Thesis</div>
     <h2 class="belief-h">
