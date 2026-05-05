@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team — Sonder & Metric</title>
+<meta name="description" content="The specialist team behind Sonder & Metric — executive search across PE-backed sustainable infrastructure platforms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-style: normal; }
+  html { scroll-behavior: smooth; }
+  body { background: #0F4A5E; color: #1C2E38; font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1); transition-delay: var(--d, 0s); }
+  .revealed { opacity: 1; transform: translateY(0); }
+
+  .word-wrap { display: inline-block; overflow: hidden; vertical-align: baseline; padding-bottom: 0.18em; margin-bottom: -0.18em; }
+  .word-wrap .word { display: inline-block; transform: translateY(110%); transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1); transition-delay: var(--d, 0s); }
+  .word-wrap.revealed .word { transform: translateY(0); }
+  .word-wrap.revealed { opacity: 1; transform: none; }
+  .word-wrap.reveal { opacity: 1; transform: none; }
+
+  nav {
+    display: flex; align-items: center; padding: 0 5%;
+    background: #0F4A5E; position: sticky; top: 0; z-index: 100;
+    height: 72px; gap: 32px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease, backdrop-filter 0.3s ease;
+    will-change: transform;
+  }
+  nav.scrolled { background: rgba(15, 74, 94, 0.82); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); }
+  nav.hidden { transform: translateY(-100%); }
+  .logo { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; text-decoration: none; flex-shrink: 0; }
+  .logo span { color: #ffffff; }
+  .nav-spacer { flex: 1; }
+  .nav-r { display: flex; align-items: center; gap: 32px; }
+  .nav-link { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 500; text-decoration: none; position: relative; white-space: nowrap; transition: color 0.2s; }
+  .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: #DB6F2A; transition: width 0.25s; }
+  .nav-link:hover { color: #ffffff; }
+  .nav-link:hover::after { width: 100%; }
+  .nav-link.active { color: #ffffff; }
+  .nav-link.active::after { width: 100%; }
+  .nav-cta { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #0F4A5E; background: #ffffff; padding: 12px 24px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: opacity 0.2s, transform 0.15s; }
+  .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+  .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .nav-burger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,0.6); }
+
+  .team-hero {
+    padding: 120px 7% 100px;
+    position: relative; overflow: hidden;
+    min-height: 64vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    background: #0F4A5E;
+  }
+  .team-hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+  .team-hero-content { position: relative; z-index: 3; max-width: 1400px; text-align: center; }
+  .team-hero-pre { font-size: 12px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #DB6F2A; margin-bottom: 28px; }
+  .team-hero-h { font-family: 'Poppins', sans-serif; font-size: clamp(36px, 5.6vw, 76px); font-weight: 500; line-height: 1.05; color: #ffffff; margin-bottom: 32px; letter-spacing: -0.028em; }
+  .team-hero-sub { font-size: clamp(16px, 1.2vw, 19px); font-weight: 400; color: rgba(255,255,255,0.78); max-width: 720px; line-height: 1.65; margin: 0 auto; }
+
+  .team-grid-wrap { background: #0F4A5E; padding: 40px 7% 140px; }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .team-card {
+    background: #093744;
+    border-top: 4px solid #DB6F2A;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .team-photo {
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, #0F4A5E 0%, #062b35 100%);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .team-photo::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 70% 30%, rgba(219, 111, 42, 0.16) 0%, transparent 55%),
+      repeating-linear-gradient(45deg, rgba(245,240,220,0.025) 0px, rgba(245,240,220,0.025) 1px, transparent 1px, transparent 14px);
+    pointer-events: none;
+  }
+  .team-photo svg.team-photo-icon {
+    width: 30%; max-width: 130px;
+    color: rgba(245, 240, 220, 0.55);
+    position: relative; z-index: 1;
+    display: block;
+  }
+  .team-photo-label {
+    position: absolute;
+    bottom: 22px;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(245,240,220,0.4); font-weight: 500;
+    z-index: 1;
+  }
+  .team-content {
+    padding: 32px 32px 36px;
+    flex: 1;
+    display: flex; flex-direction: column;
+  }
+  .team-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(20px, 1.7vw, 26px);
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  .team-role {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #DB6F2A; font-weight: 600;
+    margin-bottom: 22px;
+  }
+  .team-bio {
+    font-size: clamp(14px, 1.05vw, 16px);
+    font-weight: 400;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.7;
+  }
+
+  .team-cta {
+    background: #093744; color: #ffffff;
+    padding: 100px 7% 110px;
+    text-align: center;
+    position: relative;
+  }
+  .team-cta-h { font-family: 'Poppins', sans-serif; font-size: clamp(26px, 2.8vw, 38px); font-weight: 500; color: #ffffff; line-height: 1.2; letter-spacing: -0.02em; max-width: 760px; margin: 0 auto 28px; }
+  .team-cta-sub { font-size: clamp(14px, 1vw, 16px); font-weight: 300; color: rgba(255,255,255,0.78); max-width: 600px; margin: 0 auto 40px; line-height: 1.65; }
+  .team-cta-link { display: inline-flex; align-items: center; gap: 12px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #ffffff; background: #DB6F2A; padding: 18px 32px; text-decoration: none; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 14px rgba(219, 111, 42, 0.32); }
+  .team-cta-link:hover { background: #c25f1f; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(219, 111, 42, 0.4); }
+  .team-cta-arrow { transition: transform 0.2s; display: inline-block; }
+  .team-cta-link:hover .team-cta-arrow { transform: translateX(4px); }
+
+  footer { background: #0F4A5E; padding: 28px 7%; }
+  .foot-min { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .foot-brand-link { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; text-decoration: none; transition: opacity 0.2s; }
+  .foot-brand-link:hover { opacity: 0.85; }
+  .foot-brand-link span { color: #ffffff; }
+  .foot-contact { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.92); font-weight: 500; text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid rgba(219, 111, 42, 0.55); display: inline-flex; align-items: center; gap: 10px; transition: color 0.2s, border-color 0.2s; }
+  .foot-contact:hover { color: #DB6F2A; border-bottom-color: #DB6F2A; }
+  .foot-contact-arrow { transition: transform 0.2s; display: inline-block; }
+  .foot-contact:hover .foot-contact-arrow { transform: translateX(3px); }
+
+  @media (max-width: 1024px) {
+    .team-hero-h { font-size: clamp(34px, 5.4vw, 60px); }
+    .team-grid { gap: 22px; }
+    .team-content { padding: 28px 26px 32px; }
+  }
+  @media (max-width: 900px) {
+    .team-grid { grid-template-columns: 1fr; gap: 20px; }
+  }
+  @media (max-width: 768px) {
+    .nav-r .nav-link, .nav-r .nav-cta { display: none; }
+    .nav-burger { display: flex; }
+    .team-hero { padding: 88px 5% 64px; min-height: 50vh; }
+    .team-hero-h { font-size: clamp(28px, 7.5vw, 44px); margin-bottom: 22px; line-height: 1.1; }
+    .team-hero-sub { font-size: 15px; line-height: 1.55; }
+    .team-grid-wrap { padding: 32px 5% 88px; }
+    .team-content { padding: 24px 22px 28px; }
+    .team-cta { padding: 72px 5% 80px; }
+    footer { padding: 22px 5%; }
+    .foot-min { gap: 14px; }
+    .foot-brand-link { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Sonder <span>&</span> Metric</a>
+  <div class="nav-spacer"></div>
+  <div class="nav-r">
+    <a href="/#services" class="nav-link">What we do</a>
+    <a href="/case-studies" class="nav-link">Case Studies</a>
+    <a href="/our-team" class="nav-link active">Our Team</a>
+    <a href="/about" class="nav-link">About</a>
+    <a href="mailto:info@sonderandmetric.com?subject=Search%20enquiry" class="nav-cta">Start a search</a>
+  </div>
+  <div class="nav-burger"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="team-hero">
+  <canvas class="team-hero-canvas" id="teamHeroCanvas"></canvas>
+  <div class="team-hero-content">
+    <div class="team-hero-pre reveal" style="--d:0s">The Team</div>
+    <h1 class="team-hero-h">
+      <span class="word-wrap reveal" style="--d:0.15s"><span class="word">The</span></span>
+      <span class="word-wrap reveal" style="--d:0.25s"><span class="word">people</span></span>
+      <span class="word-wrap reveal" style="--d:0.35s"><span class="word">behind</span></span>
+      <span class="word-wrap reveal" style="--d:0.45s"><span class="word">the</span></span>
+      <span class="word-wrap reveal" style="--d:0.55s"><span class="word">work.</span></span>
+    </h1>
+    <p class="team-hero-sub reveal" style="--d:0.8s">A small, specialist team focused on leadership for PE-backed sustainable infrastructure platforms.</p>
+  </div>
+</section>
+
+<section class="team-grid-wrap">
+  <div class="team-grid">
+
+    <article class="team-card reveal" style="--d:0s">
+      <div class="team-photo">
+        <svg class="team-photo-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="36" r="16"/>
+          <path d="M22 86 C 22 68, 36 58, 50 58 C 64 58, 78 68, 78 86"/>
+        </svg>
+        <div class="team-photo-label">Photo placeholder</div>
+      </div>
+      <div class="team-content">
+        <div class="team-name">[ Name ]</div>
+        <div class="team-role">[ Role ]</div>
+        <p class="team-bio">[ Short bio. Background, sector experience and what they bring to the work. Roughly two to three sentences sits comfortably here without crowding the layout. ]</p>
+      </div>
+    </article>
+
+    <article class="team-card reveal" style="--d:0.15s">
+      <div class="team-photo">
+        <svg class="team-photo-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="36" r="16"/>
+          <path d="M22 86 C 22 68, 36 58, 50 58 C 64 58, 78 68, 78 86"/>
+        </svg>
+        <div class="team-photo-label">Photo placeholder</div>
+      </div>
+      <div class="team-content">
+        <div class="team-name">[ Name ]</div>
+        <div class="team-role">[ Role ]</div>
+        <p class="team-bio">[ Short bio. Background, sector experience and what they bring to the work. Roughly two to three sentences sits comfortably here without crowding the layout. ]</p>
+      </div>
+    </article>
+
+    <article class="team-card reveal" style="--d:0s">
+      <div class="team-photo">
+        <svg class="team-photo-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="36" r="16"/>
+          <path d="M22 86 C 22 68, 36 58, 50 58 C 64 58, 78 68, 78 86"/>
+        </svg>
+        <div class="team-photo-label">Photo placeholder</div>
+      </div>
+      <div class="team-content">
+        <div class="team-name">[ Name ]</div>
+        <div class="team-role">[ Role ]</div>
+        <p class="team-bio">[ Short bio. Background, sector experience and what they bring to the work. Roughly two to three sentences sits comfortably here without crowding the layout. ]</p>
+      </div>
+    </article>
+
+    <article class="team-card reveal" style="--d:0.15s">
+      <div class="team-photo">
+        <svg class="team-photo-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="36" r="16"/>
+          <path d="M22 86 C 22 68, 36 58, 50 58 C 64 58, 78 68, 78 86"/>
+        </svg>
+        <div class="team-photo-label">Photo placeholder</div>
+      </div>
+      <div class="team-content">
+        <div class="team-name">[ Name ]</div>
+        <div class="team-role">[ Role ]</div>
+        <p class="team-bio">[ Short bio. Background, sector experience and what they bring to the work. Roughly two to three sentences sits comfortably here without crowding the layout. ]</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="team-cta">
+  <h2 class="team-cta-h reveal" style="--d:0.05s">Hiring leaders for an energy or infrastructure platform?</h2>
+  <p class="team-cta-sub reveal" style="--d:0.15s">Tell us about the brief. We&rsquo;ll share who we&rsquo;re seeing in the market and where the strongest candidates are sitting.</p>
+  <a href="mailto:info@sonderandmetric.com?subject=Search%20enquiry" class="team-cta-link reveal" style="--d:0.25s">Start a search <span class="team-cta-arrow">&rarr;</span></a>
+</section>
+
+<footer>
+  <div class="foot-min">
+    <a href="/" class="foot-brand-link">Sonder <span>&</span> Metric</a>
+    <a href="mailto:info@sonderandmetric.com" class="foot-contact">Contact us <span class="foot-contact-arrow">&rarr;</span></a>
+  </div>
+</footer>
+
+<script>
+  // ===== REVEAL ANIMATIONS =====
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 80px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ===== NAV SCROLL BEHAVIOUR =====
+  const nav = document.querySelector('nav');
+  let lastScroll = 0;
+  let navTicking = false;
+  const NAV_DELTA = 8;
+  window.addEventListener('scroll', () => {
+    if (!navTicking) {
+      window.requestAnimationFrame(() => {
+        const curr = window.scrollY;
+        const diff = curr - lastScroll;
+        if (curr > 20) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+        if (Math.abs(diff) > NAV_DELTA) {
+          if (curr > 220 && diff > 0) nav.classList.add('hidden');
+          else if (diff < 0) nav.classList.remove('hidden');
+          lastScroll = curr;
+        }
+        navTicking = false;
+      });
+      navTicking = true;
+    }
+  }, { passive: true });
+
+  // ===== TEAM HERO LISSAJOUS ANIMATION (looping figure-8, mirrors home page) =====
+  (function() {
+    const canvas = document.getElementById('teamHeroCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const keyframes = [
+      { a: 1, b: 2, ampX: 0.95, ampY: 0.55, phaseDiff: Math.PI / 2 },
+      { a: 1, b: 2, ampX: 1.00, ampY: 0.65, phaseDiff: Math.PI / 2 }
+    ];
+    const holdDur = 2.5;
+    const transitionDur = 5.5;
+    const driftSpeed = 0.25;
+
+    const segmentDur = holdDur + transitionDur;
+    const totalDur = segmentDur * keyframes.length;
+
+    let elapsed = 0;
+    let drift = 0;
+    let last = performance.now();
+    let isVisible = false;
+    let rafId = null;
+
+    function resize() {
+      const w = canvas.offsetWidth, h = canvas.offsetHeight;
+      if (w === 0 || h === 0) return;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function easeInOutCubic(x) {
+      return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+    }
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function currentParams() {
+      const cycleT = elapsed % totalDur;
+      const segIdx = Math.floor(cycleT / segmentDur);
+      const segT = cycleT - segIdx * segmentDur;
+      const cur = keyframes[segIdx];
+      const nxt = keyframes[(segIdx + 1) % keyframes.length];
+      if (segT < holdDur) {
+        return { a: cur.a, b: cur.b, ampX: cur.ampX, ampY: cur.ampY, phaseDiff: cur.phaseDiff };
+      }
+      const tt = (segT - holdDur) / transitionDur;
+      const e = easeInOutCubic(tt);
+      return {
+        a: lerp(cur.a, nxt.a, e),
+        b: lerp(cur.b, nxt.b, e),
+        ampX: lerp(cur.ampX, nxt.ampX, e),
+        ampY: lerp(cur.ampY, nxt.ampY, e),
+        phaseDiff: lerp(cur.phaseDiff, nxt.phaseDiff, e)
+      };
+    }
+
+    function frame(now) {
+      if (!isVisible) { rafId = null; return; }
+      const dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+      if (!reduceMotion) {
+        elapsed += dt;
+        drift += dt * driftSpeed;
+      }
+
+      const w = canvas.offsetWidth;
+      const h = canvas.offsetHeight;
+      ctx.clearRect(0, 0, w, h);
+
+      const p = currentParams();
+      const phaseX = p.phaseDiff + drift * 0.8;
+      const phaseY = drift * 0.6;
+
+      const cx = w / 2;
+      const cy = h * 0.55;
+      const rBase = Math.min(w * 0.46, h * 0.50);
+
+      const N = 80;
+      const steps = 280;
+
+      for (let i = 0; i < N; i++) {
+        const tNorm = i / (N - 1);
+        const scale = 0.15 + tNorm * 0.85;
+        const opacity = 0.08 + tNorm * 0.42;
+        const lineOffset = tNorm * 0.06;
+
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(245, 240, 220, ' + opacity.toFixed(3) + ')';
+        ctx.lineWidth = 0.9;
+
+        for (let s = 0; s <= steps; s++) {
+          const u = (s / steps) * Math.PI * 2;
+          const r = rBase * scale;
+          const x = cx + r * p.ampX * Math.sin(p.a * u + phaseX + lineOffset);
+          const y = cy + r * p.ampY * Math.sin(p.b * u + phaseY);
+          if (s === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+      rafId = requestAnimationFrame(frame);
+    }
+
+    const hIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!isVisible) {
+            isVisible = true;
+            resize();
+            last = performance.now();
+            rafId = requestAnimationFrame(frame);
+          }
+        } else {
+          isVisible = false;
+          if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        }
+      });
+    }, { threshold: 0.01 });
+    hIo.observe(canvas);
+  })();
+</script>
+</body>
+</html>
