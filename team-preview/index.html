@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animation options — Sonder & Metric</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: #0F4A5E; color: #ffffff; font-family: 'Poppins', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+  nav {
+    display: flex; align-items: center; padding: 0 5%;
+    background: #0F4A5E; position: sticky; top: 0; z-index: 100;
+    height: 72px; gap: 32px;
+  }
+  .logo { font-size: 22px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; text-decoration: none; }
+  .nav-spacer { flex: 1; }
+  .nav-back { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid rgba(219,111,42,0.55); }
+  .nav-back:hover { color: #DB6F2A; border-bottom-color: #DB6F2A; }
+
+  .intro { padding: 80px 7% 60px; max-width: 1100px; margin: 0 auto; }
+  .intro-pre { font-size: 12px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #DB6F2A; margin-bottom: 24px; }
+  .intro-h { font-size: clamp(28px, 4vw, 48px); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 22px; max-width: 780px; }
+  .intro-p { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 700px; }
+
+  .opt {
+    position: relative;
+    height: 70vh; min-height: 480px;
+    overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex; align-items: center;
+  }
+  .opt-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+  .opt-content { position: relative; z-index: 2; padding: 0 7%; max-width: 1100px; }
+  .opt-pre { font-size: 11px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: #DB6F2A; margin-bottom: 18px; font-variant-numeric: tabular-nums; }
+  .opt-h { font-family: 'Poppins', sans-serif; font-size: clamp(24px, 3vw, 38px); font-weight: 500; line-height: 1.15; letter-spacing: -0.018em; color: #ffffff; margin-bottom: 16px; }
+  .opt-desc { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.78); line-height: 1.6; max-width: 540px; }
+
+  .outro { padding: 80px 7% 80px; max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08); }
+  .outro p { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  footer { background: #093744; padding: 28px 7%; }
+  .foot { max-width: 1100px; margin: 0 auto; font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.04em; }
+
+  @media (max-width: 768px) {
+    .intro { padding: 56px 5% 40px; }
+    .opt { height: 60vh; min-height: 420px; }
+    .opt-content { padding: 0 5%; }
+    .outro { padding: 56px 5% 56px; }
+    footer { padding: 22px 5%; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Sonder <span>&</span> Metric</a>
+  <div class="nav-spacer"></div>
+  <a href="/our-team" class="nav-back">← Back to Our Team</a>
+</nav>
+
+<section class="intro">
+  <div class="intro-pre">Preview</div>
+  <h1 class="intro-h">Background animation options for the Our Team hero.</h1>
+  <p class="intro-p">Four candidates below. Each runs only while in view. Pick whichever feels right and I'll wire it into the actual page.</p>
+</section>
+
+<section class="opt">
+  <canvas class="opt-canvas" id="optA"></canvas>
+  <div class="opt-content">
+    <div class="opt-pre">Option A</div>
+    <h2 class="opt-h">Lissajous · 3:2 ratio</h2>
+    <p class="opt-desc">Same family as the homepage, different ratio. Trefoil-like rotation rather than the figure-8 sweep. Closest cousin to what's already there.</p>
+  </div>
+</section>
+
+<section class="opt">
+  <canvas class="opt-canvas" id="optB"></canvas>
+  <div class="opt-content">
+    <div class="opt-pre">Option B</div>
+    <h2 class="opt-h">Rose curve · morphing petals</h2>
+    <p class="opt-desc">Nested rose curves drifting between 6- and 10-lobed forms. Geometric but blooming. Reads as more organic than a Lissajous.</p>
+  </div>
+</section>
+
+<section class="opt">
+  <canvas class="opt-canvas" id="optC"></canvas>
+  <div class="opt-content">
+    <div class="opt-pre">Option C</div>
+    <h2 class="opt-h">Particle network · connections</h2>
+    <p class="opt-desc">Slow-drifting points with proximity lines. Reads as network / team — thematic fit for the page. Quiet, ambient.</p>
+  </div>
+</section>
+
+<section class="opt">
+  <canvas class="opt-canvas" id="optD"></canvas>
+  <div class="opt-content">
+    <div class="opt-pre">Option D</div>
+    <h2 class="opt-h">Flow field · trailing particles</h2>
+    <p class="opt-desc">Particles drifting through a slow vector field, leaving fading trails. Looks like wind or current. Most visually different from the rest of the site.</p>
+  </div>
+</section>
+
+<section class="outro">
+  <p>Tell me A, B, C, or D — or that none land and we should try something else.</p>
+</section>
+
+<footer>
+  <div class="foot">Sonder & Metric · animation preview</div>
+</footer>
+
+<script>
+  // ===== Shared: lazy-start each canvas only while in view =====
+  function lazyCanvas(canvasId, init) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let isVisible = false, rafId = null, last = performance.now();
+    let state = null;
+
+    function resize() {
+      const w = canvas.offsetWidth, h = canvas.offsetHeight;
+      if (!w || !h) return;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr);
+      if (state && state.onResize) state.onResize(w, h);
+    }
+    window.addEventListener('resize', resize);
+
+    function loop(now) {
+      if (!isVisible) { rafId = null; return; }
+      const dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+      const w = canvas.offsetWidth, h = canvas.offsetHeight;
+      state.frame(ctx, w, h, dt);
+      rafId = requestAnimationFrame(loop);
+    }
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!isVisible) {
+            if (!state) state = init(canvas);
+            isVisible = true;
+            resize();
+            last = performance.now();
+            rafId = requestAnimationFrame(loop);
+          }
+        } else {
+          isVisible = false;
+          if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        }
+      });
+    }, { threshold: 0.01 });
+    io.observe(canvas);
+  }
+
+  // ===== Option A: Lissajous 3:2 =====
+  lazyCanvas('optA', () => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const keyframes = [
+      { a: 3, b: 2, ampX: 0.85, ampY: 0.65, phaseDiff: Math.PI / 2 },
+      { a: 3, b: 2, ampX: 0.95, ampY: 0.75, phaseDiff: Math.PI / 2 + 0.4 }
+    ];
+    const holdDur = 2.5, transitionDur = 5.5, driftSpeed = 0.22;
+    const segmentDur = holdDur + transitionDur;
+    const totalDur = segmentDur * keyframes.length;
+    let elapsed = 0, drift = 0;
+
+    function ease(x) { return x < 0.5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3)/2; }
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function params() {
+      const cT = elapsed % totalDur;
+      const i = Math.floor(cT / segmentDur);
+      const t = cT - i * segmentDur;
+      const c = keyframes[i], n = keyframes[(i+1) % keyframes.length];
+      if (t < holdDur) return c;
+      const e = ease((t - holdDur) / transitionDur);
+      return { a: lerp(c.a, n.a, e), b: lerp(c.b, n.b, e), ampX: lerp(c.ampX, n.ampX, e), ampY: lerp(c.ampY, n.ampY, e), phaseDiff: lerp(c.phaseDiff, n.phaseDiff, e) };
+    }
+
+    return {
+      frame(ctx, w, h, dt) {
+        if (!reduceMotion) { elapsed += dt; drift += dt * driftSpeed; }
+        ctx.clearRect(0, 0, w, h);
+        const p = params();
+        const phaseX = p.phaseDiff + drift * 0.8, phaseY = drift * 0.6;
+        const cx = w/2, cy = h*0.55, rBase = Math.min(w*0.46, h*0.50);
+        const N = 70, steps = 240;
+        for (let i = 0; i < N; i++) {
+          const tn = i / (N-1);
+          const scale = 0.15 + tn * 0.85;
+          const opacity = 0.07 + tn * 0.40;
+          ctx.beginPath();
+          ctx.strokeStyle = 'rgba(245,240,220,' + opacity.toFixed(3) + ')';
+          ctx.lineWidth = 0.9;
+          for (let s = 0; s <= steps; s++) {
+            const u = (s/steps) * Math.PI * 2;
+            const r = rBase * scale;
+            const x = cx + r * p.ampX * Math.sin(p.a * u + phaseX + tn * 0.06);
+            const y = cy + r * p.ampY * Math.sin(p.b * u + phaseY);
+            if (s === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        }
+      }
+    };
+  });
+
+  // ===== Option B: Rose curve morph (k between 3 and 5) =====
+  lazyCanvas('optB', () => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const keyframes = [{ k: 3 }, { k: 5 }];
+    const holdDur = 2.0, transitionDur = 6.0;
+    const segmentDur = holdDur + transitionDur;
+    const totalDur = segmentDur * keyframes.length;
+    let elapsed = 0, drift = 0;
+
+    function ease(x) { return x < 0.5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3)/2; }
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function currentK() {
+      const cT = elapsed % totalDur;
+      const i = Math.floor(cT / segmentDur);
+      const t = cT - i * segmentDur;
+      const c = keyframes[i].k, n = keyframes[(i+1) % keyframes.length].k;
+      if (t < holdDur) return c;
+      return lerp(c, n, ease((t - holdDur) / transitionDur));
+    }
+
+    return {
+      frame(ctx, w, h, dt) {
+        if (!reduceMotion) { elapsed += dt; drift += dt * 0.4; }
+        ctx.clearRect(0, 0, w, h);
+        const cx = w/2, cy = h*0.55;
+        const rBase = Math.min(w*0.40, h*0.45);
+        const k = currentK();
+        const N = 50, steps = 220;
+        for (let layer = 0; layer < N; layer++) {
+          const tn = layer / (N - 1);
+          const layerPhase = drift + layer * 0.05;
+          const layerScale = 0.25 + tn * 0.75;
+          const opacity = 0.06 + tn * 0.38;
+          ctx.beginPath();
+          ctx.strokeStyle = 'rgba(245,240,220,' + opacity.toFixed(3) + ')';
+          ctx.lineWidth = 0.85;
+          for (let s = 0; s <= steps; s++) {
+            const θ = (s / steps) * Math.PI * 2;
+            const r = rBase * layerScale * Math.cos(k * θ + layerPhase);
+            const x = cx + r * Math.cos(θ);
+            const y = cy + r * Math.sin(θ);
+            if (s === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        }
+      }
+    };
+  });
+
+  // ===== Option C: Particle network =====
+  lazyCanvas('optC', () => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let particles = [];
+    let initW = 0, initH = 0;
+
+    function seed(w, h) {
+      const count = Math.min(50, Math.max(28, Math.floor(w * h / 22000)));
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 12,
+        vy: (Math.random() - 0.5) * 12
+      }));
+      initW = w; initH = h;
+    }
+
+    return {
+      onResize(w, h) { if (w !== initW || h !== initH) seed(w, h); },
+      frame(ctx, w, h, dt) {
+        if (!particles.length || w !== initW || h !== initH) seed(w, h);
+        ctx.clearRect(0, 0, w, h);
+        const speed = reduceMotion ? 0 : 1;
+        // update
+        for (const p of particles) {
+          p.x += p.vx * dt * speed;
+          p.y += p.vy * dt * speed;
+          if (p.x < -20) p.x = w + 20;
+          if (p.x > w + 20) p.x = -20;
+          if (p.y < -20) p.y = h + 20;
+          if (p.y > h + 20) p.y = -20;
+        }
+        // connections
+        const threshold = Math.min(w, h) * 0.22;
+        const t2 = threshold * threshold;
+        ctx.lineWidth = 0.6;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const d2 = dx*dx + dy*dy;
+            if (d2 < t2) {
+              const a = (1 - Math.sqrt(d2) / threshold) * 0.35;
+              ctx.strokeStyle = 'rgba(245,240,220,' + a.toFixed(3) + ')';
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        // dots
+        ctx.fillStyle = 'rgba(245,240,220,0.7)';
+        for (const p of particles) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    };
+  });
+
+  // ===== Option D: Flow field with fading trails =====
+  lazyCanvas('optD', () => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let particles = [];
+    let initW = 0, initH = 0;
+    let elapsed = 0;
+
+    function seed(w, h) {
+      const count = Math.min(80, Math.max(50, Math.floor(w * h / 14000)));
+      particles = Array.from({ length: count }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        life: Math.random() * 200
+      }));
+      initW = w; initH = h;
+    }
+
+    function angleAt(x, y, t) {
+      return (Math.sin(x * 0.0045 + t * 0.25) + Math.cos(y * 0.0045 + t * 0.18)) * Math.PI;
+    }
+
+    return {
+      onResize(w, h) { if (w !== initW || h !== initH) { seed(w, h); } },
+      frame(ctx, w, h, dt) {
+        if (!particles.length || w !== initW || h !== initH) seed(w, h);
+        if (!reduceMotion) elapsed += dt;
+        // fade existing pixels (transparent canvas friendly)
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.fillStyle = 'rgba(0,0,0,0.045)';
+        ctx.fillRect(0, 0, w, h);
+        ctx.globalCompositeOperation = 'source-over';
+        // step particles
+        const speed = reduceMotion ? 0 : 55;
+        ctx.fillStyle = 'rgba(245,240,220,0.55)';
+        for (const p of particles) {
+          const a = angleAt(p.x, p.y, elapsed);
+          p.x += Math.cos(a) * speed * dt;
+          p.y += Math.sin(a) * speed * dt;
+          p.life -= 1;
+          if (p.x < 0 || p.x > w || p.y < 0 || p.y > h || p.life < 0) {
+            p.x = Math.random() * w; p.y = Math.random() * h;
+            p.life = 120 + Math.random() * 180;
+          }
+          ctx.fillRect(p.x, p.y, 1.2, 1.2);
+        }
+      }
+    };
+  });
+</script>
+</body>
+</html>
