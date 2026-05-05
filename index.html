@@ -206,10 +206,18 @@
   .services-h {
     font-family: 'Poppins', sans-serif;
     font-size: clamp(22px, 2.2vw, 30px);
-    font-weight: 400;
+    font-weight: 500;
     color: #ffffff;
     letter-spacing: -0.012em;
-    line-height: 1.4;
+    line-height: 1.35;
+    max-width: 980px;
+    margin: 0 0 22px;
+  }
+  .services-sub {
+    font-size: clamp(15px, 1.15vw, 18px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.65;
     max-width: 920px;
     margin: 0 0 92px;
   }
@@ -452,7 +460,8 @@
     .belief-body { margin-left: 24px; padding-left: 52px; }
     .belief-body::before { font-size: 160px; top: -42px; }
     .cards-bridge-wrap { padding: 110px 7% 64px; }
-    .services-h { margin-bottom: 76px; }
+    .services-h { margin-bottom: 18px; }
+    .services-sub { margin-bottom: 76px; }
     .cards-bridge { grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .card { min-height: 340px; padding: 26px 22px; }
     .platforms { padding: 88px 0 96px; }
@@ -480,7 +489,8 @@
     .belief-stats { gap: 12px; align-items: stretch; }
     .belief-stats .stat-card { max-width: 100%; }
     .cards-bridge-wrap { padding: 80px 5% 56px; }
-    .services-h { font-size: 19px; margin-bottom: 56px; }
+    .services-h { font-size: 19px; margin-bottom: 14px; }
+    .services-sub { font-size: 14px; margin-bottom: 48px; }
     .cards-bridge { grid-template-columns: 1fr; gap: 12px; }
     .card { padding: 24px 22px; min-height: 0; }
     .card-body { font-size: 14px; }
@@ -606,7 +616,8 @@
 
 <div class="cards-bridge-wrap" id="services">
   <div class="services-pre reveal" style="--d:0s">Capabilities</div>
-  <h2 class="services-h reveal" style="--d:0.15s">Each engagement is scoped to where value gets created in the platform lifecycle &mdash; the pre-deal view, the critical hire, or the leadership build that scales a platform towards exit.</h2>
+  <h2 class="services-h reveal" style="--d:0.15s">We deliver decision-grade talent intelligence to Private Equity, Infrastructure Funds and their portfolio companies through executive search and advisory mandates.</h2>
+  <p class="services-sub reveal" style="--d:0.25s">Each engagement is scoped to where value gets created in the platform lifecycle: the pre-deal view, the critical hire, or the leadership build that scales a platform towards exit.</p>
   <div class="cards-bridge">
     <div class="card reveal" style="--d:0s">
       <div class="card-num">01</div>
