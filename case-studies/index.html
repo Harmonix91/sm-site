@@ -41,15 +41,6 @@
   .nav-link:hover::after { width: 100%; }
   .nav-link.active { color: #ffffff; }
   .nav-link.active::after { width: 100%; }
-  .nav-dropdown { position: relative; padding-bottom: 20px; margin-bottom: -20px; }
-  .nav-dropdown-trigger { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: color 0.2s; white-space: nowrap; }
-  .nav-dropdown-trigger span { font-size: 9px; transition: transform 0.2s; }
-  .nav-dropdown:hover .nav-dropdown-trigger { color: #ffffff; }
-  .nav-dropdown:hover .nav-dropdown-trigger span { transform: rotate(180deg); }
-  .nav-dropdown-menu { position: absolute; top: 100%; left: 0; background: #093744; min-width: 220px; display: none; flex-direction: column; border-top: 2px solid #DB6F2A; }
-  .nav-dropdown:hover .nav-dropdown-menu { display: flex; }
-  .nav-dropdown-item { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.55); padding: 14px 20px; text-decoration: none; display: block; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s, background 0.2s; }
-  .nav-dropdown-item:hover { color: #DB6F2A; background: #062b35; }
   .nav-cta { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #0F4A5E; background: #ffffff; padding: 12px 24px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: opacity 0.2s, transform 0.15s; }
   .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
   .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
@@ -151,6 +142,9 @@
   .foot-brand-link { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; text-decoration: none; transition: opacity 0.2s; }
   .foot-brand-link:hover { opacity: 0.85; }
   .foot-brand-link span { color: #ffffff; }
+  .foot-right { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .foot-link { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 500; text-decoration: none; transition: color 0.2s; }
+  .foot-link:hover { color: #DB6F2A; }
   .foot-contact { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.92); font-weight: 500; text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid rgba(219, 111, 42, 0.55); display: inline-flex; align-items: center; gap: 10px; transition: color 0.2s, border-color 0.2s; }
   .foot-contact:hover { color: #DB6F2A; border-bottom-color: #DB6F2A; }
   .foot-contact-arrow { transition: transform 0.2s; display: inline-block; }
@@ -167,7 +161,7 @@
     .case-visual-icon { width: 22%; max-width: 90px; }
   }
   @media (max-width: 768px) {
-    .nav-r .nav-link, .nav-r .nav-dropdown, .nav-r .nav-cta { display: none; }
+    .nav-r .nav-link, .nav-r .nav-cta { display: none; }
     .nav-burger { display: flex; }
     .cs-hero { padding: 80px 5% 64px; min-height: 50vh; }
     .cs-cases { padding: 60px 5% 32px; }
@@ -180,6 +174,7 @@
     footer { padding: 22px 5%; }
     .foot-min { gap: 14px; }
     .foot-brand-link { font-size: 18px; }
+    .foot-right { gap: 18px; }
   }
 </style>
 </head>
@@ -189,19 +184,10 @@
   <a href="/" class="logo">Sonder <span>&</span> Metric</a>
   <div class="nav-spacer"></div>
   <div class="nav-r">
-    <div class="nav-dropdown">
-      <div class="nav-dropdown-trigger">What we do <span>&#9662;</span></div>
-      <div class="nav-dropdown-menu">
-        <a href="/board-search" class="nav-dropdown-item">Board Search</a>
-        <a href="/fund-side" class="nav-dropdown-item">Fund-side Search</a>
-        <a href="/embedded-talent" class="nav-dropdown-item">Embedded Talent Partnership</a>
-        <a href="/transaction-search" class="nav-dropdown-item">Transaction Search</a>
-      </div>
-    </div>
+    <a href="/#services" class="nav-link">What we do</a>
     <a href="/case-studies" class="nav-link active">Case Studies</a>
-    <a href="/approach" class="nav-link">Approach</a>
-    <a href="/about" class="nav-link">About</a>
-    <a href="/contact" class="nav-cta">Start a search</a>
+    <a href="/our-team" class="nav-link">Our Team</a>
+    <a href="mailto:info@sonderandmetric.com?subject=Search%20enquiry" class="nav-cta">Start a search</a>
   </div>
   <div class="nav-burger"><span></span><span></span><span></span></div>
 </nav>
@@ -329,7 +315,7 @@
       <div class="case-num">04</div>
       <div class="case-eyebrow">Battery Storage &middot; Greenfield Build-Out</div>
       <h2 class="case-title">World&rsquo;s Largest Single-Site BESS Project</h2>
-      <p class="case-body">Engaged to build out the operating team for the world&rsquo;s largest single-site battery storage project. The Station Director was secured against a small pool of UK candidates with grid-scale BESS commissioning experience; the wider mandate covers four direct management reports and the broader site operating team.</p>
+      <p class="case-body">Engaged to build out the operating team for the world&rsquo;s largest single-site battery storage project. The Station Director was secured against a small pool of candidates with grid-scale BESS commissioning experience; the wider mandate covers four direct management reports and the broader site operating team.</p>
       <div class="case-stats">
         <div class="stat"><div class="stat-num">&pound;750m</div><div class="stat-label">Capital Investment</div></div>
         <div class="stat"><div class="stat-num">1.45 GW</div><div class="stat-label">Project Capacity</div></div>
@@ -361,14 +347,17 @@
 <section class="cs-cta">
   <h2 class="cs-cta-h reveal" style="--d:0.05s">Hiring leaders for an energy or infrastructure platform?</h2>
   <p class="cs-cta-sub reveal" style="--d:0.15s">Tell us about the brief. We&rsquo;ll share who we&rsquo;re seeing in the market and where the strongest candidates are sitting.</p>
-  <a href="/contact" class="cs-cta-link reveal" style="--d:0.25s">Start a search <span class="cs-cta-arrow">&rarr;</span></a>
-  <div class="cs-cta-email reveal" style="--d:0.35s">or email <a href="mailto:josh@sonderandmetric.com">josh@sonderandmetric.com</a></div>
+  <a href="mailto:info@sonderandmetric.com?subject=Search%20enquiry" class="cs-cta-link reveal" style="--d:0.25s">Start a search <span class="cs-cta-arrow">&rarr;</span></a>
+  <div class="cs-cta-email reveal" style="--d:0.35s">or email <a href="mailto:info@sonderandmetric.com">info@sonderandmetric.com</a></div>
 </section>
 
 <footer>
   <div class="foot-min">
     <a href="/" class="foot-brand-link">Sonder <span>&</span> Metric</a>
-    <a href="mailto:info@sonderandmetric.com" class="foot-contact">Contact us <span class="foot-contact-arrow">&rarr;</span></a>
+    <div class="foot-right">
+      <a href="/privacy-policy" class="foot-link">Privacy Policy</a>
+      <a href="mailto:info@sonderandmetric.com" class="foot-contact">Contact us <span class="foot-contact-arrow">&rarr;</span></a>
+    </div>
   </div>
 </footer>
 
