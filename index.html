@@ -6,6 +6,7 @@
 <title>Sonder & Metric — Executive Search across Sustainable Infrastructure</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-style: normal; }
@@ -594,22 +595,22 @@
   </div>
   <div class="platforms-strip-mask">
     <div class="platforms-strip">
-      <div class="platforms-cell"><img src="logos/Apatura%20Logo.png" alt="Apatura"></div>
-      <div class="platforms-cell"><img src="logos/Bring%20Energy%20final%20logo.png" alt="Bring Energy"></div>
-      <div class="platforms-cell boost"><img src="logos/Conrad%20Energy%20Logo.png" alt="Conrad Energy"></div>
-      <div class="platforms-cell boost"><img src="logos/Fidra%20Logo.webp" alt="Fidra"></div>
-      <div class="platforms-cell"><img src="logos/Flexitricity%20Logo%20PNG.webp" alt="Flexitricity"></div>
-      <div class="platforms-cell"><img src="logos/gmt.svg" alt="GMT Energy"></div>
-      <div class="platforms-cell"><img src="logos/Velox%20Power%20logo.png" alt="Velox Power"></div>
-      <div class="platforms-cell boost size-up"><img src="logos/Vital%20Energi%20Logo.svg" alt="Vital Energi"></div>
-      <div class="platforms-cell"><img src="logos/Apatura%20Logo.png" alt="Apatura"></div>
-      <div class="platforms-cell"><img src="logos/Bring%20Energy%20final%20logo.png" alt="Bring Energy"></div>
-      <div class="platforms-cell boost"><img src="logos/Conrad%20Energy%20Logo.png" alt="Conrad Energy"></div>
-      <div class="platforms-cell boost"><img src="logos/Fidra%20Logo.webp" alt="Fidra"></div>
-      <div class="platforms-cell"><img src="logos/Flexitricity%20Logo%20PNG.webp" alt="Flexitricity"></div>
-      <div class="platforms-cell"><img src="logos/gmt.svg" alt="GMT Energy"></div>
-      <div class="platforms-cell"><img src="logos/Velox%20Power%20logo.png" alt="Velox Power"></div>
-      <div class="platforms-cell boost size-up"><img src="logos/Vital%20Energi%20Logo.svg" alt="Vital Energi"></div>
+      <div class="platforms-cell"><img loading="lazy" decoding="async" src="logos/Apatura%20Logo.png" alt="Apatura"></div>
+      <div class="platforms-cell"><img loading="lazy" decoding="async" src="logos/Bring%20Energy%20final%20logo.png" alt="Bring Energy"></div>
+      <div class="platforms-cell boost"><img loading="lazy" decoding="async" src="logos/Conrad%20Energy%20Logo.png" alt="Conrad Energy"></div>
+      <div class="platforms-cell boost"><img loading="lazy" decoding="async" src="logos/Fidra%20Logo.webp" alt="Fidra"></div>
+      <div class="platforms-cell"><img loading="lazy" decoding="async" src="logos/Flexitricity%20Logo%20PNG.webp" alt="Flexitricity"></div>
+      <div class="platforms-cell"><img loading="lazy" decoding="async" src="logos/gmt.svg" alt="GMT Energy"></div>
+      <div class="platforms-cell"><img loading="lazy" decoding="async" src="logos/Velox%20Power%20logo.png" alt="Velox Power"></div>
+      <div class="platforms-cell boost size-up"><img loading="lazy" decoding="async" src="logos/Vital%20Energi%20Logo.svg" alt="Vital Energi"></div>
+      <div class="platforms-cell"><img loading="lazy" decoding="async" src="logos/Apatura%20Logo.png" alt="Apatura"></div>
+      <div class="platforms-cell"><img loading="lazy" decoding="async" src="logos/Bring%20Energy%20final%20logo.png" alt="Bring Energy"></div>
+      <div class="platforms-cell boost"><img loading="lazy" decoding="async" src="logos/Conrad%20Energy%20Logo.png" alt="Conrad Energy"></div>
+      <div class="platforms-cell boost"><img loading="lazy" decoding="async" src="logos/Fidra%20Logo.webp" alt="Fidra"></div>
+      <div class="platforms-cell"><img loading="lazy" decoding="async" src="logos/Flexitricity%20Logo%20PNG.webp" alt="Flexitricity"></div>
+      <div class="platforms-cell"><img loading="lazy" decoding="async" src="logos/gmt.svg" alt="GMT Energy"></div>
+      <div class="platforms-cell"><img loading="lazy" decoding="async" src="logos/Velox%20Power%20logo.png" alt="Velox Power"></div>
+      <div class="platforms-cell boost size-up"><img loading="lazy" decoding="async" src="logos/Vital%20Energi%20Logo.svg" alt="Vital Energi"></div>
     </div>
   </div>
 </section>
@@ -799,6 +800,8 @@
     }
     resize();
     window.addEventListener('resize', resize);
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(resize).observe(canvas);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
 
     function easeInOutCubic(x) {
       return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
@@ -846,8 +849,8 @@
       const cy = h * 0.55;
       const rBase = Math.min(w * 0.46, h * 0.50);
 
-      const N = 80;
-      const steps = 280;
+      const N = 40;
+      const steps = 220;
 
       for (let i = 0; i < N; i++) {
         const tNorm = i / (N - 1);
@@ -913,6 +916,8 @@
     }
     resize();
     window.addEventListener('resize', resize);
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(resize).observe(canvas);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
 
     function frame(now) {
       if (!isVisible) { rafId = null; return; }
@@ -925,8 +930,8 @@
       ctx.clearRect(0, 0, w, h);
 
       const cy = h * 0.66;
-      const layers = 60;
-      const steps = 220;
+      const layers = 30;
+      const steps = 180;
 
       for (let layer = 0; layer < layers; layer++) {
         const tNorm = layer / (layers - 1);
@@ -1022,6 +1027,8 @@
     }
     resize();
     window.addEventListener('resize', resize);
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(resize).observe(canvas);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
 
     function currentShape() {
       const cycleT = elapsed % totalDur;
@@ -1061,7 +1068,7 @@
 
       const shape = currentShape();
 
-      const layers = 80;
+      const layers = 40;
       for (let layer = 0; layer < layers; layer++) {
         const tNorm = layer / (layers - 1);
         const scale = (0.15 + tNorm * 0.85) * baseScale;
