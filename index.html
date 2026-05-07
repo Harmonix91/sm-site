@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sonder & Metric — Executive Search across Sustainable Infrastructure</title>
+<title>Sonder & Metric — Executive Search across Real Asset Platforms</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
@@ -390,7 +390,7 @@
     font-size: clamp(16px, 1.15vw, 19px); font-weight: 400;
     color: rgba(255,255,255,0.78); line-height: 1.65;
     max-width: 720px;
-    margin-bottom: 0;
+    margin: 28px 0 0;
   }
   .sectors-list {
     margin-bottom: 40px;
@@ -661,27 +661,28 @@
     <div class="sectors-header">
       <div class="sectors-pre reveal" style="--d:0.1s">Where We Focus</div>
       <h2 class="sectors-h reveal" style="--d:0.2s">
-        <span class="sectors-h-line">We work across Sustainable Infrastructure,</span>
-        <span class="sectors-h-line">serving the platforms delivering a better tomorrow.</span>
+        <span class="sectors-h-line">We work across Real Asset Platforms,</span>
+        <span class="sectors-h-line">where leadership is the value creation lever.</span>
       </h2>
+      <p class="sectors-sub reveal" style="--d:0.32s">We focus on the executives who carry the value creation plan: Heads of Asset Management, Portfolio Directors, and Executive platform leadership.</p>
     </div>
     <div class="sectors-body">
       <div class="sectors-content">
         <div class="sectors-list reveal" style="--d:0.45s">
           <div class="sectors-row">
-            <div class="sectors-row-name">Power &amp; Storage</div>
-            <div class="sectors-row-desc">Renewables, BESS, Generation &amp; Flexibility</div>
+            <div class="sectors-row-name">Power &amp; Utilities</div>
+            <div class="sectors-row-desc">Renewables, storage, networks, heat &amp; water</div>
           </div>
           <div class="sectors-row">
-            <div class="sectors-row-name">Utilities &amp; Grid</div>
-            <div class="sectors-row-desc">Transmission, distribution, heat networks, water, waste</div>
+            <div class="sectors-row-name">Infrastructure</div>
+            <div class="sectors-row-desc">Transport, social and economic infrastructure</div>
           </div>
           <div class="sectors-row">
-            <div class="sectors-row-name">Infrastructure Services</div>
-            <div class="sectors-row-desc">EPC, O&amp;M, technical services</div>
+            <div class="sectors-row-name">Critical Facilities</div>
+            <div class="sectors-row-desc">Industrial, mission-critical operations, healthcare</div>
           </div>
           <div class="sectors-row">
-            <div class="sectors-row-name">Digital Infrastructure</div>
+            <div class="sectors-row-name">Digital</div>
             <div class="sectors-row-desc">Data centres, fibre, towers</div>
           </div>
         </div>
@@ -1031,9 +1032,9 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
 
     function currentShape() {
-      const cycleT = elapsed % totalDur;
-      const segIdx = Math.floor(cycleT / segDur);
-      const segT = cycleT - segIdx * segDur;
+      const cycleT = elapsed % segDur;
+      const segIdx = Math.floor(elapsed / segDur) % shapes.length;
+      const segT = cycleT;
       const cur = shapes[segIdx];
       const nxt = shapes[(segIdx + 1) % shapes.length];
 
