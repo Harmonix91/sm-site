@@ -17,13 +17,6 @@
     color: #1C2E38; 
     font-family: 'Poppins', sans-serif; 
     -webkit-font-smoothing: antialiased; 
-    line-height: 1.6;
-  }
-
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 80px 7% 100px;
   }
 
   .back-link {
@@ -35,21 +28,19 @@
     text-transform: uppercase;
     color: rgba(255,255,255,0.6);
     text-decoration: none;
-    margin-bottom: 48px;
+    padding: 24px 7%;
     font-weight: 500;
     transition: color 0.2s;
   }
   .back-link:hover { color: #ffffff; }
 
-  .hero-section {
+  .hero {
+    padding: 80px 7% 100px;
     text-align: center;
-    margin-bottom: 80px;
-    padding-bottom: 60px;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
   }
 
   .podcast-title {
-    font-size: clamp(40px, 5.5vw, 64px);
+    font-size: clamp(48px, 6vw, 72px);
     font-weight: 500;
     color: #ffffff;
     letter-spacing: -0.02em;
@@ -58,107 +49,100 @@
   }
 
   .podcast-tagline {
-    font-size: clamp(16px, 1.8vw, 22px);
+    font-size: clamp(18px, 2vw, 24px);
     font-weight: 400;
     color: rgba(255,255,255,0.75);
     line-height: 1.5;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
-  /* IMAGE PLACEHOLDER STYLING */
-  .img-placeholder {
-    background: rgba(255,255,255,0.08);
-    border: 2px dashed rgba(255,255,255,0.25);
-    border-radius: 4px;
-    display: flex;
+  /* WIDE SECTION LAYOUT */
+  .section {
+    padding: 80px 7%;
+  }
+
+  .section.alt {
+    background: rgba(255,255,255,0.03);
+  }
+
+  .section-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
     align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 20px;
-    margin: 40px auto;
   }
 
-  .img-placeholder.hero-img {
-    width: 100%;
-    max-width: 600px;
-    height: 300px;
+  .section-inner.reverse {
+    direction: rtl;
   }
 
-  .img-placeholder.profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin: 40px auto 30px;
+  .section-inner.reverse > * {
+    direction: ltr;
   }
 
-  section {
-    margin-bottom: 80px;
-  }
-
-  .section-title {
-    font-size: clamp(24px, 2.8vw, 36px);
+  .section-content h2 {
+    font-size: clamp(28px, 3.5vw, 42px);
     font-weight: 600;
     color: #ffffff;
     letter-spacing: -0.015em;
     margin-bottom: 24px;
-    line-height: 1.2;
+    line-height: 1.15;
   }
 
-  .section-subtitle {
-    font-size: clamp(18px, 1.5vw, 22px);
-    font-weight: 500;
-    color: #DB6F2A;
-    letter-spacing: -0.01em;
-    margin-bottom: 16px;
-    margin-top: 32px;
-  }
-
-  p {
-    font-size: clamp(15px, 1.15vw, 17px);
+  .section-content p {
+    font-size: clamp(16px, 1.2vw, 18px);
     color: rgba(255,255,255,0.85);
-    line-height: 1.75;
-    margin-bottom: 20px;
+    line-height: 1.7;
+    margin-bottom: 18px;
   }
 
-  p:last-child {
+  .section-content p:last-child {
     margin-bottom: 0;
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 24px 0;
-  }
-
-  ul li {
-    font-size: clamp(15px, 1.15vw, 17px);
-    color: rgba(255,255,255,0.85);
-    line-height: 1.75;
-    padding-left: 28px;
-    position: relative;
-    margin-bottom: 12px;
-  }
-
-  ul li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: #DB6F2A;
-    font-weight: 600;
-  }
-
-  .cta-section {
-    background: rgba(255,255,255,0.06);
-    border-left: 4px solid #DB6F2A;
+  /* IMAGE PLACEHOLDERS */
+  .img-box {
+    background: rgba(255,255,255,0.08);
+    border: 2px dashed rgba(255,255,255,0.25);
+    border-radius: 8px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
     padding: 40px;
-    margin: 60px 0;
   }
 
-  .cta-section .section-title {
+  .img-box.compact {
+    min-height: 300px;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: rgba(255,255,255,0.05);
+    border-top: 4px solid #DB6F2A;
+    padding: 60px 7%;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+    color: #ffffff;
     margin-bottom: 20px;
+  }
+
+  .cta-section p {
+    font-size: clamp(17px, 1.3vw, 20px);
+    color: rgba(255,255,255,0.85);
+    max-width: 700px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
   }
 
   .cta-button {
@@ -171,10 +155,9 @@
     font-weight: 600;
     color: #ffffff;
     background: #DB6F2A;
-    padding: 16px 32px;
+    padding: 18px 36px;
     text-decoration: none;
     transition: background 0.2s, transform 0.15s;
-    margin-top: 20px;
   }
 
   .cta-button:hover {
@@ -182,152 +165,125 @@
     transform: translateY(-1px);
   }
 
-  .host-section {
-    background: rgba(255,255,255,0.04);
-    padding: 50px 40px;
-    margin: 60px 0;
-  }
+  @media (max-width: 1024px) {
+    .section-inner {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
 
-  .host-content {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
+    .section-inner.reverse {
+      direction: ltr;
+    }
+
+    .img-box {
+      min-height: 300px;
+    }
   }
 
   @media (max-width: 768px) {
-    .container {
-      padding: 60px 5% 80px;
+    .hero {
+      padding: 60px 5% 70px;
     }
 
-    .hero-section {
-      margin-bottom: 60px;
-      padding-bottom: 40px;
+    .section {
+      padding: 60px 5%;
     }
 
-    section {
-      margin-bottom: 60px;
+    .section-inner {
+      gap: 40px;
     }
 
-    .cta-section, .host-section {
-      padding: 30px 24px;
+    .img-box {
+      min-height: 250px;
     }
 
-    .img-placeholder.hero-img {
-      height: 200px;
-    }
-
-    .img-placeholder.profile-img {
-      width: 150px;
-      height: 150px;
+    .cta-section {
+      padding: 50px 5%;
     }
   }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <a href="./" class="back-link">← Back to Sonder & Metric</a>
+<a href="./" class="back-link">← Back to Sonder & Metric</a>
 
-  <div class="hero-section">
-    <h1 class="podcast-title">Real Assets, Real Leaders</h1>
-    <p class="podcast-tagline">The podcast for Portfolio Directors and Heads of Asset Management who create value through revenue-generating assets</p>
-    
-    <!-- HERO IMAGE PLACEHOLDER -->
-    <div class="img-placeholder hero-img">
-      📷 ADD HERO IMAGE HERE<br>
-      (Recommended: 1200x600px)<br>
-      Upload to /images/ folder
+<div class="hero">
+  <h1 class="podcast-title">Real Assets, Real Leaders</h1>
+  <p class="podcast-tagline">Conversations with Portfolio Directors and Heads of Asset Management who create value through real asset platforms</p>
+</div>
+
+<!-- SECTION 1: WHAT IT IS -->
+<div class="section">
+  <div class="section-inner">
+    <div class="section-content">
+      <h2>Asset Management Leaders. Real Conversations.</h2>
+      <p>Portfolio Directors and Heads of Asset Management across energy, infrastructure, facilities, and industrial platforms — talking about how they manage their assets, tie their work to value creation, and gain recognition from senior leadership.</p>
+      <p>Not theory. Real stories from people doing the work.</p>
+    </div>
+    <div class="img-box">
+      📷 IMAGE 1<br>
+      Suggested: Asset management visual<br>
+      or portfolio overview graphic<br>
+      (Recommended: 800x500px)
     </div>
   </div>
+</div>
 
-  <section>
-    <h2 class="section-title">What This Is</h2>
-    <p>A conversation series with the executives who manage portfolios of physical assets — energy, infrastructure, facilities, industrial — and drive value creation from them.</p>
-    <p>We're talking to Portfolio Directors, Heads of Asset Management, and the platform leaders they work with. Not about theory. About what actually works. What it takes to align your work to value creation. How you earn the economics that reflect your contribution. The conversations that matter but rarely happen in public.</p>
-    <p>This is for operators, by an operator.</p>
-  </section>
-
-  <section>
-    <h2 class="section-title">Why This Exists</h2>
-    <p>Nobody talks openly about how asset management leaders prove their value and get compensated for it. The secrecy helps the people with leverage. It hurts the people trying to figure out what's normal to ask for.</p>
-    <p>This podcast breaks that silence. Real conversations with leaders who've earned meaningful equity, carry, or performance-based compensation — asking what they actually did to get there, how the conversation happened, and what they'd tell someone in their position now.</p>
-    <p>The goal: help the next generation of asset management leaders understand what it takes. Not guesswork. Lived experience.</p>
-  </section>
-
-  <section>
-    <h2 class="section-title">Who We're Looking For</h2>
-    
-    <h3 class="section-subtitle">Portfolio Directors and Heads of Asset Management who:</h3>
-    <ul>
-      <li>Manage portfolios of revenue-generating physical assets (energy, infrastructure, facilities, industrial)</li>
-      <li>Have earned meaningful economics (equity, carry, performance comp tied to value creation)</li>
-      <li>Are willing to share honestly about their journey — the negotiations, the turning points, what worked and what didn't</li>
-      <li>Want to help others navigate the same path</li>
-    </ul>
-
-    <h3 class="section-subtitle">Also interested in:</h3>
-    <ul>
-      <li>Platform CEOs/CFOs/COOs who work closely with Portfolio Directors and can speak to the relationship</li>
-      <li>Fund-side executives who've built or managed asset management functions</li>
-    </ul>
-
-    <p>Post-exit or established leaders preferred — you're at a point where you can be candid in ways people still building their careers can't be.</p>
-  </section>
-
-  <section>
-    <h2 class="section-title">The Conversation</h2>
-    <p>Each episode is 45-60 minutes, edited to 30-40 minutes of the most valuable content.</p>
-
-    <h3 class="section-subtitle">Topics we cover:</h3>
-    <ul>
-      <li>Your journey into asset management / portfolio leadership</li>
-      <li>When you realized your compensation should be tied to value creation, not just performance</li>
-      <li>How you aligned your work to drive value (not just keep assets running)</li>
-      <li>The conversation with your board/GP about equity, carry, or performance comp — what you said, how they responded</li>
-      <li>What you got, and what you'd do differently knowing what you know now</li>
-      <li>What you'd tell someone in your position today</li>
-    </ul>
-
-    <h3 class="section-subtitle">What you control:</h3>
-    <ul>
-      <li>Questions sent beforehand (no surprises)</li>
-      <li>Final edit review before it goes live</li>
-      <li>How specific you get about numbers (ranges work fine)</li>
-      <li>Whether you want to name companies/funds or keep it principles-based</li>
-    </ul>
-
-    <p>This isn't gotcha journalism. It's creating the resource we all wish existed when we were starting out.</p>
-  </section>
-
-  <section>
-    <h2 class="section-title">Why Participate</h2>
-    <p><strong>Your story helps people.</strong> The operators who listen aren't thinking you're bragging — they're thinking "how do I do that?" You're teaching, not showing off.</p>
-    <p><strong>You're breaking new ground.</strong> Nobody else is having these conversations publicly. The first leaders willing to share set the tone for everyone who follows.</p>
-    <p><strong>You join a community.</strong> Other guests, other leaders in asset management who are all trying to figure out the same things. This becomes a network, not just a podcast.</p>
-    <p><strong>You control the narrative.</strong> This is you telling your story on your terms. Questions upfront, edit review, your choice on specifics.</p>
-  </section>
-
-  <div class="host-section">
-    <!-- PROFILE IMAGE PLACEHOLDER -->
-    <div class="img-placeholder profile-img">
-      📷 ADD PROFILE PHOTO HERE<br>
-      (200x200px circle)
+<!-- SECTION 2: WHO WE'RE TALKING TO -->
+<div class="section alt">
+  <div class="section-inner reverse">
+    <div class="section-content">
+      <h2>Who We're Looking For</h2>
+      <p>Leaders managing revenue-generating asset portfolios who can talk about how they align their work to value creation initiatives and how they've gained standing with boards, GPs, and senior leadership.</p>
+      <p>Post-exit leaders, current Portfolio Directors, Heads of Asset Management — people willing to share what actually worked.</p>
     </div>
-
-    <div class="host-content">
-      <h2 class="section-title">About the Host</h2>
-      <p><strong>Josh Foulkes</strong> places Portfolio Directors and Heads of Asset Management across energy, infrastructure, and real assets. He's had these conversations privately with dozens of executives — about equity, compensation, value creation, and what it takes to earn standing as a partner, not just an employee.</p>
-      <p>The difference now: making those insights public so the next generation of asset management leaders can learn from them.</p>
-      <p>Based in Manchester, UK. Working across Europe.</p>
+    <div class="img-box">
+      📷 IMAGE 2<br>
+      Suggested: Professional headshot grid<br>
+      or leadership meeting visual<br>
+      (Recommended: 800x500px)
     </div>
   </div>
+</div>
 
-  <div class="cta-section">
-    <h2 class="section-title">Get Involved</h2>
-    <p>If you're a Portfolio Director, Head of Asset Management, or platform leader who's earned meaningful economics and would be willing to share your story, let's talk.</p>
-    <a href="mailto:josh@sonderandmetric.com?subject=Real%20Assets%20Real%20Leaders%20Podcast" class="cta-button">Get in Touch →</a>
+<!-- SECTION 3: THE CONVERSATION -->
+<div class="section">
+  <div class="section-inner">
+    <div class="section-content">
+      <h2>The Format</h2>
+      <p>45-60 minute conversations, edited to 30-40 minutes. We talk about the platforms you've managed, how you tied your role to value creation, and how you earned recognition from leadership for what you do.</p>
+      <p>You control the detail level. Questions sent ahead. Edit review before it goes live.</p>
+    </div>
+    <div class="img-box compact">
+      📷 IMAGE 3<br>
+      Suggested: Recording setup<br>
+      or podcast microphone visual<br>
+      (Recommended: 800x400px)
+    </div>
   </div>
+</div>
 
+<!-- SECTION 4: ABOUT HOST -->
+<div class="section alt">
+  <div class="section-inner reverse">
+    <div class="section-content">
+      <h2>Hosted by Josh Foulkes</h2>
+      <p>Executive search across real asset platforms. I place Portfolio Directors and Heads of Asset Management in energy, infrastructure, and industrial assets.</p>
+      <p>I've had these conversations privately for years. Now making them public so the next generation can learn from them.</p>
+    </div>
+    <div class="img-box compact">
+      📷 IMAGE 4<br>
+      Josh profile photo<br>
+      (Recommended: 500x500px)
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Get Involved</h2>
+  <p>If you're a Portfolio Director or Head of Asset Management with a story about creating value through real assets, let's talk.</p>
+  <a href="mailto:josh@sonderandmetric.com?subject=Real%20Assets%20Real%20Leaders%20Podcast" class="cta-button">Get in Touch →</a>
 </div>
 
 </body>
