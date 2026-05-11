@@ -707,6 +707,7 @@
   </div>
 </footer>
 
+<script src="mobile-menu.js" defer></script>
 <script>
   // ===== REVEAL ANIMATIONS =====
   const io = new IntersectionObserver((entries) => {
@@ -978,7 +979,7 @@
     pIo.observe(canvas);
   })();
 
-  // ===== SECTORS SILHOUETTE MORPH (BESS -> turbines -> pipe -> data centre) =====
+  // ===== SECTORS SILHOUETTE MORPH =====
   (function() {
     const canvas = document.getElementById('sectorsCanvas');
     if (!canvas) return;
@@ -1013,7 +1014,6 @@
 
     const shapes = [BESS, TOWER, PIPE, DATACENTRE];
     const segDur = 3.0;
-    const totalDur = segDur * shapes.length;
 
     let elapsed = 0;
     let last = performance.now();
