@@ -88,6 +88,13 @@
       repeating-linear-gradient(45deg, rgba(245,240,220,0.025) 0px, rgba(245,240,220,0.025) 1px, transparent 1px, transparent 14px);
     pointer-events: none;
   }
+  .team-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 22%;
+    display: block;
+    position: relative; z-index: 1;
+  }
+  .team-photo.has-photo::before { display: none; }
   .team-photo svg.team-photo-icon {
     width: 30%; max-width: 130px;
     color: rgba(245, 240, 220, 0.55);
@@ -126,6 +133,7 @@
     color: rgba(255,255,255,0.78);
     line-height: 1.7;
   }
+  .team-bio + .team-bio { margin-top: 14px; }
 
   .team-cta {
     background: #093744; color: #ffffff;
@@ -209,17 +217,14 @@
   <div class="team-grid">
 
     <article class="team-card reveal" style="--d:0s">
-      <div class="team-photo">
-        <svg class="team-photo-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="36" r="16"/>
-          <path d="M22 86 C 22 68, 36 58, 50 58 C 64 58, 78 68, 78 86"/>
-        </svg>
-        <div class="team-photo-label">Photo placeholder</div>
+      <div class="team-photo has-photo">
+        <img src="Josh%20website%20headshot.png" alt="Josh Foulkes, Founder of Sonder & Metric">
       </div>
       <div class="team-content">
-        <div class="team-name">[ Name ]</div>
-        <div class="team-role">[ Role ]</div>
-        <p class="team-bio">[ Short bio. Background, sector experience and what they bring to the work. Roughly two to three sentences sits comfortably here without crowding the layout. ]</p>
+        <div class="team-name">Josh Foulkes</div>
+        <div class="team-role">Founder</div>
+        <p class="team-bio">Josh is the founder of Sonder &amp; Metric, and has spent the past 10 years advising Asset Owners &amp; Operators on critical talent initiatives. He is well networked and also hosts the Real Assets, Real Leaders podcast. He is married to Sarah, and together they have 3 energetic boys.</p>
+        <p class="team-bio">Josh is active in his local church, a competent musician and a fair-weather golfer.</p>
       </div>
     </article>
 
