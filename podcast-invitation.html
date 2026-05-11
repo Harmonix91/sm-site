@@ -123,6 +123,16 @@
     transform: scale(1.15);
   }
 
+  /* Special styling for Josh portrait */
+  .img-container.host-photo {
+    height: 450px;
+  }
+
+  .img-container.host-photo img {
+    transform: scale(1.25);
+    object-position: center 35%;
+  }
+
   /* CTA SECTION */
   .cta-section {
     background: rgba(255,255,255,0.05);
@@ -183,6 +193,10 @@
     .img-container.compact {
       height: 250px;
     }
+
+    .img-container.host-photo {
+      height: 350px;
+    }
   }
 
   @media (max-width: 768px) {
@@ -204,6 +218,10 @@
 
     .img-container.compact {
       height: 200px;
+    }
+
+    .img-container.host-photo {
+      height: 300px;
     }
 
     .cta-section {
@@ -271,7 +289,7 @@
       <p>Executive search across real asset platforms. I place Portfolio Directors and Heads of Asset Management in energy, infrastructure, and industrial assets.</p>
       <p>I've had these conversations privately for years. Now making them public so the next generation can learn from them.</p>
     </div>
-    <div class="img-container compact">
+    <div class="img-container host-photo">
       <img src="images/Pod - josh solo.png" alt="Josh Foulkes">
     </div>
   </div>
