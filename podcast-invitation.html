@@ -92,6 +92,22 @@
     line-height: 1.15;
   }
 
+  .host-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .linkedin-icon {
+    display: inline-flex;
+    align-items: center;
+    transition: opacity 0.2s;
+  }
+
+  .linkedin-icon:hover {
+    opacity: 0.8;
+  }
+
   .section-content p {
     font-size: clamp(16px, 1.2vw, 18px);
     color: rgba(255,255,255,0.85);
@@ -227,6 +243,12 @@
     .cta-section {
       padding: 50px 5%;
     }
+
+    .host-title {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
   }
 </style>
 </head>
@@ -244,11 +266,11 @@
   <div class="section-inner">
     <div class="section-content">
       <h2>Asset Management Leaders. Real Conversations.</h2>
-      <p>Portfolio Directors and Heads of Asset Management across energy, infrastructure, facilities, and industrial platforms — talking about how they manage their assets, tie their work to value creation, and gain recognition from senior leadership.</p>
+      <p>Portfolio Directors and Heads of Asset Management across energy, infrastructure, facilities, and industrial platforms — talking about how they manage their assets, tie their work to value creation, and build influence at executive, board and fund level.</p>
       <p>Not theory. Real stories from people doing the work.</p>
     </div>
     <div class="img-container">
-      <img src="images/pod 1.png" alt="Asset management professionals in conversation">
+      <img src="images/pod 3.png" alt="Asset management professionals in conversation">
     </div>
   </div>
 </div>
@@ -258,8 +280,8 @@
   <div class="section-inner reverse">
     <div class="section-content">
       <h2>Who We're Looking For</h2>
-      <p>Leaders managing revenue-generating asset portfolios who can talk about how they align their work to value creation initiatives and how they've gained standing with boards, GPs, and senior leadership.</p>
-      <p>Post-exit leaders, current Portfolio Directors, Heads of Asset Management — people willing to share what actually worked.</p>
+      <p>Leaders managing revenue-generating asset portfolios who can talk about how they align their work to value creation initiatives and how they've built influence at executive, board and fund level.</p>
+      <p>Post-exit leaders, current Portfolio Directors, Heads of Asset Management, and platform executives (COOs, CEOs, CFOs of Real Asset platforms) — people willing to share what actually worked.</p>
     </div>
     <div class="img-container">
       <img src="images/pod 2.png" alt="Leadership professionals">
@@ -272,11 +294,11 @@
   <div class="section-inner">
     <div class="section-content">
       <h2>The Format</h2>
-      <p>45-60 minute conversations, edited to 30-40 minutes. We talk about the platforms you've managed, how you tied your role to value creation, and how you earned recognition from leadership for what you do.</p>
+      <p>45-60 minute conversations, edited to 30-40 minutes. We talk about the platforms you've managed, how you tied your role to value creation, and how you built influence with the people who matter.</p>
       <p>You control the detail level. Questions sent ahead. Edit review before it goes live.</p>
     </div>
     <div class="img-container compact">
-      <img src="images/pod 3.png" alt="Podcast recording setup">
+      <img src="images/pod 1.png" alt="Podcast recording setup">
     </div>
   </div>
 </div>
@@ -285,8 +307,18 @@
 <div class="section alt">
   <div class="section-inner reverse">
     <div class="section-content">
-      <h2>Hosted by Josh Foulkes</h2>
-      <p>Executive search across real asset platforms. I place Portfolio Directors and Heads of Asset Management in energy, infrastructure, and industrial assets.</p>
+      <div class="host-title">
+        <h2>Hosted by Josh Foulkes</h2>
+        <a href="https://www.linkedin.com/in/joshfoulkes/" target="_blank" rel="noopener noreferrer" class="linkedin-icon" aria-label="Josh Foulkes on LinkedIn">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="4" fill="#0A66C2"/>
+            <path d="M11.5 13.5H8.5V23.5H11.5V13.5Z" fill="white"/>
+            <path d="M10 12C11.1046 12 12 11.1046 12 10C12 8.89543 11.1046 8 10 8C8.89543 8 8 8.89543 8 10C8 11.1046 8.89543 12 10 12Z" fill="white"/>
+            <path d="M23.5 23.5H20.5V18.5C20.5 17.1193 19.3807 16 18 16C16.6193 16 15.5 17.1193 15.5 18.5V23.5H12.5V13.5H15.5V14.8C16.1 14 17.3 13.2 18.8 13.2C21.5 13.2 23.5 15.2 23.5 17.9V23.5Z" fill="white"/>
+          </svg>
+        </a>
+      </div>
+      <p>I place Executive Leaders across Real Asset platforms, with a particular focus on Asset and Portfolio leadership.</p>
       <p>I've had these conversations privately for years. Now making them public so the next generation can learn from them.</p>
     </div>
     <div class="img-container host-photo">
@@ -298,7 +330,7 @@
 <!-- CTA -->
 <div class="cta-section">
   <h2>Get Involved</h2>
-  <p>If you're a Portfolio Director or Head of Asset Management with a story about creating value through real assets, let's talk.</p>
+  <p>If you're a Portfolio Director, Head of Asset Management, or platform executive with a story about creating value through real assets, let's talk.</p>
   <a href="mailto:josh@sonderandmetric.com?subject=Real%20Assets%20Real%20Leaders%20Podcast" class="cta-button">Get in Touch →</a>
 </div>
 
