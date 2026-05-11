@@ -103,23 +103,23 @@
     margin-bottom: 0;
   }
 
-  /* IMAGE PLACEHOLDERS */
-  .img-box {
-    background: rgba(255,255,255,0.08);
-    border: 2px dashed rgba(255,255,255,0.25);
+  /* IMAGE STYLING */
+  .img-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
     border-radius: 8px;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 40px;
   }
 
-  .img-box.compact {
-    min-height: 300px;
+  .img-container.compact {
+    height: 300px;
+  }
+
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   /* CTA SECTION */
@@ -175,8 +175,12 @@
       direction: ltr;
     }
 
-    .img-box {
-      min-height: 300px;
+    .img-container {
+      height: 300px;
+    }
+
+    .img-container.compact {
+      height: 250px;
     }
   }
 
@@ -193,8 +197,12 @@
       gap: 40px;
     }
 
-    .img-box {
-      min-height: 250px;
+    .img-container {
+      height: 250px;
+    }
+
+    .img-container.compact {
+      height: 200px;
     }
 
     .cta-section {
@@ -220,11 +228,8 @@
       <p>Portfolio Directors and Heads of Asset Management across energy, infrastructure, facilities, and industrial platforms — talking about how they manage their assets, tie their work to value creation, and gain recognition from senior leadership.</p>
       <p>Not theory. Real stories from people doing the work.</p>
     </div>
-    <div class="img-box">
-      📷 IMAGE 1<br>
-      Suggested: Asset management visual<br>
-      or portfolio overview graphic<br>
-      (Recommended: 800x500px)
+    <div class="img-container">
+      <img src="images/pod 1.png" alt="Asset management professionals in conversation">
     </div>
   </div>
 </div>
@@ -237,11 +242,8 @@
       <p>Leaders managing revenue-generating asset portfolios who can talk about how they align their work to value creation initiatives and how they've gained standing with boards, GPs, and senior leadership.</p>
       <p>Post-exit leaders, current Portfolio Directors, Heads of Asset Management — people willing to share what actually worked.</p>
     </div>
-    <div class="img-box">
-      📷 IMAGE 2<br>
-      Suggested: Professional headshot grid<br>
-      or leadership meeting visual<br>
-      (Recommended: 800x500px)
+    <div class="img-container">
+      <img src="images/pod 2.png" alt="Leadership professionals">
     </div>
   </div>
 </div>
@@ -254,11 +256,8 @@
       <p>45-60 minute conversations, edited to 30-40 minutes. We talk about the platforms you've managed, how you tied your role to value creation, and how you earned recognition from leadership for what you do.</p>
       <p>You control the detail level. Questions sent ahead. Edit review before it goes live.</p>
     </div>
-    <div class="img-box compact">
-      📷 IMAGE 3<br>
-      Suggested: Recording setup<br>
-      or podcast microphone visual<br>
-      (Recommended: 800x400px)
+    <div class="img-container compact">
+      <img src="images/pod 3.png" alt="Podcast recording setup">
     </div>
   </div>
 </div>
@@ -271,10 +270,8 @@
       <p>Executive search across real asset platforms. I place Portfolio Directors and Heads of Asset Management in energy, infrastructure, and industrial assets.</p>
       <p>I've had these conversations privately for years. Now making them public so the next generation can learn from them.</p>
     </div>
-    <div class="img-box compact">
-      📷 IMAGE 4<br>
-      Josh profile photo<br>
-      (Recommended: 500x500px)
+    <div class="img-container compact">
+      <img src="images/Pod - josh solo.png" alt="Josh Foulkes">
     </div>
   </div>
 </div>
