@@ -87,7 +87,9 @@
     flex-shrink: 0;
     white-space: nowrap;
   }
-  .stat-counter { display: inline-block; }
+  .stat-counter { display: inline-block; font-variant-numeric: tabular-nums; text-align: left; }
+  .stat-counter[data-target="100"] { min-width: 3.7ch; }
+  .stat-counter[data-target="60"] { min-width: 2ch; }
   .stat-unit {
     font-size: 0.42em;
     font-weight: 400;
