@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Assets, Real Leaders — Podcast Invitation</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { 
+    background: #0F4A5E; 
+    color: #1C2E38; 
+    font-family: 'Poppins', sans-serif; 
+    -webkit-font-smoothing: antialiased; 
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    padding: 24px 7%;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: #ffffff; }
+
+  .hero {
+    padding: 80px 7% 100px;
+    text-align: center;
+  }
+
+  .podcast-title {
+    font-size: clamp(48px, 6vw, 72px);
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .podcast-tagline {
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* WIDE SECTION LAYOUT */
+  .section {
+    padding: 80px 7%;
+  }
+
+  .section.alt {
+    background: rgba(255,255,255,0.03);
+  }
+
+  .section-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .section-inner.reverse {
+    direction: rtl;
+  }
+
+  .section-inner.reverse > * {
+    direction: ltr;
+  }
+
+  .section-content h2 {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: -0.015em;
+    margin-bottom: 24px;
+    line-height: 1.15;
+  }
+
+  .host-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .linkedin-icon {
+    display: inline-flex;
+    align-items: center;
+    transition: opacity 0.2s;
+  }
+
+  .linkedin-icon:hover {
+    opacity: 0.8;
+  }
+
+  .section-content p {
+    font-size: clamp(16px, 1.2vw, 18px);
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+
+  .section-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* IMAGE STYLING - CROP WHITE EDGES */
+  .img-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .img-container.compact {
+    height: 300px;
+  }
+
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.15);
+  }
+
+  /* Special styling for Josh portrait */
+  .img-container.host-photo {
+    height: 450px;
+  }
+
+  .img-container.host-photo img {
+    transform: scale(1.25);
+    object-position: center 35%;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: rgba(255,255,255,0.05);
+    border-top: 4px solid #DB6F2A;
+    padding: 60px 7%;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .cta-section p {
+    font-size: clamp(17px, 1.3vw, 20px);
+    color: rgba(255,255,255,0.85);
+    max-width: 700px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+    background: #DB6F2A;
+    padding: 18px 36px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .cta-button:hover {
+    background: #c25f1f;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 1024px) {
+    .section-inner {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .section-inner.reverse {
+      direction: ltr;
+    }
+
+    .img-container {
+      height: 300px;
+    }
+
+    .img-container.compact {
+      height: 250px;
+    }
+
+    .img-container.host-photo {
+      height: 350px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 60px 5% 70px;
+    }
+
+    .section {
+      padding: 60px 5%;
+    }
+
+    .section-inner {
+      gap: 40px;
+    }
+
+    .img-container {
+      height: 250px;
+    }
+
+    .img-container.compact {
+      height: 200px;
+    }
+
+    .img-container.host-photo {
+      height: 300px;
+    }
+
+    .cta-section {
+      padding: 50px 5%;
+    }
+
+    .host-title {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<a href="../" class="back-link">← Back to Sonder & Metric</a>
+
+<div class="hero">
+  <h1 class="podcast-title">Real Assets, Real Leaders</h1>
+  <p class="podcast-tagline">Conversations with Portfolio Directors and Heads of Asset Management who create value through real asset platforms</p>
+</div>
+
+<!-- SECTION 1: WHAT IT IS -->
+<div class="section">
+  <div class="section-inner">
+    <div class="section-content">
+      <h2>Asset Management Leaders. Real Conversations.</h2>
+      <p>Portfolio Directors and Heads of Asset Management across energy, infrastructure, facilities, and industrial platforms — talking about how they manage their assets, tie their work to value creation, and build influence at executive, board and fund level.</p>
+      <p>Not theory. Real stories from people doing the work.</p>
+    </div>
+    <div class="img-container">
+      <img src="../images/pod 3.png" alt="Asset management professionals in conversation">
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: WHO WE'RE TALKING TO -->
+<div class="section alt">
+  <div class="section-inner reverse">
+    <div class="section-content">
+      <h2>Who We're Looking For</h2>
+      <p>Leaders managing revenue-generating asset portfolios who can talk about how they align their work to value creation initiatives and how they've built influence at executive, board and fund level.</p>
+      <p>Post-exit leaders, current Portfolio Directors, Heads of Asset Management, and platform executives (COOs, CEOs, CFOs of Real Asset platforms) — people willing to share what actually worked.</p>
+    </div>
+    <div class="img-container">
+      <img src="../images/pod 2.png" alt="Leadership professionals">
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: THE CONVERSATION -->
+<div class="section">
+  <div class="section-inner">
+    <div class="section-content">
+      <h2>The Format</h2>
+      <p>45-60 minute conversations, edited to 30-40 minutes. We talk about the platforms you've managed, how you tied your role to value creation, and how you built influence with the people who matter.</p>
+      <p>You control the detail level. Questions sent ahead. Edit review before it goes live.</p>
+    </div>
+    <div class="img-container compact">
+      <img src="../images/pod 1.png" alt="Podcast recording setup">
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4: ABOUT HOST -->
+<div class="section alt">
+  <div class="section-inner reverse">
+    <div class="section-content">
+      <div class="host-title">
+        <h2>Hosted by Josh Foulkes</h2>
+        <a href="https://www.linkedin.com/in/joshfoulkes/" target="_blank" rel="noopener noreferrer" class="linkedin-icon" aria-label="Josh Foulkes on LinkedIn">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="4" fill="#0A66C2"/>
+            <path d="M11.5 13.5H8.5V23.5H11.5V13.5Z" fill="white"/>
+            <path d="M10 12C11.1046 12 12 11.1046 12 10C12 8.89543 11.1046 8 10 8C8.89543 8 8 8.89543 8 10C8 11.1046 8.89543 12 10 12Z" fill="white"/>
+            <path d="M23.5 23.5H20.5V18.5C20.5 17.1193 19.3807 16 18 16C16.6193 16 15.5 17.1193 15.5 18.5V23.5H12.5V13.5H15.5V14.8C16.1 14 17.3 13.2 18.8 13.2C21.5 13.2 23.5 15.2 23.5 17.9V23.5Z" fill="white"/>
+          </svg>
+        </a>
+      </div>
+      <p>I place Executive Leaders across Real Asset platforms, with a particular focus on Asset and Portfolio leadership.</p>
+      <p>I've had these conversations privately for years. Now making them public so the next generation can learn from them.</p>
+    </div>
+    <div class="img-container host-photo">
+      <img src="../images/Pod - josh solo.png" alt="Josh Foulkes">
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Get Involved</h2>
+  <p>If you're a Portfolio Director, Head of Asset Management, or platform executive with a story about creating value through real assets, let's talk.</p>
+  <a href="mailto:josh@sonderandmetric.com?subject=Real%20Assets%20Real%20Leaders%20Podcast" class="cta-button">Get in Touch →</a>
+</div>
+
+</body>
+</html>
