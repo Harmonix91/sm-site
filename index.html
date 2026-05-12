@@ -861,7 +861,7 @@
     let elapsed = 0;
     let drift = 0;
     let last = performance.now();
-    let isVisible = false;
+    let isVisible = true;
     let rafId = null;
 
     function resize() {
@@ -966,6 +966,9 @@
       });
     }, { threshold: 0.01 });
     hIo.observe(canvas);
+
+    last = performance.now();
+    rafId = requestAnimationFrame(frame);
   })();
 
   // ===== PLATFORMS HORIZONTAL WAVE BACKDROP =====
@@ -978,7 +981,7 @@
 
     let elapsed = 0;
     let last = performance.now();
-    let isVisible = false;
+    let isVisible = true;
     let rafId = null;
 
     function resize() {
@@ -1050,6 +1053,9 @@
       });
     }, { threshold: 0.01 });
     pIo.observe(canvas);
+
+    last = performance.now();
+    rafId = requestAnimationFrame(frame);
   })();
 
   // ===== SECTORS SILHOUETTE MORPH (BESS -> turbines -> pipe -> data centre) =====
@@ -1091,7 +1097,7 @@
 
     let elapsed = 0;
     let last = performance.now();
-    let isVisible = false;
+    let isVisible = true;
     let rafId = null;
 
     function resize() {
@@ -1186,6 +1192,9 @@
       });
     }, { threshold: 0.01 });
     sIo.observe(canvas);
+
+    last = performance.now();
+    rafId = requestAnimationFrame(frame);
   })();
 </script>
 </body>
