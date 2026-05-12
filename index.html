@@ -861,20 +861,19 @@
     let elapsed = 0;
     let drift = 0;
     let last = performance.now();
-    let isVisible = true;
-    let rafId = null;
+    let inViewport = true;
 
-    function resize() {
+    function ensureSize() {
       const w = canvas.offsetWidth, h = canvas.offsetHeight;
-      if (w === 0 || h === 0) return;
-      canvas.width = w * dpr; canvas.height = h * dpr;
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(dpr, dpr);
+      if (w === 0 || h === 0) return false;
+      const targetW = Math.round(w * dpr), targetH = Math.round(h * dpr);
+      if (canvas.width !== targetW || canvas.height !== targetH) {
+        canvas.width = targetW; canvas.height = targetH;
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+      }
+      return true;
     }
-    resize();
-    window.addEventListener('resize', resize);
-    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(resize).observe(canvas);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
 
     function easeInOutCubic(x) {
       return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
@@ -902,18 +901,18 @@
     }
 
     function frame(now) {
-      if (!isVisible) { rafId = null; return; }
+      requestAnimationFrame(frame);
       const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
+      if (!inViewport) return;
+      if (!ensureSize()) return;
       if (!reduceMotion) {
         elapsed += dt;
         drift += dt * driftSpeed;
       }
 
-      resize();
       const w = canvas.offsetWidth;
       const h = canvas.offsetHeight;
-      if (w === 0 || h === 0) { rafId = requestAnimationFrame(frame); return; }
       ctx.clearRect(0, 0, w, h);
 
       const p = currentParams();
@@ -947,28 +946,15 @@
         }
         ctx.stroke();
       }
-      rafId = requestAnimationFrame(frame);
     }
 
-    const hIo = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (!isVisible) {
-            isVisible = true;
-            resize();
-            last = performance.now();
-            rafId = requestAnimationFrame(frame);
-          }
-        } else {
-          isVisible = false;
-          if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
-        }
-      });
-    }, { threshold: 0.01 });
-    hIo.observe(canvas);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        entries.forEach(entry => { inViewport = entry.isIntersecting; });
+      }, { threshold: 0.01 }).observe(canvas);
+    }
 
-    last = performance.now();
-    rafId = requestAnimationFrame(frame);
+    requestAnimationFrame(frame);
   })();
 
   // ===== PLATFORMS HORIZONTAL WAVE BACKDROP =====
@@ -981,32 +967,30 @@
 
     let elapsed = 0;
     let last = performance.now();
-    let isVisible = true;
-    let rafId = null;
+    let inViewport = true;
 
-    function resize() {
+    function ensureSize() {
       const w = canvas.offsetWidth, h = canvas.offsetHeight;
-      if (w === 0 || h === 0) return;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(dpr, dpr);
+      if (w === 0 || h === 0) return false;
+      const targetW = Math.round(w * dpr), targetH = Math.round(h * dpr);
+      if (canvas.width !== targetW || canvas.height !== targetH) {
+        canvas.width = targetW; canvas.height = targetH;
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+      }
+      return true;
     }
-    resize();
-    window.addEventListener('resize', resize);
-    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(resize).observe(canvas);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
 
     function frame(now) {
-      if (!isVisible) { rafId = null; return; }
+      requestAnimationFrame(frame);
       const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
+      if (!inViewport) return;
+      if (!ensureSize()) return;
       if (!reduceMotion) elapsed += dt * 0.35;
 
-      resize();
       const w = canvas.offsetWidth;
       const h = canvas.offsetHeight;
-      if (w === 0 || h === 0) { rafId = requestAnimationFrame(frame); return; }
       ctx.clearRect(0, 0, w, h);
 
       const cy = h * 0.66;
@@ -1033,29 +1017,15 @@
         }
         ctx.stroke();
       }
-
-      rafId = requestAnimationFrame(frame);
     }
 
-    const pIo = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (!isVisible) {
-            isVisible = true;
-            resize();
-            last = performance.now();
-            rafId = requestAnimationFrame(frame);
-          }
-        } else {
-          isVisible = false;
-          if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
-        }
-      });
-    }, { threshold: 0.01 });
-    pIo.observe(canvas);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        entries.forEach(entry => { inViewport = entry.isIntersecting; });
+      }, { threshold: 0.01 }).observe(canvas);
+    }
 
-    last = performance.now();
-    rafId = requestAnimationFrame(frame);
+    requestAnimationFrame(frame);
   })();
 
   // ===== SECTORS SILHOUETTE MORPH (BESS -> turbines -> pipe -> data centre) =====
@@ -1097,21 +1067,19 @@
 
     let elapsed = 0;
     let last = performance.now();
-    let isVisible = true;
-    let rafId = null;
+    let inViewport = true;
 
-    function resize() {
+    function ensureSize() {
       const w = canvas.offsetWidth, h = canvas.offsetHeight;
-      if (w === 0 || h === 0) return;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(dpr, dpr);
+      if (w === 0 || h === 0) return false;
+      const targetW = Math.round(w * dpr), targetH = Math.round(h * dpr);
+      if (canvas.width !== targetW || canvas.height !== targetH) {
+        canvas.width = targetW; canvas.height = targetH;
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+      }
+      return true;
     }
-    resize();
-    window.addEventListener('resize', resize);
-    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(resize).observe(canvas);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
 
     function currentShape() {
       const cycleT = elapsed % segDur;
@@ -1132,15 +1100,15 @@
     }
 
     function frame(now) {
-      if (!isVisible) { rafId = null; return; }
+      requestAnimationFrame(frame);
       const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
+      if (!inViewport) return;
+      if (!ensureSize()) return;
       if (!reduceMotion) elapsed += dt;
 
-      resize();
       const w = canvas.offsetWidth;
       const h = canvas.offsetHeight;
-      if (w === 0 || h === 0) { rafId = requestAnimationFrame(frame); return; }
       ctx.clearRect(0, 0, w, h);
 
       const cx = w / 2;
@@ -1172,29 +1140,15 @@
         ctx.closePath();
         ctx.stroke();
       }
-
-      rafId = requestAnimationFrame(frame);
     }
 
-    const sIo = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (!isVisible) {
-            isVisible = true;
-            resize();
-            last = performance.now();
-            rafId = requestAnimationFrame(frame);
-          }
-        } else {
-          isVisible = false;
-          if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
-        }
-      });
-    }, { threshold: 0.01 });
-    sIo.observe(canvas);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        entries.forEach(entry => { inViewport = entry.isIntersecting; });
+      }, { threshold: 0.01 }).observe(canvas);
+    }
 
-    last = performance.now();
-    rafId = requestAnimationFrame(frame);
+    requestAnimationFrame(frame);
   })();
 </script>
 </body>
