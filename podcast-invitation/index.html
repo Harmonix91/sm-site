@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Real Assets, Real Leaders — Podcast Invitation</title>
+<title>Beyond the Model — Podcast Invitation</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,6 +129,40 @@
 
   .section-content p:last-child {
     margin-bottom: 0;
+  }
+
+  .format-list {
+    list-style: none;
+    counter-reset: format-counter;
+    margin: 4px 0 22px 0;
+    padding: 0;
+  }
+  .format-list li {
+    counter-increment: format-counter;
+    position: relative;
+    padding-left: 46px;
+    padding-bottom: 16px;
+    font-size: clamp(15px, 1.15vw, 17px);
+    color: rgba(255,255,255,0.85);
+    line-height: 1.65;
+  }
+  .format-list li:last-child {
+    padding-bottom: 0;
+  }
+  .format-list li::before {
+    content: counter(format-counter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #DB6F2A;
+    letter-spacing: 0.06em;
+    font-variant-numeric: tabular-nums;
+  }
+  .format-list li strong {
+    color: #ffffff;
+    font-weight: 600;
   }
 
   /* IMAGE STYLING - CROP WHITE EDGES */
@@ -269,7 +303,7 @@
 <a href="../" class="back-link">← Back to Sonder & Metric</a>
 
 <div class="hero">
-  <h1 class="podcast-title">Real Assets, Real Leaders</h1>
+  <h1 class="podcast-title">Beyond the Model</h1>
   <p class="podcast-tagline">Conversations with Platform Executives & Asset Management Leaders who create value through real asset platforms</p>
 </div>
 
@@ -277,7 +311,7 @@
 <div class="section">
   <div class="section-inner">
     <div class="section-content">
-      <h2>Real Operators. Real Conversations.</h2>
+      <h2>Beyond the Model. Where Value is Created.</h2>
       <p>Long-term contracted revenue at single-digit returns used to be the whole Real Assets pitch. That's no longer the case. LPs want value creation upside on top of the contracted base — and that upside isn't built in the model. It's delivered on the ground, quarter after quarter, by the Platform Executives and Asset Management Leaders running these businesses.</p>
       <p>This is where they tell us how. Not theory. Real stories from people doing the work.</p>
     </div>
@@ -306,7 +340,16 @@
   <div class="section-inner">
     <div class="section-content">
       <h2>The Format</h2>
-      <p>45-60 minute conversations, edited to 30-40 minutes. We talk about the platforms you've managed, how you tied your role to value creation, and how you built influence with the people who matter.</p>
+      <p>A 45&ndash;60 minute conversation, in person or over a video call. Edited down to 30&ndash;40 minutes for release.</p>
+      <p>After a quick intro on the platform and your role, the arc moves through six areas:</p>
+      <ol class="format-list">
+        <li><strong>The investment thesis</strong> &mdash; why the platform was bought, and the value creation plan it was bought on</li>
+        <li><strong>The risks</strong> &mdash; what could derail the thesis, what the team is watching</li>
+        <li><strong>What the model doesn't capture</strong> &mdash; operating reality vs. the underwriting</li>
+        <li><strong>Curveballs and wins</strong> &mdash; the moves that actually drove value</li>
+        <li><strong>Aligning to the plan</strong> &mdash; how you set priorities from your seat</li>
+        <li><strong>Building influence</strong> &mdash; with the sponsor and senior stakeholders</li>
+      </ol>
       <p>You control the detail level. Questions sent ahead. Edit review before it goes live.</p>
     </div>
     <div class="img-container compact">
@@ -343,7 +386,7 @@
 <div class="cta-section">
   <h2>Get Involved</h2>
   <p>If you're a Platform Executive or Asset Management Leader with a story about creating value through real assets, let's talk.</p>
-  <a href="mailto:josh@sonderandmetric.com?subject=Real%20Assets%20Real%20Leaders%20Podcast" class="cta-button">Get in Touch →</a>
+  <a href="mailto:josh@sonderandmetric.com?subject=Beyond%20the%20Model%20Podcast" class="cta-button">Get in Touch →</a>
 </div>
 
 </body>
