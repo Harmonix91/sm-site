@@ -163,6 +163,12 @@
     font-weight: 600;
   }
 
+  /* FORMAT SECTION (full-width, no image) */
+  .format-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
   .format-list {
     list-style: none;
     counter-reset: format-counter;
@@ -225,303 +231,6 @@
   .img-container.host-photo img {
     transform: scale(1.25);
     object-position: center 35%;
-  }
-
-  /* FORMAT SECTION (REVAMPED) */
-  .format-section .format-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .format-header {
-    max-width: 800px;
-    margin: 0 auto 40px;
-  }
-
-  .format-header h2 {
-    font-size: clamp(28px, 3.5vw, 42px);
-    font-weight: 600;
-    color: #ffffff;
-    letter-spacing: -0.015em;
-    margin-bottom: 24px;
-    line-height: 1.15;
-  }
-
-  .format-header p {
-    font-size: clamp(16px, 1.2vw, 18px);
-    color: rgba(255,255,255,0.85);
-    line-height: 1.7;
-    margin-bottom: 18px;
-  }
-
-  .format-hint {
-    font-size: 12px !important;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: rgba(219, 111, 42, 0.85) !important;
-    margin-top: 28px !important;
-    font-weight: 600;
-  }
-
-  .format-close {
-    max-width: 800px;
-    margin: 48px auto 0;
-    font-size: clamp(16px, 1.2vw, 18px);
-    color: rgba(255,255,255,0.85);
-    line-height: 1.7;
-  }
-
-  /* ORBITAL TIMELINE */
-  .orbital-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    height: 720px;
-    margin: 0 auto;
-    user-select: none;
-    display: none;
-  }
-
-  .orbital-loaded .orbital-container {
-    display: block;
-  }
-
-  .orbital-stage {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    perspective: 1000px;
-  }
-
-  .orbital-center {
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .orbital-core {
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #FF9A5C 0%, #DB6F2A 55%, #A8501C 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 32px rgba(219, 111, 42, 0.5);
-    animation: orbital-core-pulse 3s ease-in-out infinite;
-  }
-
-  .orbital-core::after {
-    content: '';
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.9);
-  }
-
-  .orbital-pulse-outer,
-  .orbital-pulse-inner {
-    position: absolute;
-    border-radius: 50%;
-    border: 1px solid rgba(219, 111, 42, 0.45);
-  }
-
-  .orbital-pulse-outer {
-    width: 96px;
-    height: 96px;
-    animation: orbital-ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  .orbital-pulse-inner {
-    width: 80px;
-    height: 80px;
-    animation: orbital-ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite 0.6s;
-  }
-
-  @keyframes orbital-ping {
-    0% { transform: scale(0.85); opacity: 0.7; }
-    100% { transform: scale(1.8); opacity: 0; }
-  }
-
-  @keyframes orbital-core-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.06); }
-  }
-
-  .orbital-ring {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.12);
-  }
-
-  .orbital-node {
-    position: absolute;
-    cursor: pointer;
-    width: 0;
-    height: 0;
-    transition: opacity 0.5s ease;
-  }
-
-  .orbital-node-glow {
-    position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(219,111,42,0.35) 0%, rgba(219,111,42,0) 70%);
-    width: 64px;
-    height: 64px;
-    left: -32px;
-    top: -32px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-
-  .orbital-node.is-related .orbital-node-glow,
-  .orbital-node.is-active .orbital-node-glow {
-    opacity: 1;
-  }
-
-  .orbital-node.is-related .orbital-node-glow {
-    animation: orbital-core-pulse 1.5s ease-in-out infinite;
-  }
-
-  .orbital-node-icon {
-    position: absolute;
-    left: -20px;
-    top: -20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(15, 74, 94, 0.92);
-    border: 2px solid rgba(255,255,255,0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,0.9);
-    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.4s ease, box-shadow 0.3s ease;
-  }
-
-  .orbital-node.is-related .orbital-node-icon {
-    background: rgba(255,255,255,0.92);
-    color: #0F4A5E;
-    border-color: #DB6F2A;
-  }
-
-  .orbital-node.is-active .orbital-node-icon {
-    background: #DB6F2A;
-    color: #ffffff;
-    border-color: #ffffff;
-    transform: scale(1.45);
-    box-shadow: 0 0 28px rgba(219,111,42,0.6);
-  }
-
-  .orbital-node-label {
-    position: absolute;
-    left: 50%;
-    top: 28px;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
-    transition: color 0.3s ease, font-size 0.3s ease, top 0.3s ease;
-    pointer-events: none;
-  }
-
-  .orbital-node.is-active .orbital-node-label {
-    color: #ffffff;
-    font-size: 12px;
-    top: 36px;
-  }
-
-  /* ORBITAL CARD */
-  .orbital-card {
-    position: absolute;
-    width: 320px;
-    background: rgba(8, 50, 64, 0.96);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(219, 111, 42, 0.4);
-    border-top: 2px solid #DB6F2A;
-    border-radius: 4px;
-    padding: 20px;
-    z-index: 300;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.45);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    left: 50%;
-    bottom: 40px;
-    transform: translateX(-50%) translateY(8px);
-  }
-
-  .orbital-card.is-visible {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  .orbital-card-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 12px;
-    letter-spacing: 0.02em;
-  }
-
-  .orbital-card-content {
-    font-size: 13px;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.6;
-  }
-
-  .orbital-card-related {
-    margin-top: 16px;
-    padding-top: 14px;
-    border-top: 1px solid rgba(255,255,255,0.12);
-  }
-
-  .orbital-card-related-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-
-  .orbital-card-related-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .orbital-card-related-btn {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: rgba(255,255,255,0.85);
-    font-size: 11px;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    font-family: inherit;
-    transition: all 0.2s;
-  }
-
-  .orbital-card-related-btn:hover {
-    background: rgba(219,111,42,0.2);
-    border-color: #DB6F2A;
-    color: #ffffff;
   }
 
   /* CTA SECTION */
@@ -606,15 +315,6 @@
     .img-container.host-photo {
       height: 350px;
     }
-
-    .orbital-container {
-      height: 640px;
-    }
-
-    .orbital-ring {
-      width: 360px;
-      height: 360px;
-    }
   }
 
   @media (max-width: 768px) {
@@ -642,6 +342,7 @@
       height: 300px;
     }
 
+    /* Mobile: dial back image cropping so subjects don't get cut */
     .img-container img {
       transform: scale(1.04);
     }
@@ -679,25 +380,6 @@
       width: 100%;
       justify-content: center;
     }
-
-    /* On mobile, hide orbital and show the numbered list */
-    .orbital-loaded .orbital-container {
-      display: none;
-    }
-    .orbital-loaded .format-list-mobile {
-      display: block;
-    }
-    .format-hint {
-      display: none;
-    }
-  }
-
-  /* List visibility: list shown by default (no-JS fallback); JS hides it on desktop */
-  .format-list-mobile {
-    display: block;
-  }
-  .orbital-loaded .format-list-mobile {
-    display: none;
   }
 </style>
 </head>
@@ -748,19 +430,14 @@
   </div>
 </div>
 
-<!-- SECTION 3: THE FORMAT (ORBITAL) -->
-<div class="section format-section">
-  <div class="format-inner">
-    <div class="format-header">
-      <h2>The Format</h2>
-      <p>A 45&ndash;60 minute conversation over a video call. Edited down to 30&ndash;40 minutes for release.</p>
-      <p>The questions are about your lens and your experience across the platforms and portfolio companies you've been involved with &mdash; not a deep dive into any one deal, and not a request for confidential specifics. We're after the patterns, the judgement, and the operating reality that only shows up once you're in the work.</p>
-      <p class="format-hint">Seven recurring threads. Tap any node to explore.</p>
-    </div>
-
-    <div class="orbital-container" id="orbital-container"></div>
-
-    <ol class="format-list format-list-mobile">
+<!-- SECTION 3: THE FORMAT (full-width, no image) -->
+<div class="section">
+  <div class="format-inner section-content">
+    <h2>The Format</h2>
+    <p>A 45&ndash;60 minute conversation over a video call. Edited down to 30&ndash;40 minutes for release.</p>
+    <p>The questions are about your lens and your experience across the platforms and portfolio companies you've been involved with &mdash; not a deep dive into any one deal, and not a request for confidential specifics. We're after the patterns, the judgement, and the operating reality that only shows up once you're in the work.</p>
+    <p>A handful of recurring threads we'll work through:</p>
+    <ol class="format-list">
       <li><strong>The economics</strong> &mdash; how money gets made in these platforms, the risks the underwriting flagged that could derail long-term value, and what an LP needs to understand</li>
       <li><strong>Operating reality</strong> &mdash; what you only really understand once you're inside the platform</li>
       <li><strong>The levers</strong> &mdash; the most effective value creation levers you've pulled, and what made them work</li>
@@ -769,8 +446,7 @@
       <li><strong>The contrarian view</strong> &mdash; what your part of the market gets wrong</li>
       <li><strong>The handover</strong> &mdash; what you'd tell the next operator walking into a platform like the ones you've run</li>
     </ol>
-
-    <p class="format-close">You control the detail level. Questions sent ahead. Edit review before it goes live.</p>
+    <p>You control the detail level. Questions sent ahead. Edit review before it goes live.</p>
   </div>
 </div>
 
@@ -808,258 +484,6 @@
     <a href="mailto:josh@sonderandmetric.com?subject=Beyond%20the%20Model%20Podcast" class="cta-button secondary">Email Josh</a>
   </div>
 </div>
-
-<script>
-(function() {
-  var TIMELINE_DATA = [
-    {
-      id: 1,
-      title: "The Economics",
-      content: "How money gets made in these platforms, the risks the underwriting flagged that could derail long-term value, and what an LP needs to understand.",
-      relatedIds: [2, 3],
-      icon: '<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>'
-    },
-    {
-      id: 2,
-      title: "Operating Reality",
-      content: "What you only really understand once you are inside the platform.",
-      relatedIds: [1, 3, 5],
-      icon: '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>'
-    },
-    {
-      id: 3,
-      title: "The Levers",
-      content: "The most effective value creation levers you have pulled, and what made them work.",
-      relatedIds: [2, 4, 5],
-      icon: '<line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/>'
-    },
-    {
-      id: 4,
-      title: "Stakeholders",
-      content: "Sponsor, board, customer, supply chain, regulator \u2014 the partners every value creation plan depends on.",
-      relatedIds: [3, 7],
-      icon: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
-    },
-    {
-      id: 5,
-      title: "The Pattern",
-      content: "What shows up every time across deals, and what changes the most.",
-      relatedIds: [2, 6, 7],
-      icon: '<path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/>'
-    },
-    {
-      id: 6,
-      title: "The Contrarian",
-      content: "What your part of the market gets wrong.",
-      relatedIds: [5, 7],
-      icon: '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>'
-    },
-    {
-      id: 7,
-      title: "The Handover",
-      content: "What you would tell the next operator walking into a platform like the ones you have run.",
-      relatedIds: [4, 5, 6],
-      icon: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>'
-    }
-  ];
-
-  var RADIUS = 200;
-  var ROTATION_STEP = 0.28;
-  var ROTATION_INTERVAL = 50;
-
-  function wrapSvg(paths) {
-    return '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + paths + '</svg>';
-  }
-
-  var rotationAngle = 0;
-  var autoRotate = true;
-  var activeNodeId = null;
-  var nodeEls = {};
-  var stage;
-  var card;
-  var container;
-  var rotationTimer = null;
-
-  function calcPos(index, total) {
-    var angle = ((index / total) * 360 + rotationAngle) % 360;
-    var radian = (angle * Math.PI) / 180;
-    return {
-      x: RADIUS * Math.cos(radian),
-      y: RADIUS * Math.sin(radian),
-      opacity: Math.max(0.4, 0.4 + 0.6 * ((1 + Math.sin(radian)) / 2)),
-      zIndex: Math.round(100 + 50 * Math.cos(radian))
-    };
-  }
-
-  function renderNodes() {
-    for (var i = 0; i < TIMELINE_DATA.length; i++) {
-      var item = TIMELINE_DATA[i];
-      var node = nodeEls[item.id];
-      if (!node) continue;
-      var pos = calcPos(i, TIMELINE_DATA.length);
-      var isActive = item.id === activeNodeId;
-      node.style.transform = 'translate(' + pos.x.toFixed(2) + 'px, ' + pos.y.toFixed(2) + 'px)';
-      node.style.opacity = isActive ? 1 : pos.opacity;
-      node.style.zIndex = isActive ? 250 : pos.zIndex;
-    }
-  }
-
-  function startRotation() {
-    if (rotationTimer) clearInterval(rotationTimer);
-    rotationTimer = setInterval(function() {
-      if (autoRotate) {
-        rotationAngle = (rotationAngle + ROTATION_STEP) % 360;
-        renderNodes();
-      }
-    }, ROTATION_INTERVAL);
-  }
-
-  function findItem(id) {
-    for (var i = 0; i < TIMELINE_DATA.length; i++) {
-      if (TIMELINE_DATA[i].id === id) return TIMELINE_DATA[i];
-    }
-    return null;
-  }
-
-  function clearStates() {
-    for (var id in nodeEls) {
-      if (nodeEls.hasOwnProperty(id)) {
-        nodeEls[id].classList.remove('is-active', 'is-related');
-      }
-    }
-  }
-
-  function openNode(id) {
-    var item = findItem(id);
-    if (!item) return;
-
-    activeNodeId = id;
-    autoRotate = false;
-
-    var idx = TIMELINE_DATA.indexOf(item);
-    var targetAngle = (idx / TIMELINE_DATA.length) * 360;
-    rotationAngle = (270 - targetAngle + 720) % 360;
-
-    clearStates();
-    nodeEls[id].classList.add('is-active');
-    for (var i = 0; i < item.relatedIds.length; i++) {
-      var rId = item.relatedIds[i];
-      if (nodeEls[rId]) nodeEls[rId].classList.add('is-related');
-    }
-
-    card.querySelector('.orbital-card-title').textContent = item.title;
-    card.querySelector('.orbital-card-content').textContent = item.content;
-
-    var relatedHost = card.querySelector('.orbital-card-related');
-    relatedHost.innerHTML = '';
-    if (item.relatedIds.length) {
-      var label = document.createElement('div');
-      label.className = 'orbital-card-related-label';
-      label.textContent = 'Connected threads';
-      relatedHost.appendChild(label);
-
-      var list = document.createElement('div');
-      list.className = 'orbital-card-related-list';
-      for (var j = 0; j < item.relatedIds.length; j++) {
-        (function(rId) {
-          var r = findItem(rId);
-          if (!r) return;
-          var btn = document.createElement('button');
-          btn.className = 'orbital-card-related-btn';
-          btn.textContent = r.title + ' \u2192';
-          btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            openNode(rId);
-          });
-          list.appendChild(btn);
-        })(item.relatedIds[j]);
-      }
-      relatedHost.appendChild(list);
-    }
-
-    card.classList.add('is-visible');
-    renderNodes();
-  }
-
-  function closeNode() {
-    activeNodeId = null;
-    autoRotate = true;
-    clearStates();
-    card.classList.remove('is-visible');
-  }
-
-  function toggleNode(id) {
-    if (activeNodeId === id) closeNode();
-    else openNode(id);
-  }
-
-  function buildOrbital() {
-    container = document.getElementById('orbital-container');
-    if (!container) return;
-
-    // Bail on small viewports — the mobile list will show instead.
-    if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
-      document.documentElement.classList.add('orbital-loaded');
-      return;
-    }
-
-    stage = document.createElement('div');
-    stage.className = 'orbital-stage';
-    container.appendChild(stage);
-
-    var center = document.createElement('div');
-    center.className = 'orbital-center';
-    center.innerHTML = '<div class="orbital-pulse-outer"></div><div class="orbital-pulse-inner"></div><div class="orbital-core"></div>';
-    stage.appendChild(center);
-
-    var ring = document.createElement('div');
-    ring.className = 'orbital-ring';
-    stage.appendChild(ring);
-
-    for (var i = 0; i < TIMELINE_DATA.length; i++) {
-      (function(item) {
-        var node = document.createElement('div');
-        node.className = 'orbital-node';
-        node.setAttribute('data-id', item.id);
-        node.innerHTML =
-          '<div class="orbital-node-glow"></div>' +
-          '<div class="orbital-node-icon">' + wrapSvg(item.icon) + '</div>' +
-          '<div class="orbital-node-label">' + item.title + '</div>';
-        node.addEventListener('click', function(e) {
-          e.stopPropagation();
-          toggleNode(item.id);
-        });
-        stage.appendChild(node);
-        nodeEls[item.id] = node;
-      })(TIMELINE_DATA[i]);
-    }
-
-    card = document.createElement('div');
-    card.className = 'orbital-card';
-    card.innerHTML =
-      '<div class="orbital-card-title"></div>' +
-      '<div class="orbital-card-content"></div>' +
-      '<div class="orbital-card-related"></div>';
-    stage.appendChild(card);
-
-    container.addEventListener('click', function(e) {
-      if (e.target === container || e.target === stage) {
-        closeNode();
-      }
-    });
-
-    document.documentElement.classList.add('orbital-loaded');
-    renderNodes();
-    startRotation();
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', buildOrbital);
-  } else {
-    buildOrbital();
-  }
-})();
-</script>
 
 </body>
 </html>
