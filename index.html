@@ -41,14 +41,14 @@
   body.menu-open{overflow:hidden}
   @media(min-width:881px){.mobile-menu{display:none}}
 
-  .pre{font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);margin-bottom:28px}
+  .pre{font-size:13px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);margin-bottom:28px}
   section{padding:130px 6%}
 
   /* ===== HERO: monolith type left, Lissajous offset right ===== */
   .hero{min-height:calc(100vh - 76px);display:flex;flex-direction:column;justify-content:center;padding:60px 6% 70px;position:relative;overflow:hidden}
   .hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
   .hero-in{position:relative;z-index:2}
-  .hero-eyebrow{font-size:12px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);margin-bottom:34px}
+  .hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);margin-bottom:34px}
   .hero-h{font-size:clamp(46px,8.6vw,140px);font-weight:600;line-height:.99;letter-spacing:-.042em}
   .hero-h .o{color:var(--orange)}
   .hero-h .thin{font-weight:300}
@@ -57,7 +57,7 @@
   .hero-tick{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:500}
 
   /* ===== BELIEF (original live-site pattern) ===== */
-  .belief-h{font-size:clamp(38px,6vw,96px);font-weight:500;letter-spacing:-.034em;line-height:1;margin-bottom:70px}
+  .belief-h{font-size:clamp(38px,6vw,96px);font-weight:500;letter-spacing:-.034em;line-height:1;margin-bottom:104px}
   .belief-flow{display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:start;max-width:1400px}
   .belief-body{position:relative;margin-left:40px;padding-left:64px}
   .belief-body::before{content:'\201C';position:absolute;left:-8px;top:-52px;font-family:'Poppins',sans-serif;font-size:200px;font-weight:600;color:var(--orange);opacity:.28;line-height:1;pointer-events:none}
@@ -76,7 +76,7 @@
   /* ===== PLATFORMS ===== */
   .platforms{padding:100px 0 110px;position:relative;overflow:hidden}
   .platforms-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
-  .plat-head{position:relative;z-index:2;text-align:center;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.42);font-weight:500;margin-bottom:48px}
+  .plat-head{position:relative;z-index:2;text-align:center;font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:48px}
   .strip-mask{position:relative;z-index:2}
   .strip-mask{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 120px,#000 calc(100% - 120px),transparent);mask-image:linear-gradient(to right,transparent,#000 120px,#000 calc(100% - 120px),transparent)}
   .strip{display:flex;width:max-content;animation:scroll 52s linear infinite;align-items:center}
@@ -162,6 +162,7 @@
     .belief-flow{grid-template-columns:1fr;gap:44px}
     .belief-body{margin-left:0;padding-left:36px}
     .belief-body::before{font-size:120px;top:-32px;left:-4px}
+    .belief-h{margin-bottom:72px}
     .belief-stats{align-items:stretch}
     .stat-card{max-width:100%}
     .arena-grid{grid-template-columns:1fr;gap:48px}
