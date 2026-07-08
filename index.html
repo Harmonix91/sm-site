@@ -44,7 +44,7 @@
   .pre{font-size:13px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);margin-bottom:28px}
   section{padding:130px 6%}
 
-  /* ===== HERO: monolith type left, Lissajous offset right ===== */
+  /* ===== HERO: monolith type left, hourglass right ===== */
   .hero{min-height:calc(100vh - 76px);display:flex;flex-direction:column;justify-content:center;padding:60px 6% 70px;position:relative;overflow:hidden}
   .hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
   .hero-in{position:relative;z-index:2}
@@ -159,6 +159,7 @@
   @media(max-width:880px){
     .nav-r{display:none}
     .nav-burger{display:flex}
+    .hero{justify-content:flex-start;padding:80px 6% 300px}
     .belief-flow{grid-template-columns:1fr;gap:44px}
     .belief-body{margin-left:0;padding-left:36px}
     .belief-body::before{font-size:120px;top:-32px;left:-4px}
@@ -170,7 +171,7 @@
     .sectors-body{grid-template-columns:1fr;gap:48px}
     .sectors-visual{height:320px;order:-1}
     .sector-item.active .sector-head{margin-left:0;padding-left:16px}
-    .tl-track,.tl-labels,.tl-detail{display:none}
+    .tl-track,.tl-labels,.tl-detail,.tl-end{display:none}
     .tl-mobile{display:block;border-left:2px solid rgba(219,111,42,.5);padding-left:26px}
     .tlm-item{padding:22px 0;position:relative}
     .tlm-item::before{content:'';position:absolute;left:-33px;top:30px;width:11px;height:11px;background:var(--orange);transform:rotate(45deg)}
@@ -490,8 +491,8 @@
       const w=canvas.offsetWidth,h=canvas.offsetHeight;ctx.clearRect(0,0,w,h);
       const mobile=w<880;
       const cx=mobile?w/2:w*.74;
-      const cy=h*.5;
-      const H=Math.min(h*.324,w*.18),W=H*.72;
+      const cy=mobile?h-170:h*.5;
+      const H=mobile?Math.min(140,w*.28):Math.min(h*.324,w*.18),W=H*.72;
       ctx.save();ctx.translate(cx,cy);ctx.rotate(rot);
       const N=26,steps=64;
       for(let i=0;i<N;i++){const tt=i/(N-1),sc=.2+tt*.8,op=.05+tt*.4;
