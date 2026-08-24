@@ -3,18 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sonder & Metric — Executive Search across Energy & Infrastructure</title>
-<meta name="description" content="Principal-led executive search and advisory for Energy & Infrastructure investors and the platforms they back. Portfolio company leadership and fund-side Asset & Portfolio Management. Mandate to offer in 60 days.">
+<title>Sonder &amp; Metric | Executive Search for Private Capital-Backed Companies</title>
+<meta name="description" content="Principal-led executive search and leadership assessment for private capital-backed companies running a value creation plan on a defined hold. Energy, infrastructure, industrial, engineering and technical services. UK and Europe.">
 <link rel="canonical" href="https://sonderandmetric.com/">
-<meta property="og:title" content="Sonder & Metric — Executive Search across Energy & Infrastructure">
-<meta property="og:description" content="Principal-led executive search for investors and the platforms they back. Delivered at pace, with uncompromised rigour.">
+<meta property="og:title" content="Sonder &amp; Metric | Executive Search for Private Capital-Backed Companies">
+<meta property="og:description" content="Principal-led executive search for investors and the companies they back. Leadership assessed against the investment case, not the job spec.">
 <meta property="og:url" content="https://sonderandmetric.com/">
 <meta property="og:type" content="website">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230F4A5E'/%3E%3Ctext x='32' y='46' font-family='Poppins,Helvetica,Arial,sans-serif' font-size='42' font-weight='600' fill='%23FFFFFF' text-anchor='middle'%3E%26amp;%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0F4A5E">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  :root{--teal:#0F4A5E;--orange:#DB6F2A}
+  :root{
+    --teal:#0F4A5E;
+    --orange:#DB6F2A;
+    --paper:#F6F8F9;   /* ground for the one light panel */
+    --ink:#1C2E38;     /* text on the light panel */
+    --mist:#9FB7C0;    /* hairlines on the light panel */
+  }
   body{background:var(--teal);color:#fff;font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.25,1,.5,1),transform .9s cubic-bezier(.25,1,.5,1);transition-delay:var(--d,0s)}
   .revealed{opacity:1;transform:none}
@@ -103,6 +111,20 @@
   .arena-one{text-align:center;margin-top:76px;font-size:13.5px;color:rgba(255,255,255,.55);font-weight:300}
   .arena-one em{color:#fff;font-style:normal;font-weight:400}
 
+  /* ===== THE ONE LIGHT PANEL: capabilities on Paper ===== */
+  .sides{background:var(--paper);color:var(--ink)}
+  .sides .pre{color:var(--teal)}
+  .sides .sides-h{color:var(--teal)}
+  .sides .sides-sub{color:var(--ink);font-weight:400}
+  .sides .arena-side{color:var(--orange)}
+  .sides .arena-name{color:var(--ink)}
+  .sides .arena-copy{color:var(--ink);font-weight:400}
+  .sides .arena-copy strong{color:var(--ink);font-weight:600}
+  .sides .arena-roles{border-top:1px solid var(--mist)}
+  .sides .arena-roles li{color:var(--ink);border-bottom:1px solid var(--mist)}
+  .sides .arena-wrap .thread{background:var(--mist);width:1px}
+  .sides .arena-wrap .thread::after{background:var(--teal);width:9px;height:9px}
+
   /* ===== SECTORS ===== */
   .sectors-h{font-size:clamp(28px,3.6vw,52px);font-weight:500;letter-spacing:-.025em;line-height:1.1;margin-bottom:72px;max-width:900px}
   .sectors-body{display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center;max-width:1400px}
@@ -134,7 +156,9 @@
 
   /* ===== PROCESS TIMELINE ===== */
   .proc-sub{font-size:clamp(15px,1.2vw,18px);font-weight:300;color:rgba(255,255,255,.78);line-height:1.7;max-width:760px;margin-bottom:96px}
-  .proc-sub strong{color:#fff;font-weight:500}
+  .sides-h.with-sub{margin-bottom:24px}
+  .sides-sub{text-align:center;max-width:780px;margin:0 auto 80px;font-size:clamp(15px,1.25vw,19px);font-weight:300;color:rgba(255,255,255,.78);line-height:1.7}
+.proc-sub strong{color:#fff;font-weight:500}
   .tl{position:relative;max-width:1400px}
   .tl-track{position:relative;height:2px;background:linear-gradient(to right,rgba(219,111,42,.9) 0%,rgba(219,111,42,.9) 84%,rgba(219,111,42,0) 100%)}
   .tl-track .dotted{position:absolute;left:84%;right:0;top:0;height:2px;background:repeating-linear-gradient(to right,rgba(219,111,42,.55) 0 6px,transparent 6px 12px)}
@@ -166,6 +190,7 @@
     .belief-h{margin-bottom:72px}
     .belief-stats{align-items:stretch}
     .stat-card{max-width:100%}
+    .sides-sub{margin-bottom:56px}
     .arena-grid{grid-template-columns:1fr;gap:48px}
     .arena-wrap .thread{display:none}
     .sectors-body{grid-template-columns:1fr;gap:48px}
@@ -208,13 +233,13 @@
 <section class="hero">
   <canvas class="hero-canvas" id="heroCanvas"></canvas>
   <div class="hero-in">
-    <div class="hero-eyebrow reveal" style="--d:.05s">Executive Search &amp; Advisory &middot; Energy &amp; Infrastructure</div>
+    <div class="hero-eyebrow reveal" style="--d:.05s">Executive Search &amp; Advisory &middot; Private Capital</div>
     <h1 class="hero-h">
       <span class="reveal" style="--d:.1s;display:block">Leadership</span>
       <span class="reveal" style="--d:.25s;display:block"><span class="thin">is the</span> <span class="o">lever</span>.</span>
     </h1>
     <div class="hero-base reveal" style="--d:.55s">
-      <p class="hero-sub">Principal-led search for investors and the platforms they back. Delivered at pace, with uncompromised rigour.</p>
+      <p class="hero-sub">Principal-led search for investors and the companies they back. Delivered at pace, with uncompromised rigour.</p>
       <div class="hero-tick">UK &amp; Europe</div>
     </div>
   </div>
@@ -222,11 +247,11 @@
 
 <section>
   <div class="pre reveal">The Thesis</div>
-  <h2 class="belief-h reveal" style="--d:.1s">Models don't build platforms. Operators do.</h2>
+  <h2 class="belief-h reveal" style="--d:.1s">Models don't create value. Leaders do.</h2>
   <div class="belief-flow">
     <div class="belief-body reveal" style="--d:.2s">
-      <p class="belief-p">Real platform value isn't built in financial models. It takes high calibre leadership to turn your value creation plan from thesis to reality.</p>
-      <p class="belief-p">Behind every scaled platform is a team of Operators who got the calls right. Behind every successful exit are the leaders who made decisions when it mattered.</p>
+      <p class="belief-p">Value doesn't get created in a financial model. It takes high calibre leadership to turn a value creation plan into a business that is worth more at the end of the hold than it was at the start.</p>
+      <p class="belief-p">Behind every company that performed is a management team that got the calls right. Behind every clean exit are the people who made the decisions when it mattered.</p>
       <p class="belief-p">We know where to find them, and how to attract them.</p>
       <div class="belief-sig">&mdash; Josh Foulkes, Founder</div>
     </div>
@@ -245,7 +270,7 @@
 
 <section class="platforms">
   <canvas class="platforms-canvas" id="platformsCanvas"></canvas>
-  <div class="plat-head reveal">Platforms across our mandates</div>
+  <div class="plat-head reveal">Businesses across our mandates</div>
   <div class="strip-mask">
     <div class="strip">
       <div class="cell"><img loading="lazy" src="logos/Apatura%20Logo.png" alt="Apatura"></div>
@@ -271,42 +296,42 @@
 <section class="sides" id="sides">
   <div class="sides-in">
     <div class="pre reveal" style="text-align:center">Capabilities</div>
-    <h2 class="sides-h reveal" style="--d:.1s">Two sides. One plan.</h2>
+    <h2 class="sides-h with-sub reveal" style="--d:.1s">Two sides. One plan.</h2>
+    <p class="sides-sub reveal" style="--d:.18s">Most search firms assess a candidate against the job spec. We assess them against the investment case, whichever side of it you sit on.</p>
     <div class="arena-wrap">
     <div class="thread"></div>
     <div class="arena-grid">
       <div class="reveal" style="--d:.2s">
         <div class="arena-side">Portfolio Company</div>
         <div class="arena-name">Executive Leadership</div>
-        <p class="arena-copy"><strong>Retained executive search for C and C-1 leadership</strong> at infrastructure and PE-backed platforms, where value creation is at the root of every mandate.</p>
+        <p class="arena-copy"><strong>Retained executive search for C and C-1 leadership</strong> at private capital-backed companies, where value creation is at the root of every mandate.</p>
         <ul class="arena-roles">
           <li>Chief Executive &amp; Chief Operating Officers</li>
           <li>Chief Commercial &amp; Chief Financial Officers</li>
+          <li>Divisional Managing Directors carrying full P&amp;L</li>
           <li>Critical operating &amp; functional leadership</li>
-          <li>Coordinated platform build programmes</li>
         </ul>
       </div>
       <div class="reveal" style="--d:.35s">
         <div class="arena-side">Fund Side</div>
-        <div class="arena-name">Asset &amp; Portfolio Management</div>
-        <p class="arena-copy"><strong>The fund-side value creation engine.</strong> The teams that steward the assets and turn thesis into realised returns across the hold.</p>
+        <div class="arena-name">Portfolio &amp; Value Creation Leadership</div>
+        <p class="arena-copy"><strong>The fund-side value creation engine.</strong> The people who steward the companies in the portfolio and turn thesis into realised returns across the hold.</p>
         <ul class="arena-roles">
-          <li>Heads of Asset Management</li>
-          <li>Portfolio &amp; Asset Directors</li>
-          <li>Operating partners &amp; value creation leads</li>
+          <li>Operating Partners &amp; value creation leads</li>
+          <li>Heads of Value Creation &amp; Portfolio Operations</li>
+          <li>Portfolio Directors &amp; Heads of Asset Management</li>
           <li>Market mapping &amp; leadership assessment</li>
         </ul>
       </div>
     </div>
     </div>
-    <div class="arena-one reveal" style="--d:.5s">Whichever side you sit on, the question is the same: <em>who carries the value creation plan.</em></div>
   </div>
 </section>
 
 <section id="process">
   <div class="pre reveal">How We Work</div>
   <h2 class="sectors-h reveal" style="--d:.1s">A search, run like diligence.</h2>
-  <p class="proc-sub reveal" style="--d:.2s">You wouldn't commit capital to an asset without underwriting it. We don't put a leader in front of you without the same discipline: <strong>a defined process, weekly steering, and evidence at every stage.</strong> Six weeks, mandate to shortlist. An accepted offer around day sixty.</p>
+  <p class="proc-sub reveal" style="--d:.2s">We don't put a leader in front of you without underwriting them: <strong>a defined process, weekly steering, and written evidence at every stage.</strong> Every search runs through a client data room, so you work from the research as it is produced rather than from a summary of it at the end. Four to six weeks, briefing to presented longlist. An accepted offer around day sixty.</p>
 
   <div class="tl reveal" style="--d:.3s">
     <div style="position:relative">
@@ -322,11 +347,11 @@
         <div class="tl-node" data-i="5" style="left:84%"></div>
       </div>
       <div class="tl-labels">
-        <div class="tl-label active" data-i="0" style="left:4%">Strategy<span class="wk">Week 1</span></div>
+        <div class="tl-label active" data-i="0" style="left:4%">Briefing<span class="wk">Week 1</span></div>
         <div class="tl-label" data-i="1" style="left:19%">Research<span class="wk">Weeks 1&ndash;2</span></div>
         <div class="tl-label" data-i="2" style="left:37%">Engagement<span class="wk">Weeks 2&ndash;4</span></div>
         <div class="tl-label" data-i="3" style="left:55%">Assessment<span class="wk">Weeks 4&ndash;6</span></div>
-        <div class="tl-label" data-i="4" style="left:71%">Shortlist<span class="wk">Week 6</span></div>
+        <div class="tl-label" data-i="4" style="left:71%">Longlist<span class="wk">Week 6</span></div>
         <div class="tl-label" data-i="5" style="left:84%">Landing<span class="wk">To Day 100</span></div>
       </div>
     </div>
@@ -334,65 +359,65 @@
     <div class="tl-detail">
       <div id="tdLeft">
         <div class="td-num">Phase 01 &middot; Week 1</div>
-        <div class="td-name">Strategy</div>
+        <div class="td-name">Briefing</div>
       </div>
-      <p class="td-copy" id="tdCopy"><strong>We start with the strategy, not the CV pile.</strong> The investment thesis, the value creation plan, and what this role has to deliver against it. Your story and proposition get the same attention, because the best Operators are diligencing you too.</p>
+      <p class="td-copy" id="tdCopy"><strong>We start with the plan, not the CV pile.</strong> The investment thesis, the value creation plan, and what this role has to deliver against it. Part of the job is working out whether the brief is true and saying so when it isn't, because a capable leader hired into the wrong brief still fails. Your story gets the same attention, because the best candidates are diligencing you too.</p>
     </div>
 
     <div class="tl-mobile">
-      <div class="tlm-item"><div class="tlm-wk">Week 1</div><div class="tlm-name">Strategy</div><p class="tlm-copy">We start with the strategy, not the CV pile. The thesis, the plan, and what the role must deliver. Your story gets the same attention, because the best Operators are diligencing you too.</p></div>
-      <div class="tlm-item"><div class="tlm-wk">Weeks 1&ndash;2</div><div class="tlm-name">Research</div><p class="tlm-copy">A full map of the market, not a database search. Who runs the relevant assets, who has scaled before, and who is reachable.</p></div>
+      <div class="tlm-item"><div class="tlm-wk">Week 1</div><div class="tlm-name">Briefing</div><p class="tlm-copy">We start with the plan, not the CV pile. The thesis, and what this role has to deliver against it. Part of the job is working out whether the brief is true and saying so when it isn't. Your story gets the same attention, because the best candidates are diligencing you too.</p></div>
+      <div class="tlm-item"><div class="tlm-wk">Weeks 1&ndash;2</div><div class="tlm-name">Research</div><p class="tlm-copy">A full map of the market, not a database search. Who runs the relevant businesses, who has scaled one before, and who is reachable. Adjacent markets included deliberately, because that is where the under-the-radar candidates sit.</p></div>
       <div class="tlm-item"><div class="tlm-wk">Weeks 2&ndash;4</div><div class="tlm-name">Engagement</div><p class="tlm-copy">A structured multi-channel approach to leaders who are not looking. Weekly steering calls keep you inside the search, not waiting on it.</p></div>
-      <div class="tlm-item"><div class="tlm-wk">Weeks 4&ndash;6</div><div class="tlm-name">Assessment</div><p class="tlm-copy">Competency interviews and validated psychometrics, interpreted by people who know the sector. Evidence, not gut feel.</p></div>
-      <div class="tlm-item"><div class="tlm-wk">Week 6</div><div class="tlm-name">Shortlist</div><p class="tlm-copy">A shortlist with comparative evidence behind every name. You interview with the full picture, then we run the offer to acceptance.</p></div>
-      <div class="tlm-item"><div class="tlm-wk">To Day 100</div><div class="tlm-name">Landing</div><p class="tlm-copy">Onboarding and a 100-day plan. The mandate isn't done at the offer. It's done when the plan is moving.</p></div>
+      <div class="tlm-item"><div class="tlm-wk">Weeks 4&ndash;6</div><div class="tlm-name">Assessment</div><p class="tlm-copy">A scored competency interview against five or six competencies agreed with you at briefing, written up for every candidate we present. Evidence, not gut feel.</p></div>
+      <div class="tlm-item"><div class="tlm-wk">Week 6</div><div class="tlm-name">Longlist</div><p class="tlm-copy">A longlist of assessed candidates with comparative evidence behind every name. You confirm the shortlist from it and interview with the full picture, then we run the offer to acceptance.</p></div>
+      <div class="tlm-item"><div class="tlm-wk">To Day 100</div><div class="tlm-name">Landing</div><p class="tlm-copy">Onboarding and a first 100 days plan, built with you. The mandate isn't done at the offer. It's done when the plan is moving. Six month guarantee.</p></div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="pre reveal">Where We Focus</div>
-  <h2 class="sectors-h reveal" style="--d:.1s">Where leadership decides the outcome.</h2>
+<section id="markets">
+  <div class="pre reveal">Markets</div>
+  <h2 class="sectors-h reveal" style="--d:.1s">Working across Industrial Platforms, delivering business-critical outcomes.</h2>
   <div class="sectors-body">
     <div class="sector-list reveal" style="--d:.2s" id="sectorList">
       <div class="sector-item active" data-shape="1">
         <div class="sector-head">
-          <div class="sector-name">Power Generation</div>
+          <div class="sector-name">Power &amp; Renewables</div>
         </div>
         <div class="sector-detail">
-          <p class="sector-why">Merchant exposure, route to market and the pace of build. The platforms that win are led by operators who can price risk and still move first.</p>
-        </div>
-      </div>
-      <div class="sector-item" data-shape="0">
-        <div class="sector-head">
-          <div class="sector-name">Storage &amp; Grid</div>
-        </div>
-        <div class="sector-detail">
-          <p class="sector-why">Revenue stacks shift faster than build programmes. Leadership here is the difference between an optimised asset and a stranded one.</p>
+          <p class="sector-why">Solar, onshore and offshore wind, battery storage and flexible generation, energy from waste, bioenergy and hydrogen. Merchant exposure, route to market and the pace of build. The businesses that win are led by teams who can price risk and still move first.</p>
         </div>
       </div>
       <div class="sector-item" data-shape="2">
         <div class="sector-head">
-          <div class="sector-name">Utilities</div>
+          <div class="sector-name">Utilities &amp; Grid</div>
         </div>
         <div class="sector-detail">
-          <p class="sector-why">Regulated returns reward operational discipline. The best teams sweat the asset base and still find the growth.</p>
-        </div>
-      </div>
-      <div class="sector-item" data-shape="3">
-        <div class="sector-head">
-          <div class="sector-name">Digital</div>
-        </div>
-        <div class="sector-detail">
-          <p class="sector-why">Demand is compounding faster than capacity can be built. Leadership decides who delivers at pace without dropping availability.</p>
+          <p class="sector-why">Transmission and distribution, heat networks, water, waste and environmental services. Regulated returns and long-dated contracts reward operational discipline. The best teams sweat the asset base, hold the compliance line, and still find the growth.</p>
         </div>
       </div>
       <div class="sector-item" data-shape="4">
         <div class="sector-head">
-          <div class="sector-name">Social Infrastructure</div>
+          <div class="sector-name">Transport &amp; Aviation</div>
         </div>
         <div class="sector-detail">
-          <p class="sector-why">Long-dated contracts and public accountability. Steady hands protect the returns here. Strong ones improve them.</p>
+          <p class="sector-why">Airports and aviation services, ports, rail, road and logistics infrastructure. Long concession lives, heavy capital programmes, and a service that has to run every day regardless. Leadership here is judged on delivery under public scrutiny as much as on margin.</p>
+        </div>
+      </div>
+      <div class="sector-item" data-shape="3">
+        <div class="sector-head">
+          <div class="sector-name">Digital Infrastructure</div>
+        </div>
+        <div class="sector-detail">
+          <p class="sector-why">Data centres, fibre and towers. Demand is compounding faster than capacity can be built. Leadership decides who delivers at pace without dropping availability, and who is still integrating the last acquisition when the next one lands.</p>
+        </div>
+      </div>
+      <div class="sector-item" data-shape="0">
+        <div class="sector-head">
+          <div class="sector-name">Industrial &amp; Technical Services</div>
+        </div>
+        <div class="sector-detail">
+          <p class="sector-why">Manufacturing and engineering groups, operations and maintenance providers, EPC and specialist contractors, technical advisory and facilities management. No balance sheet full of assets, and exactly the same problem: margin, utilisation, contract renewal, and someone capable of running it well.</p>
         </div>
       </div>
     </div>
@@ -573,18 +598,18 @@
   // ===== PROCESS TIMELINE =====
   (function(){
     const phases=[
-      {num:'Phase 01 · Week 1',name:'Strategy',
-       copy:'<strong>We start with the strategy, not the CV pile.</strong> The investment thesis, the value creation plan, and what this role has to deliver against it. Your story and proposition get the same attention, because the best Operators are diligencing you too.'},
+      {num:'Phase 01 · Week 1',name:'Briefing',
+       copy:'<strong>We start with the plan, not the CV pile.</strong> The investment thesis, the value creation plan, and what this role has to deliver against it. Part of the job is working out whether the brief is true and saying so when it isn\'t, because a capable leader hired into the wrong brief still fails. Your story gets the same attention, because the best candidates are diligencing you too.'},
       {num:'Phase 02 · Weeks 1–2',name:'Research',
-       copy:'<strong>A full map of the market, not a database search.</strong> Who runs the relevant assets, who has scaled a platform before, who carries the track record the plan needs, and who is genuinely reachable.'},
+       copy:'<strong>A full map of the market, not a database search.</strong> Who runs the relevant businesses, who has scaled one before, who carries the track record the plan needs, and who is genuinely reachable. Adjacent markets are mapped deliberately, because that is where the under-the-radar candidates sit and it is the main defence against a shallow list.'},
       {num:'Phase 03 · Weeks 2–4',name:'Engagement',
-       copy:'<strong>A structured, multi-channel approach to leaders who are not looking.</strong> Weekly steering calls keep you inside the search rather than waiting on it. You see the market respond in real time.'},
+       copy:'<strong>A structured, multi-channel approach to leaders who are not looking.</strong> Every approach carries a specific reason for this person to consider this opportunity. No mass outreach. Weekly steering calls keep you inside the search rather than waiting on it.'},
       {num:'Phase 04 · Weeks 4–6',name:'Assessment',
-       copy:'<strong>Evidence, not gut feel.</strong> Competency interviews and validated psychometrics, interpreted by people who know the sector. Every candidate is underwritten before they reach your table.'},
-      {num:'Phase 05 · Week 6',name:'Shortlist',
-       copy:'<strong>A shortlist with comparative evidence behind every name.</strong> You interview with the full picture in front of you. Then we run the offer through to acceptance, typically around day sixty.'},
+       copy:'<strong>Evidence, not gut feel.</strong> A structured competency interview, scored and written up for every candidate we present, against five or six competencies agreed with you at briefing and built for this role rather than pulled off a shelf. Every candidate is measured against the same set, which is what makes the comparison between them real.'},
+      {num:'Phase 05 · Week 6',name:'Longlist',
+       copy:'<strong>A longlist of assessed candidates, with comparative evidence behind every name.</strong> Reports, scoring and the reasoning behind each recommendation, not CVs with a covering note. You confirm the shortlist from it and interview with the full picture. Then we run the offer through to acceptance, typically around day sixty.'},
       {num:'Phase 06 · To Day 100',name:'Landing',
-       copy:'<strong>The mandate isn\'t done at the offer.</strong> Onboarding support and a 100-day plan get the hire moving against the value creation plan. It\'s why retention across our mandates is 100% at twelve months.'}
+       copy:'<strong>The mandate isn\'t done at the offer.</strong> A first 100 days plan built with you gets the appointment moving against the value creation plan rather than bedding in slowly. Six month guarantee. Retention across our mandates is 100% at twelve months.'}
     ];
     const nodes=document.querySelectorAll('.tl-node');
     const labels=document.querySelectorAll('.tl-label');
@@ -618,15 +643,16 @@
     const ctx=canvas.getContext('2d');
     const dpr=Math.min(window.devicePixelRatio||1,2);
     const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // Battery cell, lying horizontal, terminal on the right
-    const BESS=[[-200,-100],[-100,-100],[0,-100],[140,-100],[140,-40],[200,-40],[200,0],[200,40],[140,40],[140,100],[0,100],[-100,100],[-200,100],[-200,40],[-200,0],[-200,-40]];
+    // Works: sawtooth roof with a stack
+    const FACTORY=[[-200,140],[-200,20],[-140,-40],[-140,20],[-60,-40],[-60,20],[20,-40],[20,20],[100,20],[100,-120],[150,-120],[150,20],[200,20],[200,140],[60,140],[-70,140]];
     // Wind turbine: three-blade rotor on a mast
     const TOWER=[[-12,160],[-12,40],[-12,-24],[-96,14],[-86,-2],[-15,-44],[-7,-150],[7,-150],[15,-44],[86,-2],[96,14],[12,-24],[12,40],[12,160],[0,160],[-6,160]];
     // Pipework: a Z-shaped pipe run with two elbows
     const PIPE=[[-200,125],[-80,125],[35,125],[35,30],[35,-55],[120,-55],[200,-55],[200,-125],[80,-125],[-35,-125],[-35,-30],[-35,55],[-120,55],[-200,55],[-200,90],[-200,108]];
     const DATACENTRE=[[-200,160],[-200,28],[-160,28],[-150,-93],[-140,28],[-60,28],[-50,-115],[-40,28],[40,28],[50,-115],[60,28],[140,28],[150,-93],[160,28],[200,28],[200,160]];
-    const SOCIAL=[[-200,160],[-200,20],[-140,20],[-140,-40],[-60,-40],[-60,-100],[0,-140],[60,-100],[60,-40],[140,-40],[140,20],[200,20],[200,160],[100,160],[0,160],[-100,160]];
-    const shapes=[BESS,TOWER,PIPE,DATACENTRE,SOCIAL];
+    // Arch bridge: deck over a single span, piers either side
+    const BRIDGE=[[-200,-40],[-100,-40],[0,-40],[100,-40],[200,-40],[200,30],[200,120],[140,120],[130,30],[70,-8],[0,-16],[-70,-8],[-130,30],[-140,120],[-200,120],[-200,30]];
+    const shapes=[FACTORY,TOWER,PIPE,DATACENTRE,BRIDGE];
     let current=shapes[1].map(p=>[...p]);
     let target=1;
     let last=performance.now(),inViewport=true;
