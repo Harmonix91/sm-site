@@ -58,7 +58,7 @@
   .hero-in{position:relative;z-index:2}
   .hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);margin-bottom:34px}
   /* DRAFT: longer headline, so the type steps down from 196px max */
-  .hero-h{font-size:clamp(40px,6.8vw,118px);font-weight:600;line-height:1.02;letter-spacing:-.04em}
+  .hero-h{font-size:clamp(38px,6.2vw,108px);font-weight:600;line-height:1.02;letter-spacing:-.04em}
   .hero-h .o{color:var(--orange)}
   .hero-h .thin{font-weight:300}
   .hero-base{display:flex;justify-content:space-between;align-items:flex-end;margin-top:52px;gap:40px;flex-wrap:wrap}
@@ -239,7 +239,7 @@
     <div class="hero-eyebrow reveal" style="--d:.05s">Leadership Search &amp; Advisory &middot; Infrastructure</div>
     <h1 class="hero-h">
       <span class="reveal" style="--d:.1s;display:block">Leadership search</span>
-      <span class="reveal" style="--d:.2s;display:block"><span class="thin">for the infrastructure</span></span>
+      <span class="reveal" style="--d:.2s;display:block">for the infrastructure</span>
       <span class="reveal" style="--d:.3s;display:block"><span class="o">ecosystem</span>.</span>
     </h1>
     <div class="hero-base reveal" style="--d:.55s">
@@ -517,7 +517,7 @@
       if(!pouring){const ft=(cyc-CYCLE)/FLIP;const e=ft<.5?4*ft*ft*ft:1-Math.pow(-2*ft+2,3)/2;rot=Math.PI*e}
       const w=canvas.offsetWidth,h=canvas.offsetHeight;ctx.clearRect(0,0,w,h);
       const mobile=w<880;
-      const cx=mobile?w/2:w*.74;
+      const cx=mobile?w/2:w*.78;
       const cy=mobile?h-170:h*.5;
       const H=mobile?Math.min(140,w*.28):Math.min(h*.324,w*.18),W=H*.72;
       ctx.save();ctx.translate(cx,cy);ctx.rotate(rot);
