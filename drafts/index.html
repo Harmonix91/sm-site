@@ -3,10 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- DRAFT ONLY: remove the robots line below when this goes live -->
 <meta name="robots" content="noindex,nofollow">
-<title>DRAFT | Sonder &amp; Metric | Leadership Search for the Infrastructure Ecosystem</title>
-<meta name="description" content="Draft preview. Not for indexing.">
+<title>Sonder &amp; Metric | Leadership Search for the Infrastructure Ecosystem</title>
+<meta name="description" content="Leadership search and assessment for the businesses that fund, build and run infrastructure. Power, utilities, transport, digital and industrial services. UK and Europe.">
 <link rel="canonical" href="https://sonderandmetric.com/">
+<meta property="og:title" content="Sonder &amp; Metric | Leadership Search for the Infrastructure Ecosystem">
+<meta property="og:description" content="Leadership search for the businesses that fund, build and run infrastructure.">
+<meta property="og:url" content="https://sonderandmetric.com/">
+<meta property="og:type" content="website">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230F4A5E'/%3E%3Ctext x='32' y='46' font-family='Poppins,Helvetica,Arial,sans-serif' font-size='42' font-weight='600' fill='%23FFFFFF' text-anchor='middle'%3E%26amp;%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#0F4A5E">
@@ -16,16 +21,15 @@
   :root{
     --teal:#0F4A5E;
     --orange:#DB6F2A;
-    --paper:#F6F8F9;   /* ground for the one light panel */
-    --ink:#1C2E38;     /* text on the light panel */
-    --mist:#9FB7C0;    /* hairlines on the light panel */
+    --paper:#F6F8F9;
+    --ink:#1C2E38;
+    --mist:#9FB7C0;
   }
   body{background:var(--teal);color:#fff;font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.25,1,.5,1),transform .9s cubic-bezier(.25,1,.5,1);transition-delay:var(--d,0s)}
   .revealed{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
-  /* DRAFT badge */
   .draft-badge{position:fixed;left:16px;bottom:16px;z-index:200;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#fff;background:var(--orange);padding:8px 12px}
 
   nav{display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:76px;position:sticky;top:0;z-index:100;background:rgba(15,74,94,.9);backdrop-filter:blur(12px)}
@@ -52,20 +56,17 @@
   .pre{font-size:13px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);margin-bottom:28px}
   section{padding:130px 6%}
 
-  /* ===== HERO: monolith type left, hourglass right ===== */
+  /* ===== HERO ===== */
   .hero{min-height:calc(100vh - 76px);display:flex;flex-direction:column;justify-content:center;padding:60px 6% 70px;position:relative;overflow:hidden}
   .hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
   .hero-in{position:relative;z-index:2}
   .hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);margin-bottom:34px}
-  /* DRAFT: longer headline, so the type steps down from 196px max */
   .hero-h{font-size:clamp(38px,6.2vw,108px);font-weight:600;line-height:1.02;letter-spacing:-.04em}
   .hero-h .o{color:var(--orange)}
-  .hero-h .thin{font-weight:300}
-  .hero-base{display:flex;justify-content:space-between;align-items:flex-end;margin-top:52px;gap:40px;flex-wrap:wrap}
+  .hero-base{margin-top:52px}
   .hero-sub{font-size:clamp(16px,1.35vw,20px);font-weight:300;color:rgba(255,255,255,.78);max-width:540px;line-height:1.65}
-  .hero-tick{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:500}
 
-  /* ===== BELIEF (original live-site pattern) ===== */
+  /* ===== BELIEF ===== */
   .belief-h{font-size:clamp(38px,6vw,96px);font-weight:500;letter-spacing:-.034em;line-height:1.05;margin-bottom:104px}
   .belief-flow{display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:start;max-width:1400px}
   .belief-body{position:relative;margin-left:40px;padding-left:64px}
@@ -86,8 +87,7 @@
   .platforms{padding:110px 0;position:relative;overflow:hidden}
   .platforms-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
   .plat-head{position:relative;z-index:2;text-align:center;font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:48px}
-  .strip-mask{position:relative;z-index:2}
-  .strip-mask{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 120px,#000 calc(100% - 120px),transparent);mask-image:linear-gradient(to right,transparent,#000 120px,#000 calc(100% - 120px),transparent)}
+  .strip-mask{position:relative;z-index:2;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 120px,#000 calc(100% - 120px),transparent);mask-image:linear-gradient(to right,transparent,#000 120px,#000 calc(100% - 120px),transparent)}
   .strip{display:flex;width:max-content;animation:scroll 52s linear infinite;align-items:center}
   .strip:hover{animation-play-state:paused}
   .cell{flex:0 0 auto;width:200px;height:70px;display:flex;align-items:center;justify-content:center;margin:0 32px}
@@ -95,45 +95,55 @@
   @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @media(prefers-reduced-motion:reduce){.strip{animation:none}}
 
-  /* ===== TWO SIDES ===== */
-  .sides{position:relative}
-  .arena-wrap{position:relative}
-  .arena-wrap .thread{position:absolute;left:50%;top:6px;bottom:6px;width:2px;background:rgba(219,111,42,.45);transform:translateX(-50%)}
-  .arena-wrap .thread::after{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(45deg);width:10px;height:10px;background:var(--orange)}
-  .sides-in{position:relative;z-index:2;max-width:1400px;margin:0 auto}
-  .sides-h{font-size:clamp(32px,4.4vw,64px);font-weight:500;letter-spacing:-.028em;line-height:1.05;text-align:center;margin-bottom:88px}
-  .arena-grid{display:grid;grid-template-columns:1fr 1fr;gap:110px}
-  .arena-side{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--orange);margin-bottom:16px}
-  .arena-name{font-size:clamp(24px,2.6vw,38px);font-weight:600;letter-spacing:-.018em;line-height:1.1;margin-bottom:18px}
-  .arena-copy{font-size:15px;font-weight:300;color:rgba(255,255,255,.82);line-height:1.75;margin-bottom:26px}
-  .arena-copy strong{color:#fff;font-weight:500}
-  .arena-roles{list-style:none;border-top:1px solid rgba(255,255,255,.16)}
-  .arena-roles li{font-size:14px;color:rgba(255,255,255,.85);padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-  .arena-one{text-align:center;margin-top:76px;font-size:13.5px;color:rgba(255,255,255,.55);font-weight:300}
-  .arena-one em{color:#fff;font-style:normal;font-weight:400}
+  /* ===== ECOSYSTEM (light panel) ===== */
+  .eco{background:var(--paper);color:var(--ink)}
+  .eco-in{max-width:1400px;margin:0 auto}
+  .eco .pre{color:var(--teal);text-align:center}
+  .eco-h{font-size:clamp(32px,4.4vw,64px);font-weight:500;letter-spacing:-.028em;line-height:1.05;text-align:center;color:var(--teal);margin-bottom:24px}
+  .eco-sub{text-align:center;max-width:780px;margin:0 auto 88px;font-size:clamp(15px,1.25vw,19px);font-weight:400;color:var(--ink);line-height:1.7}
 
-  /* ===== THE ONE LIGHT PANEL: capabilities on Paper ===== */
-  .sides{background:var(--paper);color:var(--ink)}
-  .sides .pre{color:var(--teal)}
-  .sides .sides-h{color:var(--teal)}
-  .sides .sides-sub{color:var(--ink);font-weight:400}
-  .sides .arena-side{color:var(--orange)}
-  .sides .arena-name{color:var(--ink)}
-  .sides .arena-copy{color:var(--ink);font-weight:400}
-  .sides .arena-copy strong{color:var(--ink);font-weight:600}
-  .sides .arena-roles{border-top:1px solid var(--mist)}
-  .sides .arena-roles li{color:var(--ink);border-bottom:1px solid var(--mist)}
-  .sides .arena-wrap .thread{background:var(--mist);width:1px}
-  .sides .arena-wrap .thread::after{background:var(--teal);width:9px;height:9px}
+  .eco-track{position:relative;height:1px;background:var(--mist);margin-bottom:8px;overflow:visible}
+  .eco-node{position:absolute;top:50%;width:11px;height:11px;background:var(--paper);border:2px solid var(--teal);transform:translate(-50%,-50%) rotate(45deg);animation:nodeGlow 6s linear infinite;z-index:2}
+  .eco-node:nth-of-type(1){left:16.666%;animation-delay:.76s}
+  .eco-node:nth-of-type(2){left:50%;animation-delay:2.76s}
+  .eco-node:nth-of-type(3){left:83.333%;animation-delay:4.76s}
+  @keyframes nodeGlow{
+    0%,100%{background:var(--paper);border-color:var(--teal);transform:translate(-50%,-50%) rotate(45deg) scale(1)}
+    4%{background:var(--orange);border-color:var(--orange);transform:translate(-50%,-50%) rotate(45deg) scale(1.45)}
+    16%{background:var(--paper);border-color:var(--teal);transform:translate(-50%,-50%) rotate(45deg) scale(1)}
+  }
+  .eco-pulse{position:absolute;top:-1px;height:3px;width:90px;left:0;background:linear-gradient(90deg,rgba(219,111,42,0),var(--orange));animation:pulseRun 6s linear infinite;z-index:1}
+  .eco-pulse.back{width:70px;background:linear-gradient(270deg,rgba(15,74,94,0),rgba(15,74,94,.55));animation:pulseBack 6s linear infinite;animation-delay:-3s}
+  @keyframes pulseRun{0%{left:-90px;opacity:0}6%{opacity:1}94%{opacity:1}100%{left:100%;opacity:0}}
+  @keyframes pulseBack{0%{left:100%;opacity:0}6%{opacity:1}94%{opacity:1}100%{left:-70px;opacity:0}}
+  .eco-flow{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--mist);margin-bottom:56px}
+  .eco-flow span:first-child{color:var(--orange)}
+
+  .eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:56px}
+  .eco-col{position:relative;padding-top:4px;transition:transform .5s cubic-bezier(.25,1,.5,1)}
+  .eco-glyph{display:block;width:100%;height:150px;margin-bottom:28px}
+  .eco-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--orange);margin-bottom:14px}
+  .eco-name{font-size:clamp(24px,2.4vw,36px);font-weight:600;letter-spacing:-.018em;line-height:1.1;color:var(--ink);margin-bottom:8px}
+  .eco-who{font-size:13px;font-weight:500;color:var(--teal);margin-bottom:18px;line-height:1.5}
+  .eco-copy{font-size:15px;font-weight:400;color:var(--ink);line-height:1.75;margin-bottom:26px;min-height:5.25em}
+  .eco-roles{list-style:none;border-top:1px solid var(--mist)}
+  .eco-roles li{font-size:14px;color:var(--ink);padding:11px 0 11px 0;border-bottom:1px solid var(--mist);position:relative;transition:padding-left .45s cubic-bezier(.25,1,.5,1),color .3s}
+  .eco-roles li::before{content:'';position:absolute;left:0;top:50%;width:0;height:2px;background:var(--orange);transition:width .45s cubic-bezier(.25,1,.5,1)}
+  .eco-col:hover .eco-roles li{padding-left:18px}
+  .eco-col:hover .eco-roles li::before{width:10px}
+  .eco-col:hover .eco-name{color:var(--teal)}
+  .eco-foot{text-align:center;margin-top:76px;font-size:14px;color:var(--ink);font-weight:400}
+  .eco-foot strong{color:var(--teal);font-weight:600}
+  @media(prefers-reduced-motion:reduce){.eco-pulse,.eco-node{animation:none}}
 
   /* ===== SECTORS ===== */
   .sectors-h{font-size:clamp(28px,3.6vw,52px);font-weight:500;letter-spacing:-.025em;line-height:1.1;margin-bottom:72px;max-width:900px}
+  .sectors-h .o{color:var(--orange)}
   .sectors-body{display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center;max-width:1400px}
   .sector-list{border-top:1px solid rgba(255,255,255,.16)}
   .sector-item{border-bottom:1px solid rgba(255,255,255,.16);cursor:pointer}
   .sector-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding:26px 0;transition:padding-left .55s cubic-bezier(.25,1,.5,1)}
   .sector-name{font-size:clamp(19px,1.8vw,26px);font-weight:600;letter-spacing:-.01em;color:rgba(255,255,255,.55);transition:color .55s}
-  .sector-scope{display:none}
   .sector-detail{max-height:0;overflow:hidden;transition:max-height .85s cubic-bezier(.25,1,.5,1),opacity .7s ease;opacity:0}
   .sector-why{font-size:14.5px;font-weight:300;color:rgba(255,255,255,.82);line-height:1.7;padding:0 0 26px;max-width:520px}
   .sector-item.active .sector-head{padding-left:22px;border-left:3px solid var(--orange);margin-left:-25px}
@@ -157,9 +167,7 @@
 
   /* ===== PROCESS TIMELINE ===== */
   .proc-sub{font-size:clamp(15px,1.2vw,18px);font-weight:300;color:rgba(255,255,255,.78);line-height:1.7;max-width:760px;margin-bottom:96px}
-  .sides-h.with-sub{margin-bottom:24px}
-  .sides-sub{text-align:center;max-width:780px;margin:0 auto 80px;font-size:clamp(15px,1.25vw,19px);font-weight:300;color:rgba(255,255,255,.78);line-height:1.7}
-.proc-sub strong{color:#fff;font-weight:500}
+  .proc-sub strong{color:#fff;font-weight:500}
   .tl{position:relative;max-width:1400px}
   .tl-track{position:relative;height:2px;background:linear-gradient(to right,rgba(219,111,42,.9) 0%,rgba(219,111,42,.9) 84%,rgba(219,111,42,0) 100%)}
   .tl-track .dotted{position:absolute;left:84%;right:0;top:0;height:2px;background:repeating-linear-gradient(to right,rgba(219,111,42,.55) 0 6px,transparent 6px 12px)}
@@ -191,9 +199,11 @@
     .belief-h{margin-bottom:72px}
     .belief-stats{align-items:stretch}
     .stat-card{max-width:100%}
-    .sides-sub{margin-bottom:56px}
-    .arena-grid{grid-template-columns:1fr;gap:48px}
-    .arena-wrap .thread{display:none}
+    .eco-sub{margin-bottom:48px}
+    .eco-track,.eco-flow{display:none}
+    .eco-grid{grid-template-columns:1fr;gap:64px}
+    .eco-glyph{height:120px;margin-bottom:20px}
+    .eco-copy{min-height:0}
     .sectors-body{grid-template-columns:1fr;gap:48px}
     .sectors-visual{height:320px;order:-1}
     .sector-item.active .sector-head{margin-left:0;padding-left:16px}
@@ -236,7 +246,7 @@
 <section class="hero">
   <canvas class="hero-canvas" id="heroCanvas"></canvas>
   <div class="hero-in">
-    <div class="hero-eyebrow reveal" style="--d:.05s">Leadership Search &amp; Advisory &middot; Infrastructure</div>
+    <div class="hero-eyebrow reveal" style="--d:.05s">Leadership Search &amp; Advisory &middot; Infrastructure &middot; UK &amp; Europe</div>
     <h1 class="hero-h">
       <span class="reveal" style="--d:.1s;display:block">Leadership search</span>
       <span class="reveal" style="--d:.2s;display:block">for the infrastructure</span>
@@ -244,7 +254,6 @@
     </h1>
     <div class="hero-base reveal" style="--d:.55s">
       <p class="hero-sub">For the businesses that fund, build and run infrastructure.</p>
-      <div class="hero-tick">UK &amp; Europe</div>
     </div>
   </div>
 </section>
@@ -274,7 +283,7 @@
 
 <section class="platforms">
   <canvas class="platforms-canvas" id="platformsCanvas"></canvas>
-  <div class="plat-head reveal">Businesses across our mandates</div>
+  <div class="plat-head reveal">Infrastructure businesses we've hired for</div>
   <div class="strip-mask">
     <div class="strip">
       <div class="cell"><img loading="lazy" src="../logos/Apatura%20Logo.png" alt="Apatura"></div>
@@ -297,38 +306,65 @@
   </div>
 </section>
 
-<section class="sides" id="sides">
-  <div class="sides-in">
-    <div class="pre reveal" style="text-align:center">Capabilities</div>
-    <h2 class="sides-h with-sub reveal" style="--d:.1s">Two sides. One plan.</h2>
-    <p class="sides-sub reveal" style="--d:.18s">Most search firms assess a candidate against the job spec. We assess them against the investment case, whichever side of it you sit on.</p>
-    <div class="arena-wrap">
-    <div class="thread"></div>
-    <div class="arena-grid">
-      <div class="reveal" style="--d:.2s">
-        <div class="arena-side">Portfolio Company</div>
-        <div class="arena-name">Executive Leadership</div>
-        <p class="arena-copy"><strong>Retained executive search for C and C-1 leadership</strong> at private capital-backed companies, where value creation is at the root of every mandate.</p>
-        <ul class="arena-roles">
+<section class="eco" id="sides">
+  <div class="eco-in">
+    <div class="pre reveal">The Ecosystem</div>
+    <h2 class="eco-h reveal" style="--d:.1s">One ecosystem. Three layers.</h2>
+    <p class="eco-sub reveal" style="--d:.18s">Capital funds it. Operators own and run it. Contractors, manufacturers and service providers build it and keep it running. We hire leaders across all three, and we know how they connect.</p>
+
+    <div class="reveal" style="--d:.24s">
+      <div class="eco-track">
+        <div class="eco-pulse"></div>
+        <div class="eco-pulse back"></div>
+        <div class="eco-node"></div>
+        <div class="eco-node"></div>
+        <div class="eco-node"></div>
+      </div>
+      <div class="eco-flow"><span>Capital flows in &rarr;</span><span>&larr; Performance flows back</span></div>
+    </div>
+
+    <div class="eco-grid">
+      <div class="eco-col reveal" style="--d:.3s" data-glyph="capital">
+        <canvas class="eco-glyph"></canvas>
+        <div class="eco-num">Layer 01</div>
+        <div class="eco-name">Capital</div>
+        <div class="eco-who">Infrastructure funds, investors and asset managers</div>
+        <p class="eco-copy">The investors who back infrastructure, and the teams who steward the portfolio and turn the thesis into realised returns.</p>
+        <ul class="eco-roles">
+          <li>Operating Partners &amp; value creation leads</li>
+          <li>Investment Directors &amp; Chief Investment Officers</li>
+          <li>Heads of Portfolio &amp; Asset Management</li>
+          <li>Fund operations &amp; finance leadership</li>
+        </ul>
+      </div>
+      <div class="eco-col reveal" style="--d:.42s" data-glyph="operate">
+        <canvas class="eco-glyph"></canvas>
+        <div class="eco-num">Layer 02</div>
+        <div class="eco-name">Owners &amp; Operators</div>
+        <div class="eco-who">IPPs, utilities, developers and operating platforms</div>
+        <p class="eco-copy">The businesses that own the assets and answer for how they perform, from development through decades of operation.</p>
+        <ul class="eco-roles">
           <li>Chief Executive &amp; Chief Operating Officers</li>
           <li>Chief Commercial &amp; Chief Financial Officers</li>
-          <li>Divisional Managing Directors carrying full P&amp;L</li>
-          <li>Critical operating &amp; functional leadership</li>
+          <li>Heads of Asset Management &amp; Operations</li>
+          <li>Heads of Programme, Construction &amp; Development</li>
         </ul>
       </div>
-      <div class="reveal" style="--d:.35s">
-        <div class="arena-side">Fund Side</div>
-        <div class="arena-name">Portfolio &amp; Value Creation Leadership</div>
-        <p class="arena-copy"><strong>The fund-side value creation engine.</strong> The people who steward the companies in the portfolio and turn thesis into realised returns across the hold.</p>
-        <ul class="arena-roles">
-          <li>Operating Partners &amp; value creation leads</li>
-          <li>Heads of Value Creation &amp; Portfolio Operations</li>
-          <li>Portfolio Directors &amp; Heads of Asset Management</li>
-          <li>Market mapping &amp; leadership assessment</li>
+      <div class="eco-col reveal" style="--d:.54s" data-glyph="build">
+        <canvas class="eco-glyph"></canvas>
+        <div class="eco-num">Layer 03</div>
+        <div class="eco-name">Build &amp; Service</div>
+        <div class="eco-who">Contractors, manufacturers, O&amp;M, FM and logistics</div>
+        <p class="eco-copy">The businesses that design, build, supply and maintain the assets. No balance sheet full of assets, and the same need for leaders who can run it well.</p>
+        <ul class="eco-roles">
+          <li>Managing Directors carrying full P&amp;L</li>
+          <li>Operations &amp; Delivery Directors</li>
+          <li>Commercial &amp; Business Development Directors</li>
+          <li>Heads of Contracts, Bids &amp; Supply Chain</li>
         </ul>
       </div>
     </div>
-    </div>
+    <p class="eco-foot reveal"><strong>Market mapping and leadership assessment</strong> available across every layer.</p>
   </div>
 </section>
 
@@ -365,11 +401,11 @@
         <div class="td-num">Phase 01 &middot; Week 1</div>
         <div class="td-name">Briefing</div>
       </div>
-      <p class="td-copy" id="tdCopy"><strong>We start with the plan, not the CV pile.</strong> The investment thesis, the value creation plan, and what this role has to deliver against it. Part of the job is working out whether the brief is true and saying so when it isn't, because a capable leader hired into the wrong brief still fails. Your story gets the same attention, because the best candidates are diligencing you too.</p>
+      <p class="td-copy" id="tdCopy"><strong>We start with the plan, not the CV pile.</strong> The business plan, the pressures on it, and what this role has to deliver against it. Part of the job is working out whether the brief is true and saying so when it isn't, because a capable leader hired into the wrong brief still fails. Your story gets the same attention, because the best candidates are diligencing you too.</p>
     </div>
 
     <div class="tl-mobile">
-      <div class="tlm-item"><div class="tlm-wk">Week 1</div><div class="tlm-name">Briefing</div><p class="tlm-copy">We start with the plan, not the CV pile. The thesis, and what this role has to deliver against it. Part of the job is working out whether the brief is true and saying so when it isn't. Your story gets the same attention, because the best candidates are diligencing you too.</p></div>
+      <div class="tlm-item"><div class="tlm-wk">Week 1</div><div class="tlm-name">Briefing</div><p class="tlm-copy">We start with the plan, not the CV pile. The business plan, and what this role has to deliver against it. Part of the job is working out whether the brief is true and saying so when it isn't. Your story gets the same attention, because the best candidates are diligencing you too.</p></div>
       <div class="tlm-item"><div class="tlm-wk">Weeks 1&ndash;2</div><div class="tlm-name">Research</div><p class="tlm-copy">A full map of the market, not a database search. Who runs the relevant businesses, who has scaled one before, and who is reachable. Adjacent markets included deliberately, because that is where the under-the-radar candidates sit.</p></div>
       <div class="tlm-item"><div class="tlm-wk">Weeks 2&ndash;4</div><div class="tlm-name">Engagement</div><p class="tlm-copy">A structured multi-channel approach to leaders who are not looking. Weekly steering calls keep you inside the search, not waiting on it.</p></div>
       <div class="tlm-item"><div class="tlm-wk">Weeks 4&ndash;6</div><div class="tlm-name">Assessment</div><p class="tlm-copy">A scored competency interview against five or six competencies agreed with you at briefing, written up for every candidate we present. Evidence, not gut feel.</p></div>
@@ -381,48 +417,28 @@
 
 <section id="markets">
   <div class="pre reveal">Markets</div>
-  <h2 class="sectors-h reveal" style="--d:.1s">Working across Industrial Platforms, delivering business-critical outcomes.</h2>
+  <h2 class="sectors-h reveal" style="--d:.1s">Five markets. <span class="o">One ecosystem.</span></h2>
   <div class="sectors-body">
     <div class="sector-list reveal" style="--d:.2s" id="sectorList">
       <div class="sector-item active" data-shape="1">
-        <div class="sector-head">
-          <div class="sector-name">Power &amp; Renewables</div>
-        </div>
-        <div class="sector-detail">
-          <p class="sector-why">Solar, onshore and offshore wind, battery storage and flexible generation, energy from waste, bioenergy and hydrogen. Merchant exposure, route to market and the pace of build. The businesses that win are led by teams who can price risk and still move first.</p>
-        </div>
+        <div class="sector-head"><div class="sector-name">Power &amp; Renewables</div></div>
+        <div class="sector-detail"><p class="sector-why">Solar, onshore and offshore wind, battery storage and flexible generation, energy from waste, bioenergy and hydrogen. Merchant exposure, route to market and the pace of build. The businesses that win are led by teams who can price risk and still move first.</p></div>
       </div>
       <div class="sector-item" data-shape="2">
-        <div class="sector-head">
-          <div class="sector-name">Utilities &amp; Grid</div>
-        </div>
-        <div class="sector-detail">
-          <p class="sector-why">Transmission and distribution, heat networks, water, waste and environmental services. Regulated returns and long-dated contracts reward operational discipline. The best teams sweat the asset base, hold the compliance line, and still find the growth.</p>
-        </div>
+        <div class="sector-head"><div class="sector-name">Utilities &amp; Grid</div></div>
+        <div class="sector-detail"><p class="sector-why">Transmission and distribution, heat networks, water, waste and environmental services. Regulated returns and long-dated contracts reward operational discipline. The best teams sweat the asset base, hold the compliance line, and still find the growth.</p></div>
       </div>
       <div class="sector-item" data-shape="4">
-        <div class="sector-head">
-          <div class="sector-name">Transport &amp; Aviation</div>
-        </div>
-        <div class="sector-detail">
-          <p class="sector-why">Airports and aviation services, ports, rail, road and logistics infrastructure. Long concession lives, heavy capital programmes, and a service that has to run every day regardless. Leadership here is judged on delivery under public scrutiny as much as on margin.</p>
-        </div>
+        <div class="sector-head"><div class="sector-name">Transport &amp; Aviation</div></div>
+        <div class="sector-detail"><p class="sector-why">Airports and aviation services, ports, rail, road and logistics infrastructure. Long concession lives, heavy capital programmes, and a service that has to run every day regardless. Leadership here is judged on delivery under public scrutiny as much as on margin.</p></div>
       </div>
       <div class="sector-item" data-shape="3">
-        <div class="sector-head">
-          <div class="sector-name">Digital Infrastructure</div>
-        </div>
-        <div class="sector-detail">
-          <p class="sector-why">Data centres, fibre and towers. Demand is compounding faster than capacity can be built. Leadership decides who delivers at pace without dropping availability, and who is still integrating the last acquisition when the next one lands.</p>
-        </div>
+        <div class="sector-head"><div class="sector-name">Digital Infrastructure</div></div>
+        <div class="sector-detail"><p class="sector-why">Data centres, fibre and towers. Demand is compounding faster than capacity can be built. Leadership decides who delivers at pace without dropping availability, and who is still integrating the last acquisition when the next one lands.</p></div>
       </div>
       <div class="sector-item" data-shape="0">
-        <div class="sector-head">
-          <div class="sector-name">Industrial &amp; Technical Services</div>
-        </div>
-        <div class="sector-detail">
-          <p class="sector-why">Manufacturing and engineering groups, operations and maintenance providers, EPC and specialist contractors, technical advisory and facilities management. No balance sheet full of assets, and exactly the same problem: margin, utilisation, contract renewal, and someone capable of running it well.</p>
-        </div>
+        <div class="sector-head"><div class="sector-name">Industrial &amp; Technical Services</div></div>
+        <div class="sector-detail"><p class="sector-why">Manufacturing and engineering groups, operations and maintenance providers, EPC and specialist contractors, technical advisory and facilities management. No balance sheet full of assets, and exactly the same problem: margin, utilisation, contract renewal, and someone capable of running it well.</p></div>
       </div>
     </div>
     <div class="sectors-visual reveal" style="--d:.3s">
@@ -481,7 +497,7 @@
     window.addEventListener('resize',()=>{if(window.innerWidth>880&&menu.classList.contains('open'))setMenu(false)});
   })();
 
-  // counters (live-site pattern)
+  // counters
   function animateCounter(el){
     const target=parseInt(el.getAttribute('data-target'),10);
     const suffix=el.getAttribute('data-suffix')||'';
@@ -495,7 +511,7 @@
   const co=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){setTimeout(()=>animateCounter(e.target),250);co.unobserve(e.target)}})},{threshold:.5});
   document.querySelectorAll('.stat-counter').forEach(el=>co.observe(el));
 
-  // ===== HERO: HOURGLASS (nested outlines, sand falling, flip on empty) =====
+  // ===== HERO: HOURGLASS =====
   (function(){
     const canvas=document.getElementById('heroCanvas');if(!canvas)return;
     const ctx=canvas.getContext('2d');
@@ -561,7 +577,7 @@
     requestAnimationFrame(frame);
   })();
 
-  // ===== PLATFORMS WAVE FIELD (live-site pattern, upgraded with second interference layer) =====
+  // ===== PLATFORMS WAVE FIELD =====
   (function(){
     const canvas=document.getElementById('platformsCanvas');if(!canvas)return;
     const ctx=canvas.getContext('2d');
@@ -583,7 +599,6 @@
         const wavelength=600-tN*200;
         const k=(Math.PI*2)/wavelength;
         const phase=-elapsed+tN*Math.PI*.4;
-        // upgrade: slow secondary interference so the field breathes
         const k2=k*.37,phase2=elapsed*.6+tN*1.7;
         const breathe=1+.18*Math.sin(elapsed*.5+tN*2.2);
         const op=.025+tN*.10;
@@ -599,11 +614,72 @@
     requestAnimationFrame(frame);
   })();
 
+  // ===== ECOSYSTEM GLYPHS: nested-outline icons, one per layer =====
+  (function(){
+    const cols=document.querySelectorAll('.eco-col');if(!cols.length)return;
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function rot(p,a,ox,oy){const c=Math.cos(a),s=Math.sin(a);const x=p[0]-ox,y=p[1]-oy;return[ox+x*c-y*s,oy+x*s+y*c]}
+    // Capital: rising bars, gently compounding
+    function capital(t){
+      const base=80,xs=[-92,-46,0,46],hs=[52,84,116,150],w=34,pts=[[-100,base]];
+      xs.forEach((x,i)=>{const h=hs[i]*(1+.07*Math.sin(t*1.1+i*.9));
+        pts.push([x,base],[x,base-h],[x+w,base-h],[x+w,base])});
+      pts.push([92,base]);
+      return[pts]}
+    // Owners & operators: turbine with a turning rotor
+    function operate(t){
+      const hub=[0,-18];
+      const mast=[[-6,100],[-3,-12],[3,-12],[6,100]];
+      const blade=[[-3,-18],[-7,-34],[-3,-96],[3,-96],[7,-34],[3,-18]];
+      const polys=[mast];
+      for(let k=0;k<3;k++){polys.push(blade.map(p=>rot(p,t*.9+k*2.094,hub[0],hub[1])))}
+      return polys}
+    // Build & service: a slowly turning gear
+    function build(t){
+      const n=10,ro=82,ri=64,pts=[];
+      for(let i=0;i<n;i++){const a0=t*.35+(i/n)*Math.PI*2,step=Math.PI*2/n;
+        pts.push([Math.cos(a0)*ri,Math.sin(a0)*ri]);
+        pts.push([Math.cos(a0+step*.18)*ro,Math.sin(a0+step*.18)*ro]);
+        pts.push([Math.cos(a0+step*.5)*ro,Math.sin(a0+step*.5)*ro]);
+        pts.push([Math.cos(a0+step*.68)*ri,Math.sin(a0+step*.68)*ri]);}
+      const hole=[];for(let i=0;i<28;i++){const a=(i/28)*Math.PI*2;hole.push([Math.cos(a)*24,Math.sin(a)*24])}
+      return[pts,hole]}
+    const makers={capital,operate,build};
+    const items=[];
+    cols.forEach(col=>{const c=col.querySelector('canvas');items.push({col,c,ctx:c.getContext('2d'),make:makers[col.dataset.glyph],hot:0,vis:true});
+      col.addEventListener('mouseenter',()=>{items.forEach(i=>{if(i.col===col)i.target=1})});
+      col.addEventListener('mouseleave',()=>{items.forEach(i=>{if(i.col===col)i.target=0})});
+    });
+    if('IntersectionObserver'in window){const ob=new IntersectionObserver(es=>{es.forEach(e=>{items.forEach(i=>{if(i.c===e.target)i.vis=e.isIntersecting})})},{threshold:.01});items.forEach(i=>ob.observe(i.c))}
+    let t=0,last=performance.now();
+    function frame(now){requestAnimationFrame(frame);
+      const dt=Math.min((now-last)/1000,.05);last=now;
+      items.forEach(it=>{
+        if(!it.vis)return;
+        it.hot+=((it.target||0)-it.hot)*Math.min(dt*4,1);
+        it.t=(it.t||0)+(reduceMotion?0:dt*(1+it.hot*1.6));
+        const c=it.c,w=c.offsetWidth,h=c.offsetHeight;if(!w||!h)return;
+        const tw=Math.round(w*dpr),th=Math.round(h*dpr);
+        if(c.width!==tw||c.height!==th){c.width=tw;c.height=th;it.ctx.setTransform(1,0,0,1,0,0);it.ctx.scale(dpr,dpr)}
+        const ctx=it.ctx;ctx.clearRect(0,0,w,h);
+        const polys=it.make(it.t);
+        const bs=Math.min(w,h)/210,cx=Math.min(w/2,h*.62),cy=h/2;
+        const layers=18;
+        for(let l=0;l<layers;l++){const tt=l/(layers-1),sc=(.18+tt*.82)*bs,op=.05+tt*(.42+it.hot*.2);
+          const orange=l===layers-1&&it.hot>.05;
+          ctx.strokeStyle=orange?'rgba(219,111,42,'+(.4+it.hot*.6).toFixed(3)+')':'rgba(15,74,94,'+op.toFixed(3)+')';
+          ctx.lineWidth=orange?1.4:.9;
+          polys.forEach(poly=>{ctx.beginPath();poly.forEach((p,i)=>{const x=cx+p[0]*sc,y=cy+p[1]*sc;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)});ctx.closePath();ctx.stroke()})}
+      })}
+    requestAnimationFrame(frame);
+  })();
+
   // ===== PROCESS TIMELINE =====
   (function(){
     const phases=[
       {num:'Phase 01 · Week 1',name:'Briefing',
-       copy:'<strong>We start with the plan, not the CV pile.</strong> The investment thesis, the value creation plan, and what this role has to deliver against it. Part of the job is working out whether the brief is true and saying so when it isn\'t, because a capable leader hired into the wrong brief still fails. Your story gets the same attention, because the best candidates are diligencing you too.'},
+       copy:'<strong>We start with the plan, not the CV pile.</strong> The business plan, the pressures on it, and what this role has to deliver against it. Part of the job is working out whether the brief is true and saying so when it isn\'t, because a capable leader hired into the wrong brief still fails. Your story gets the same attention, because the best candidates are diligencing you too.'},
       {num:'Phase 02 · Weeks 1–2',name:'Research',
        copy:'<strong>A full map of the market, not a database search.</strong> Who runs the relevant businesses, who has scaled one before, who carries the track record the plan needs, and who is genuinely reachable. Adjacent markets are mapped deliberately, because that is where the under-the-radar candidates sit and it is the main defence against a shallow list.'},
       {num:'Phase 03 · Weeks 2–4',name:'Engagement',
@@ -613,7 +689,7 @@
       {num:'Phase 05 · Week 6',name:'Longlist',
        copy:'<strong>A longlist of assessed candidates, with comparative evidence behind every name.</strong> Reports, scoring and the reasoning behind each recommendation, not CVs with a covering note. You confirm the shortlist from it and interview with the full picture. Then we run the offer through to acceptance, typically around day sixty.'},
       {num:'Phase 06 · To Day 100',name:'Landing',
-       copy:'<strong>The mandate isn\'t done at the offer.</strong> A first 100 days plan built with you gets the appointment moving against the value creation plan rather than bedding in slowly. Six month guarantee. Retention across our mandates is 100% at twelve months.'}
+       copy:'<strong>The mandate isn\'t done at the offer.</strong> A first 100 days plan built with you gets the appointment moving against the plan rather than bedding in slowly. Six month guarantee. Retention across our mandates is 100% at twelve months.'}
     ];
     const nodes=document.querySelectorAll('.tl-node');
     const labels=document.querySelectorAll('.tl-label');
@@ -647,14 +723,10 @@
     const ctx=canvas.getContext('2d');
     const dpr=Math.min(window.devicePixelRatio||1,2);
     const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // Works: sawtooth roof with a stack
     const FACTORY=[[-200,140],[-200,20],[-140,-40],[-140,20],[-60,-40],[-60,20],[20,-40],[20,20],[100,20],[100,-120],[150,-120],[150,20],[200,20],[200,140],[60,140],[-70,140]];
-    // Wind turbine: three-blade rotor on a mast
     const TOWER=[[-12,160],[-12,40],[-12,-24],[-96,14],[-86,-2],[-15,-44],[-7,-150],[7,-150],[15,-44],[86,-2],[96,14],[12,-24],[12,40],[12,160],[0,160],[-6,160]];
-    // Pipework: a Z-shaped pipe run with two elbows
     const PIPE=[[-200,125],[-80,125],[35,125],[35,30],[35,-55],[120,-55],[200,-55],[200,-125],[80,-125],[-35,-125],[-35,-30],[-35,55],[-120,55],[-200,55],[-200,90],[-200,108]];
     const DATACENTRE=[[-200,160],[-200,28],[-160,28],[-150,-93],[-140,28],[-60,28],[-50,-115],[-40,28],[40,28],[50,-115],[60,28],[140,28],[150,-93],[160,28],[200,28],[200,160]];
-    // Arch bridge: deck over a single span, piers either side
     const BRIDGE=[[-200,-40],[-100,-40],[0,-40],[100,-40],[200,-40],[200,30],[200,120],[140,120],[130,30],[70,-8],[0,-16],[-70,-8],[-130,30],[-140,120],[-200,120],[-200,30]];
     const shapes=[FACTORY,TOWER,PIPE,DATACENTRE,BRIDGE];
     let current=shapes[1].map(p=>[...p]);
