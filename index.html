@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sonder &amp; Metric | Specialist Search for Energy &amp; Infrastructure</title>
-<meta name="description" content="Specialist search for energy and infrastructure. We fill critical hires, from leadership teams to the specialists who keep assets running, when direct hiring or another firm hasn't delivered. UK and Europe.">
+<meta name="description" content="Specialist search for energy and infrastructure. Brought in when a hire is critical and the clock is running, from leadership teams to the specialists who keep assets running. UK and Europe.">
 <link rel="canonical" href="https://sonderandmetric.com/">
 <meta property="og:title" content="Sonder &amp; Metric | Specialist Search for Energy &amp; Infrastructure">
 <meta property="og:description" content="Critical hires across energy and infrastructure, filled. Brought in when a hire is critical and the clock is running.">
@@ -77,14 +77,15 @@
   .stat-num{font-size:clamp(52px,6vw,76px);font-weight:600;color:var(--teal);line-height:.95;letter-spacing:-.03em;flex-shrink:0;white-space:nowrap}
   .stat-counter{display:inline-block;font-variant-numeric:tabular-nums;text-align:left}
   .stat-counter[data-target="100"]{min-width:3.7ch}
-  .stat-counter[data-target="60"]{min-width:2ch}
+  .stat-counter[data-target="6"]{min-width:1ch}
   .stat-unit{font-size:.42em;font-weight:400;margin-left:.16em;color:var(--teal)}
   .stat-desc{font-size:clamp(15px,1.05vw,17px);font-weight:400;color:#1C2E38;line-height:1.6}
 
   /* ===== PLATFORMS ===== */
   .platforms{padding:110px 0;position:relative;overflow:hidden}
   .platforms-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
-  .plat-head{position:relative;z-index:2;text-align:center;font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:48px}
+  .plat-head{position:relative;z-index:2;text-align:center;font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:48px;padding:0 6%;line-height:1.7}
+  .plat-head span{color:rgba(255,255,255,.7)}
   .strip-mask{position:relative;z-index:2}
   .strip-mask{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 120px,#000 calc(100% - 120px),transparent);mask-image:linear-gradient(to right,transparent,#000 120px,#000 calc(100% - 120px),transparent)}
   .strip{display:flex;width:max-content;animation:scroll 52s linear infinite;align-items:center}
@@ -108,8 +109,6 @@
   .arena-copy strong{color:#fff;font-weight:500}
   .arena-roles{list-style:none;border-top:1px solid rgba(255,255,255,.16)}
   .arena-roles li{font-size:14px;color:rgba(255,255,255,.85);padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-  .arena-one{text-align:center;margin-top:76px;font-size:13.5px;color:rgba(255,255,255,.55);font-weight:300}
-  .arena-one em{color:#fff;font-style:normal;font-weight:400}
 
   /* ===== THE ONE LIGHT PANEL: capabilities on Paper ===== */
   .sides{background:var(--paper);color:var(--ink)}
@@ -132,7 +131,6 @@
   .sector-item{border-bottom:1px solid rgba(255,255,255,.16);cursor:pointer}
   .sector-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding:26px 0;transition:padding-left .55s cubic-bezier(.25,1,.5,1)}
   .sector-name{font-size:clamp(19px,1.8vw,26px);font-weight:600;letter-spacing:-.01em;color:rgba(255,255,255,.55);transition:color .55s}
-  .sector-scope{display:none}
   .sector-detail{max-height:0;overflow:hidden;transition:max-height .85s cubic-bezier(.25,1,.5,1),opacity .7s ease;opacity:0}
   .sector-why{font-size:14.5px;font-weight:300;color:rgba(255,255,255,.82);line-height:1.7;padding:0 0 26px;max-width:520px}
   .sector-item.active .sector-head{padding-left:22px;border-left:3px solid var(--orange);margin-left:-25px}
@@ -154,31 +152,33 @@
   .foot-link{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;font-weight:500;margin-left:26px}
   .foot-link:hover{color:var(--orange)}
 
-  /* ===== PROCESS TIMELINE ===== */
-  .proc-sub{font-size:clamp(15px,1.2vw,18px);font-weight:300;color:rgba(255,255,255,.78);line-height:1.7;max-width:760px;margin-bottom:96px}
   .sides-h.with-sub{margin-bottom:24px}
   .sides-sub{text-align:center;max-width:780px;margin:0 auto 80px;font-size:clamp(15px,1.25vw,19px);font-weight:300;color:rgba(255,255,255,.78);line-height:1.7}
-.proc-sub strong{color:#fff;font-weight:500}
-  .tl{position:relative;max-width:1400px}
-  .tl-track{position:relative;height:2px;background:linear-gradient(to right,rgba(219,111,42,.9) 0%,rgba(219,111,42,.9) 84%,rgba(219,111,42,0) 100%)}
-  .tl-track .dotted{position:absolute;left:84%;right:0;top:0;height:2px;background:repeating-linear-gradient(to right,rgba(219,111,42,.55) 0 6px,transparent 6px 12px)}
-  .tl-node{position:absolute;top:50%;width:12px;height:12px;background:var(--teal);border:2px solid var(--orange);transform:translate(-50%,-50%) rotate(45deg);transition:background .25s,transform .25s;cursor:pointer;z-index:3}
-  .tl-node.active{background:var(--orange);transform:translate(-50%,-50%) rotate(45deg) scale(1.35)}
-  .tl-labels{position:relative;height:56px}
-  .tl-label{position:absolute;top:22px;transform:translateX(-50%);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.5);white-space:nowrap;cursor:pointer;transition:color .25s;text-align:center}
-  .tl-label.active{color:#fff}
-  .tl-label .wk{display:block;font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.35);font-weight:500;margin-top:5px;text-transform:none}
-  .tl-label.active .wk{color:var(--orange)}
-  .tl-end{position:absolute;top:-34px;transform:translateX(-50%);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--orange);white-space:nowrap}
-  .tl-end.faded{color:rgba(255,255,255,.4)}
-  .tl-detail{margin-top:96px;display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start;min-height:170px}
-  .td-num{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:14px}
-  .td-name{font-size:clamp(24px,2.6vw,40px);font-weight:600;letter-spacing:-.018em;line-height:1.1}
-  .td-copy{font-size:15.5px;font-weight:300;color:rgba(255,255,255,.85);line-height:1.8}
-  .td-copy strong{color:#fff;font-weight:500}
-  .fadeswap{animation:fs .75s cubic-bezier(.25,1,.5,1)}
-  @keyframes fs{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .tl-mobile{display:none}
+
+  /* ===== PROCESS: six-week chart ===== */
+  .proc-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:28px;max-width:1400px}
+  .proc-top .sectors-h{margin-bottom:0;max-width:16ch}
+  .proc-big{text-align:right}
+  .proc-big .n{font-size:clamp(40px,4.4vw,64px);font-weight:600;color:var(--orange);letter-spacing:-.03em;line-height:1}
+  .proc-big .c{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:8px;font-weight:500}
+  .proc-sub{font-size:clamp(15px,1.2vw,18px);font-weight:300;color:rgba(255,255,255,.78);line-height:1.7;max-width:760px;margin-bottom:72px}
+  .proc-sub strong{color:#fff;font-weight:500}
+  .g{display:grid;grid-template-columns:minmax(150px,280px) repeat(12,minmax(0,1fr));row-gap:18px;align-items:center;max-width:1400px}
+  .g-wk{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);border-left:1px solid rgba(255,255,255,.16);padding:0 0 10px 8px;font-weight:500}
+  .g-wk.end{color:var(--orange)}
+  .g-lab{grid-column:1;font-size:16px;font-weight:500;line-height:1.3;padding-right:20px}
+  .g-lab small{display:block;font-size:12px;font-weight:300;color:rgba(255,255,255,.5);margin-top:3px}
+  .g-bar{height:26px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);transform-origin:left;transform:scaleX(.02);transition:transform .9s cubic-bezier(.25,1,.5,1);transition-delay:calc(var(--i,0) * 90ms + .3s)}
+  .g.revealed .g-bar{transform:none}
+  .g-bar.hi{background:var(--orange);border-color:var(--orange)}
+  .g-rule{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.16);margin:10px 0}
+  .g-ms{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.78);white-space:nowrap;font-weight:500}
+  .g-ms i{width:11px;height:11px;transform:rotate(45deg);background:var(--orange);flex:none}
+  .g-ms.big{color:#fff;font-weight:600}
+  .g-tick{width:9px;height:9px;transform:rotate(45deg);border:1px solid rgba(255,255,255,.55)}
+  .g-foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16);font-size:14px;font-weight:300;color:rgba(255,255,255,.78);max-width:1400px}
+  .g-foot span:last-child{color:rgba(255,255,255,.45);font-size:12px}
+  @media(prefers-reduced-motion:reduce){.g-bar{transform:none;transition:none}}
 
   @media(max-width:880px){
     .nav-r{display:none}
@@ -196,14 +196,12 @@
     .sectors-body{grid-template-columns:1fr;gap:48px}
     .sectors-visual{height:320px;order:-1}
     .sector-item.active .sector-head{margin-left:0;padding-left:16px}
-    .tl-track,.tl-labels,.tl-detail,.tl-end{display:none}
-    .tl-mobile{display:block;border-left:2px solid rgba(219,111,42,.5);padding-left:26px}
-    .tlm-item{padding:22px 0;position:relative}
-    .tlm-item::before{content:'';position:absolute;left:-33px;top:30px;width:11px;height:11px;background:var(--orange);transform:rotate(45deg)}
-    .tlm-name{font-size:19px;font-weight:600;margin-bottom:4px}
-    .tlm-wk{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:10px}
-    .tlm-copy{font-size:14px;font-weight:300;color:rgba(255,255,255,.8);line-height:1.7}
+    .proc-big{text-align:left}
     .proc-sub{margin-bottom:48px}
+    .g{grid-template-columns:0 repeat(12,minmax(0,1fr));row-gap:8px}
+    .g-lab{grid-column:1/-1;padding:12px 0 0;font-size:15px}
+    .g-wk{font-size:9px;letter-spacing:.06em;padding-left:4px}
+    .g-ms{font-size:9px;letter-spacing:.04em;white-space:normal;line-height:1.2;align-items:flex-start}
     section{padding:90px 6%}
   }
 </style>
@@ -245,32 +243,9 @@
   </div>
 </section>
 
-<section>
-  <div class="pre reveal">Where we come in</div>
-  <h2 class="belief-h reveal" style="--d:.1s">When a search stalls, we fix it.</h2>
-  <div class="belief-flow">
-    <div class="belief-body reveal" style="--d:.2s">
-      <p class="belief-p">The role has been open for months. The shortlist didn't hold. The preferred candidate walked at offer. Or someone key has left and the business can't wait for a slow process. That's usually when we get the call.</p>
-      <p class="belief-p">We start by finding out what went wrong: the brief, the package, the story being told to candidates, or how far into the market the search actually reached. Then we put senior time behind it. A full map of the market, direct approaches to people who aren't looking, and weekly updates so you always know where it stands.</p>
-      <p class="belief-p">Energy and infrastructure is where we specialise. We know who the people are at every level, and how to get them to the table.</p>
-      <div class="belief-sig">&mdash; Josh Foulkes, Founder</div>
-    </div>
-    <div class="belief-stats">
-      <div class="stat-card reveal" style="--d:.35s">
-        <div class="stat-num"><span class="stat-counter" data-target="100" data-suffix="%">0%</span></div>
-        <div class="stat-desc">Retention at twelve months across every mandate we've executed.</div>
-      </div>
-      <div class="stat-card reveal" style="--d:.5s">
-        <div class="stat-num"><span class="stat-counter" data-target="60">0</span><span class="stat-unit">days</span></div>
-        <div class="stat-desc">Typical time from mandate to accepted offer.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="platforms">
   <canvas class="platforms-canvas" id="platformsCanvas"></canvas>
-  <div class="plat-head reveal">Businesses across our mandates</div>
+  <div class="plat-head reveal">Energy &amp; Infrastructure &middot; <span>Businesses we've delivered for</span></div>
   <div class="strip-mask">
     <div class="strip">
       <div class="cell"><img loading="lazy" src="logos/Apatura%20Logo.png" alt="Apatura"></div>
@@ -289,6 +264,29 @@
       <div class="cell"><img loading="lazy" src="logos/gmt.svg" alt=""></div>
       <div class="cell"><img loading="lazy" src="logos/Velox%20Power%20logo.png" alt=""></div>
       <div class="cell"><img loading="lazy" src="logos/Vital%20Energi%20Logo.svg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="pre reveal">Where we come in</div>
+  <h2 class="belief-h reveal" style="--d:.1s">When the hire can't wait.</h2>
+  <div class="belief-flow">
+    <div class="belief-body reveal" style="--d:.2s">
+      <p class="belief-p">Someone key has resigned. A new asset is coming online and needs a team around it. The plan depends on a hire who has to be in seat this quarter. Or a search has dragged on for months and the business is out of patience. That's when we get the call.</p>
+      <p class="belief-p">We put senior time behind every search from day one. The market is mapped in the first fortnight, the right people are approached directly, including those who aren't looking, and you see assessed candidates while most processes are still writing the advert.</p>
+      <p class="belief-p">Energy and infrastructure is where we specialise. We know who the people are at every level, and how to get them to the table.</p>
+      <div class="belief-sig">&mdash; Josh Foulkes, Founder</div>
+    </div>
+    <div class="belief-stats">
+      <div class="stat-card reveal" style="--d:.35s">
+        <div class="stat-num"><span class="stat-counter" data-target="100" data-suffix="%">0%</span></div>
+        <div class="stat-desc">Retention at twelve months across every mandate we've executed.</div>
+      </div>
+      <div class="stat-card reveal" style="--d:.5s">
+        <div class="stat-num"><span class="stat-counter" data-target="6">0</span><span class="stat-unit">weeks</span></div>
+        <div class="stat-desc">From brief to accepted offer on an urgent search.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -330,48 +328,59 @@
 
 <section id="process">
   <div class="pre reveal">How We Work</div>
-  <h2 class="sectors-h reveal" style="--d:.1s">A search, run like diligence.</h2>
-  <p class="proc-sub reveal" style="--d:.2s">We don't put a leader in front of you without underwriting them: <strong>a defined process, weekly steering, and written evidence at every stage.</strong> Every search runs through a client data room, so you work from the research as it is produced rather than from a summary of it at the end. Four to six weeks, briefing to presented longlist. An accepted offer around day sixty.</p>
+  <div class="proc-top reveal" style="--d:.1s">
+    <h2 class="sectors-h">Six weeks to an accepted offer.</h2>
+    <div class="proc-big"><div class="n">Week 6</div><div class="c">Offer accepted &middot; urgent search</div></div>
+  </div>
+  <p class="proc-sub reveal" style="--d:.2s">On an urgent search nothing waits for the step before it. <strong>Mapping, approaches and assessment run side by side,</strong> so assessed candidates reach you in week two, you're interviewing by week three, and the offer goes out in week five. A weekly steering call keeps you inside the search throughout.</p>
 
-  <div class="tl reveal" style="--d:.3s">
-    <div style="position:relative">
-      <div class="tl-end" style="left:84%">Offer accepted &middot; ~Day 60</div>
-      <div class="tl-end faded" style="left:99%">Day 100</div>
-      <div class="tl-track">
-        <div class="dotted"></div>
-        <div class="tl-node active" data-i="0" style="left:4%"></div>
-        <div class="tl-node" data-i="1" style="left:19%"></div>
-        <div class="tl-node" data-i="2" style="left:37%"></div>
-        <div class="tl-node" data-i="3" style="left:55%"></div>
-        <div class="tl-node" data-i="4" style="left:71%"></div>
-        <div class="tl-node" data-i="5" style="left:84%"></div>
-      </div>
-      <div class="tl-labels">
-        <div class="tl-label active" data-i="0" style="left:4%">Briefing<span class="wk">Week 1</span></div>
-        <div class="tl-label" data-i="1" style="left:19%">Research<span class="wk">Weeks 1&ndash;2</span></div>
-        <div class="tl-label" data-i="2" style="left:37%">Engagement<span class="wk">Weeks 2&ndash;4</span></div>
-        <div class="tl-label" data-i="3" style="left:55%">Assessment<span class="wk">Weeks 4&ndash;6</span></div>
-        <div class="tl-label" data-i="4" style="left:71%">Longlist<span class="wk">Week 6</span></div>
-        <div class="tl-label" data-i="5" style="left:84%">Landing<span class="wk">To Day 100</span></div>
-      </div>
-    </div>
+  <div class="g reveal" style="--d:.3s" role="img" aria-label="Six-week search plan: brief in week 1, market map weeks 1 to 2, direct approach weeks 1 to 4, rolling assessment weeks 2 to 5, your interviews weeks 3 to 5, offer and acceptance weeks 5 to 6.">
+    <div></div>
+    <div class="g-wk" style="grid-column:span 2">Wk 1</div>
+    <div class="g-wk" style="grid-column:span 2">Wk 2</div>
+    <div class="g-wk" style="grid-column:span 2">Wk 3</div>
+    <div class="g-wk" style="grid-column:span 2">Wk 4</div>
+    <div class="g-wk" style="grid-column:span 2">Wk 5</div>
+    <div class="g-wk end" style="grid-column:span 2">Wk 6</div>
 
-    <div class="tl-detail">
-      <div id="tdLeft">
-        <div class="td-num">Phase 01 &middot; Week 1</div>
-        <div class="td-name">Briefing</div>
-      </div>
-      <p class="td-copy" id="tdCopy"><strong>We start with the plan, not the CV pile.</strong> The investment thesis, the value creation plan, and what this role has to deliver against it. Part of the job is working out whether the brief is true and saying so when it isn't, because a capable leader hired into the wrong brief still fails. Your story gets the same attention, because the best candidates are diligencing you too.</p>
-    </div>
+    <div class="g-lab">Brief<small>The role, the package, your story</small></div>
+    <div class="g-bar" style="--i:0;grid-column:2 / 3"></div>
 
-    <div class="tl-mobile">
-      <div class="tlm-item"><div class="tlm-wk">Week 1</div><div class="tlm-name">Briefing</div><p class="tlm-copy">We start with the plan, not the CV pile. The thesis, and what this role has to deliver against it. Part of the job is working out whether the brief is true and saying so when it isn't. Your story gets the same attention, because the best candidates are diligencing you too.</p></div>
-      <div class="tlm-item"><div class="tlm-wk">Weeks 1&ndash;2</div><div class="tlm-name">Research</div><p class="tlm-copy">A full map of the market, not a database search. Who runs the relevant businesses, who has scaled one before, and who is reachable. Adjacent markets included deliberately, because that is where the under-the-radar candidates sit.</p></div>
-      <div class="tlm-item"><div class="tlm-wk">Weeks 2&ndash;4</div><div class="tlm-name">Engagement</div><p class="tlm-copy">A structured multi-channel approach to leaders who are not looking. Weekly steering calls keep you inside the search, not waiting on it.</p></div>
-      <div class="tlm-item"><div class="tlm-wk">Weeks 4&ndash;6</div><div class="tlm-name">Assessment</div><p class="tlm-copy">A scored competency interview against five or six competencies agreed with you at briefing, written up for every candidate we present. Evidence, not gut feel.</p></div>
-      <div class="tlm-item"><div class="tlm-wk">Week 6</div><div class="tlm-name">Longlist</div><p class="tlm-copy">A longlist of assessed candidates with comparative evidence behind every name. You confirm the shortlist from it and interview with the full picture, then we run the offer to acceptance.</p></div>
-      <div class="tlm-item"><div class="tlm-wk">To Day 100</div><div class="tlm-name">Landing</div><p class="tlm-copy">Onboarding and a first 100 days plan, built with you. The mandate isn't done at the offer. It's done when the plan is moving. Six month guarantee.</p></div>
-    </div>
+    <div class="g-lab">Market map<small>Everyone who could do the job</small></div>
+    <div class="g-bar" style="--i:1;grid-column:2 / 5"></div>
+
+    <div class="g-lab">Direct approach<small>Including people who aren't looking</small></div>
+    <div class="g-bar" style="--i:2;grid-column:3 / 9"></div>
+
+    <div class="g-lab">Assessment<small>Scored interviews, on a rolling basis</small></div>
+    <div class="g-bar" style="--i:3;grid-column:4 / 11"></div>
+
+    <div class="g-lab">Your interviews<small>Shortlist meets the panel</small></div>
+    <div class="g-bar" style="--i:4;grid-column:6 / 11"></div>
+
+    <div class="g-lab">Offer<small>Negotiated to acceptance</small></div>
+    <div class="g-bar hi" style="--i:5;grid-column:10 / 14"></div>
+
+    <div class="g-rule"></div>
+
+    <div class="g-lab">You see</div>
+    <div class="g-ms" style="grid-column:2 / span 2"><i></i>Brief agreed</div>
+    <div class="g-ms" style="grid-column:4 / span 2"><i></i>First candidates</div>
+    <div class="g-ms" style="grid-column:6 / span 3"><i></i>Interviews</div>
+    <div class="g-ms big" style="grid-column:12 / span 2"><i></i>Hired</div>
+
+    <div class="g-lab">Steering call<small>Every week</small></div>
+    <div class="g-tick" style="grid-column:2"></div>
+    <div class="g-tick" style="grid-column:4"></div>
+    <div class="g-tick" style="grid-column:6"></div>
+    <div class="g-tick" style="grid-column:8"></div>
+    <div class="g-tick" style="grid-column:10"></div>
+    <div class="g-tick" style="grid-column:12"></div>
+  </div>
+
+  <div class="g-foot reveal" style="--d:.4s">
+    <span>Then onboarding and a first 100 days plan, backed by a six-month guarantee.</span>
+    <span>Illustrative. Timings depend on the role and the panel's availability.</span>
   </div>
 </section>
 
@@ -593,48 +602,6 @@
         ctx.stroke()}}
     if('IntersectionObserver'in window){new IntersectionObserver(es=>{es.forEach(e=>{inViewport=e.isIntersecting})},{threshold:.01}).observe(canvas)}
     requestAnimationFrame(frame);
-  })();
-
-  // ===== PROCESS TIMELINE =====
-  (function(){
-    const phases=[
-      {num:'Phase 01 · Week 1',name:'Briefing',
-       copy:'<strong>We start with the plan, not the CV pile.</strong> The investment thesis, the value creation plan, and what this role has to deliver against it. Part of the job is working out whether the brief is true and saying so when it isn\'t, because a capable leader hired into the wrong brief still fails. Your story gets the same attention, because the best candidates are diligencing you too.'},
-      {num:'Phase 02 · Weeks 1–2',name:'Research',
-       copy:'<strong>A full map of the market, not a database search.</strong> Who runs the relevant businesses, who has scaled one before, who carries the track record the plan needs, and who is genuinely reachable. Adjacent markets are mapped deliberately, because that is where the under-the-radar candidates sit and it is the main defence against a shallow list.'},
-      {num:'Phase 03 · Weeks 2–4',name:'Engagement',
-       copy:'<strong>A structured, multi-channel approach to leaders who are not looking.</strong> Every approach carries a specific reason for this person to consider this opportunity. No mass outreach. Weekly steering calls keep you inside the search rather than waiting on it.'},
-      {num:'Phase 04 · Weeks 4–6',name:'Assessment',
-       copy:'<strong>Evidence, not gut feel.</strong> A structured competency interview, scored and written up for every candidate we present, against five or six competencies agreed with you at briefing and built for this role rather than pulled off a shelf. Every candidate is measured against the same set, which is what makes the comparison between them real.'},
-      {num:'Phase 05 · Week 6',name:'Longlist',
-       copy:'<strong>A longlist of assessed candidates, with comparative evidence behind every name.</strong> Reports, scoring and the reasoning behind each recommendation, not CVs with a covering note. You confirm the shortlist from it and interview with the full picture. Then we run the offer through to acceptance, typically around day sixty.'},
-      {num:'Phase 06 · To Day 100',name:'Landing',
-       copy:'<strong>The mandate isn\'t done at the offer.</strong> A first 100 days plan built with you gets the appointment moving against the value creation plan rather than bedding in slowly. Six month guarantee. Retention across our mandates is 100% at twelve months.'}
-    ];
-    const nodes=document.querySelectorAll('.tl-node');
-    const labels=document.querySelectorAll('.tl-label');
-    const tdLeft=document.getElementById('tdLeft');
-    const tdCopy=document.getElementById('tdCopy');
-    if(!tdLeft)return;
-    function activate(i){
-      nodes.forEach(n=>n.classList.toggle('active',+n.dataset.i===i));
-      labels.forEach(l=>l.classList.toggle('active',+l.dataset.i===i));
-      const p=phases[i];
-      tdLeft.innerHTML='<div class="td-num">'+p.num+'</div><div class="td-name">'+p.name+'</div>';
-      tdCopy.innerHTML=p.copy;
-      tdLeft.classList.remove('fadeswap');tdCopy.classList.remove('fadeswap');
-      void tdLeft.offsetWidth;
-      tdLeft.classList.add('fadeswap');tdCopy.classList.add('fadeswap');
-    }
-    [...nodes,...labels].forEach(el=>{
-      el.addEventListener('click',()=>activate(+el.dataset.i));
-      let ht=null;
-      el.addEventListener('mouseenter',()=>{
-        if(!window.matchMedia('(hover:hover)').matches)return;
-        ht=setTimeout(()=>activate(+el.dataset.i),160);
-      });
-      el.addEventListener('mouseleave',()=>{if(ht){clearTimeout(ht);ht=null}});
-    });
   })();
 
   // ===== SECTORS: silhouette driven by list =====
