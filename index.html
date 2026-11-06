@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sonder &amp; Metric | Specialist Search for Energy &amp; Infrastructure</title>
-<meta name="description" content="Specialist search for energy and infrastructure. Brought in when a hire is critical and the clock is running, from leadership teams to the specialists who keep assets running. UK and Europe.">
+<meta name="description" content="Specialist search across the energy and infrastructure ecosystem. Brought in when a hire is critical and the clock is running, from leadership teams to the specialists who keep assets running. UK and Europe.">
 <link rel="canonical" href="https://sonderandmetric.com/">
 <meta property="og:title" content="Sonder &amp; Metric | Specialist Search for Energy &amp; Infrastructure">
-<meta property="og:description" content="Critical hires across energy and infrastructure, filled. Brought in when a hire is critical and the clock is running.">
+<meta property="og:description" content="Critical hires across the energy and infrastructure ecosystem, filled. Brought in when a hire is critical and the clock is running.">
 <meta property="og:url" content="https://sonderandmetric.com/">
 <meta property="og:type" content="website">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -56,7 +56,8 @@
   .hero{min-height:calc(100vh - 76px);display:flex;flex-direction:column;justify-content:center;padding:60px 6% 70px;position:relative;overflow:hidden}
   .hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
   .hero-in{position:relative;z-index:2}
-  .hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);margin-bottom:34px}
+  .hero-eyebrow{font-size:clamp(20px,2vw,32px);font-weight:500;letter-spacing:-.01em;line-height:1.3;color:#fff;margin-bottom:34px;max-width:32ch}
+  .hero-eyebrow .o{color:var(--orange)}
   .hero-h{font-size:clamp(42px,8vw,150px);font-weight:600;line-height:1;letter-spacing:-.045em}
   .hero-h .o{color:var(--orange)}
   .hero-h .thin{font-weight:300}
@@ -84,8 +85,8 @@
   /* ===== PLATFORMS ===== */
   .platforms{padding:110px 0;position:relative;overflow:hidden}
   .platforms-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
-  .plat-head{position:relative;z-index:2;text-align:center;font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:48px;padding:0 6%;line-height:1.7}
-  .plat-head span{color:rgba(255,255,255,.7)}
+  .plat-head{position:relative;z-index:2;text-align:center;font-size:clamp(20px,2vw,32px);font-weight:500;letter-spacing:-.01em;line-height:1.3;color:#fff;margin:0 auto 56px;padding:0 6%;max-width:1100px}
+  .plat-head span{color:var(--orange)}
   .strip-mask{position:relative;z-index:2}
   .strip-mask{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 120px,#000 calc(100% - 120px),transparent);mask-image:linear-gradient(to right,transparent,#000 120px,#000 calc(100% - 120px),transparent)}
   .strip{display:flex;width:max-content;animation:scroll 52s linear infinite;align-items:center}
@@ -231,7 +232,7 @@
 <section class="hero">
   <canvas class="hero-canvas" id="heroCanvas"></canvas>
   <div class="hero-in">
-    <div class="hero-eyebrow reveal" style="--d:.05s">Specialist Search &middot; Energy &amp; Infrastructure</div>
+    <p class="hero-eyebrow reveal" style="--d:.05s">Specialist search across the <span class="o">energy &amp; infrastructure ecosystem</span>.</p>
     <h1 class="hero-h">
       <span class="reveal" style="--d:.1s;display:block">Critical hires.</span>
       <span class="reveal" style="--d:.25s;display:block"><span class="o">Filled</span>.</span>
@@ -245,7 +246,7 @@
 
 <section class="platforms">
   <canvas class="platforms-canvas" id="platformsCanvas"></canvas>
-  <div class="plat-head reveal">Energy &amp; Infrastructure &middot; <span>Businesses we've delivered for</span></div>
+  <h2 class="plat-head reveal">Businesses we've delivered for across the <span>energy &amp; infrastructure ecosystem</span></h2>
   <div class="strip-mask">
     <div class="strip">
       <div class="cell"><img loading="lazy" src="logos/Apatura%20Logo.png" alt="Apatura"></div>
